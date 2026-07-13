@@ -1,0 +1,667 @@
+\documentclass[10 pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[left=2cm, right=2cm, top=1.5cm, bottom=2cm]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{cancel}
+\usepackage{amsmath,amsthm,amsfonts,amscd,amssymb,amsbsy}
+
+\title{\textbf{\underline{Propiedades}}}
+\author{}
+\date{}
+
+\begin{document}
+
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+
+\section*{}
+
+\Large{A continuación veremos algunas propiedades básicas de los grupos que se desprenden de manera inmediata de la definición. Estos resultados será utilizados con frecuencia en adelante:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo y $a,b,c \in G$. \\
+
+    i) Si $a*b=a*c$, entonces $b=c$. \\
+
+    ii) Si $b*a=c*a$, entonces $b=c$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{en un grupo se cumplen las ``leyes de cancelación''}.} \\
+
+\Large{\textbf{Demostración:} \\
+
+i) Note que:
+\begin{align*}
+    b&=e_G*b \\
+    &=(a^{-1}*a)*b \\
+    &=a^{-1}*(a*b) \\
+    &=a^{-1}*(a*c) \\
+    &=(a^{-1}*a)*c \\
+    &=e_G*c \\
+    &=c
+\end{align*}
+ii) Note que:}
+
+\begin{align*}
+    b&=b*e_G \\
+    &=b*(a*a^{-1}) \\
+    &=(b*a)*a^{-1} \\
+     &=(c*a)*a^{-1} \\ 
+    &=c*(a*a^{-1}) \\
+    &=c*e_G \\
+    &=c
+\end{align*}
+\begin{flushright}
+   $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $(G,*)$ un grupo y $g \in G$. Entonces $(g^{-1})^{-1}=g$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{Invertir dos veces un elemento devuelve el elemento original}.} \\
+
+\Large{\textbf{Demostración:} Note que:}
+\begin{align*}
+    g^{-1}*(g^{-1})^{-1}&=e_G \\
+    &=g^{-1} *g 
+\end{align*}
+\Large{De modo pues que $g^{-1}*(g^{-1})^{-1}=g^{-1}*g$. Luego, por la proposición anterior, $(g^{-1})^{-1}=g$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $(G,*)$ un grupo. Entonces $e_G^{-1}=e_G$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Como $e_G*e_G=e_G$ y $e_G^{-1}$ es único, resulta que $e_G^{-1}=e_G$.}
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo y $a,b \in G$. Entonces $(a*b)^{-1}=b^{-1}*a^{-1}$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Por un lado, note que:}
+\begin{align*}
+    (b^{-1}*a^{-1})*(a*b)&=b^{-1}*[a^{-1}*(a*b)] \\
+    &=b^{-1}*[(a^{-1}*a)*b] \\
+    &=b^{-1}*(e_G*b) \\
+    &=b^{-1}*b \\
+    &=e_G
+\end{align*}
+\Large{Por otro lado:}
+
+\begin{align*}
+    (a*b)*(b^{-1}*a^{-1})&=a*[b*(b^{-1}*a^{-1})] \\
+    &=a*[(b*b^{-1})*a^{-1}] \\
+    &=a*(e_G*a^{-1}) \\
+    &=a*a^{-1} \\
+    &=e_G
+\end{align*}
+\Large{Como $(a*b)^{-1}$ es único, resulta que $(a*b)^{-1}=b^{-1}*a^{-1}$.} \\
+
+\Large{\textbf{Observación:} La propiedad ``$(a * b)^{-1}=b^{-1}*a^{-1}$'' expresa que \textit{para deshacer dos acciones realizadas de manera consecutiva, es necesario deshacer primero la última y después la primera}. Una analogía clásica es la de ponerse las medias y luego los zapatos: para volver al estado inicial, primero hay que quitarse los zapatos y después las medias.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sea $(G,*)$ un grupo. Si para todo $a \in G$ y para todo $b \in G$, $(a*b)^{-1}=a^{-1}*b^{-1}$, entonces $(G,*)$ es abeliano.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Sean $a,b \in G$. De acuerdo con la proposición anterior, $(a*b)^{-1}=b^{-1}*a^{-1}$. Y por hipótesis, $(b*a)^{-1}=b^{-1}*a^{-1}$. De modo pues que $(a*b)^{-1}=(b*a)^{-1}$. Luego:}
+\begin{align*}
+    a*b&=(a*b)*e_G \\
+    &=(a*b)*[(b*a)^{-1}*(b*a)] \\
+    &=(a*b)*[(a*b)^{-1}*(b*a)] \\
+    &=[(a*b)*(a*b)^{-1}]*(b*a) \\
+    &=e_G*(b*a) \\
+    &=b*a
+\end{align*}
+\Large{Tenemos entonces que $*$ es conmutativa en $G$, y por tanto que $(G,*)$ es abeliano.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $(G,*)$ un grupo. Si para todo $a \in G$, para todo $b \in G$, y para todo $c \in G$, $a*b=c*a$ implica que $b=c$, entonces $(G,*)$ es abeliano.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Sean $a,b \in G$. Note que:}
+\begin{align*}
+    b*(a*b)&=(b*a)*b
+\end{align*}
+\Large{Luego, de acuerdo con la hipótesis, $a*b=b*a$. Tenemos entonces que $*$ es conmutativa en $G$, y por tanto que $(G,*)$ es abeliano.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{La \textbf{potenciación} en grupos juega un papel fundamental en el desarrollo de la teoría. Su definición e interpretación son completamente análogas a las de la potenciación con exponentes enteros.} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $(G,*)$ un grupo, $n \in \mathbb N$ y $g \in G$. Establecemos inductivamente que: \\
+
+    i) $g^0=e_G$. \\
+
+    ii) $g^{n+1}=g^n * g$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{\textbf{Ejemplo:}} \\
+
+\Large{Sean $(G,*)$ un grupo y $g \in G$. Entonces: \\
+
+-- $g^0=e_G$. \\
+
+-- $g^1=g^0*g=e_G*g=g$. \\
+
+-- $g^2=g^1*g=g*g$. \\
+
+-- $g^3=g^2*g=g*g*g$. \\
+
+-- $g^4=g^3*g=g*g*g*g$.} \\
+
+\begin{flushright}
+   $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo, $n \in \mathbb N$ y $g \in G$. \\
+
+    i) $g^1=g$. \\
+
+    ii) $e_G^n=e_G$. \\
+
+    iii) $g^n \in G$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Por definición, $g^1=g^0*g=e_G*g=g$. \\
+
+ii) Por definición, $e_G^0=e_G$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $e_G^k=e_G$. Luego $e_G^{k+1}=e_G^k*e_G=e_G*e_G=e_G$. Así pues, concluimos por inducción que $e_G^n=e_G$. \\
+
+iii) Por definición, $g^0=e_G \in G$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $g^k \in G$. Luego $g^{k+1}=g_k*g \in G$ (porque $*$ es un operación binaria en $G$ y $g,g^k \in G$). Así pues, concluimos por inducción que $g^n \in G$.} \\ 
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo, $n \in \mathbb N$ y $g \in G$. Entonces $g^{n+1}=g*g^n$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Note que $g^1=g=g*e_G=g*g^0$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $g^{k+1}=g*g^k$. Luego $g^{k+2}=g^{k+1}*g=(g*g^k)*g=g*(g^k*g)=g*g^{k+1}$. Así pues, concluimos por inducción que $g^{n+1}=g*g^n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo, $n,m \in \mathbb N$ y $g \in G$. Entonces $g^n*g^m=g^{n+m}$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Note que $g^n*g^0=g^n*e_G=g^n=g^{n+0}$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $g^n*g^k=g^{n+k}$. Luego $g^{n}*g^{k+1}=g^n*(g^k*g)=(g^n*g^k)*g=g^{n+k}*g=g^{n+k+1}$. Así pues, concluimos por inducción que $g^n*g^m=g^{n+m}$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo, $n,m \in \mathbb N$ y $g \in G$. Entonces $(g^n)^m=g^{nm}$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Note que $(g^n)^0=e_G=g^{0}=g^{n \cdot 0}$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $(g^n)^k=g^{nk}$. Luego $(g^{n})^{k+1}=(g^{n})^k*g^n=g^{nk}*g^n=g^{nk+n}=g^{n \cdot (k+1)}$. Así pues, concluimos por inducción que $(g^n)^m=g^{nm}$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{En grupos también es posible definir la potenciación con exponentes negativos:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $(G,*)$ un grupo, $n \in \mathbb N$ y $g \in G$. Entonces $g^{-n}=(g^{-1})^n$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo, $n \in \mathbb N^+$ y $g \in G$. \\
+
+    i) $e_G^{-n}=e_G$. \\
+
+    ii) $g^{-n} \in G$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Por definición, $e_G^{-n}=(e_G^{-1})^n=e_G^n=e_G$. \\
+
+ii) Note que $g^{-1} \in G$, porque $(G,*)$ es un grupo. A continuación, consideremos $k \in \mathbb N^+$, y supongamos que $g^{-k} \in G$. Luego $g^{-(k+1)}=(g^{-1})^{k+1}=(g^{-1})^k*g^{-1} \in G$ (porque $*$ es un operación binaria en $G$ y $(g^{-1})^k,g^{-1} \in G$). Así pues, concluimos por inducción que $g^{-n} \in G$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo, $n \in \mathbb N^+$ y $g \in G$. Entonces $g^{-n}=(g^{n})^{-1}$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Como $g^1=g$, resulta que $g^{-1}=(g^1)^{-1}$. A continuación, consideremos $k \in \mathbb N^+$, y supongamos que $g^{-k}=(g^k)^{-1}$. Luego $g^{-(k+1)}=(g^{-1})^{k+1}=(g^{-1})^k*g^{-1}=g^{-k}*g^{-1}=(g^{k})^{-1}*g^{-1}=(g*g^k)^{-1}=(g^{k+1})^{-1}$. Así pues, conluimos por inducción que $g^{-n}=(g^n)^{-1}$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Lema:} Sean $(G,*)$ un grupo, $n \in \mathbb N$ y $g \in G$. \\ 
+
+    i) $g^n*g^{-1}=g^{n-1}$. \\
+
+    ii) $g^{-1}*g^n=g^{n-1}$. \\
+
+    iii) Si $1 \leq n$, entonces $g^{-n}*g^{-1}=g^{-n-1}$. \\
+
+    iv) Si $1 \leq n$, entonces $g^{-1}*g^{-n}=g^{-n-1}$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Si $n=0$, entonces $g^n*g^{-1}=g^0*g^{-1}=e_G*g^{-1}=g^{-1}=g^{0-1}=g^{n-1}$. Y si $1 \leq n$, entonces $g^{n}*g^{-1}=(g^{n-1}*g)*g^{-1}=g^{n-1}*(g*g^{-1})=g^{n-1}*e_G=g^{n-1}$. Como podemos ver, en cualquier caso se sigue que $g^{n}*g^{-1}=g^{n-1}$. \\  
+
+ii) Si $n=0$, entonces $g^{-1}*g^n=g^{-1}*g^0=g^{-1}*e_G=g^{-1}=g^{0-1}=g^{n-1}$. Y si $1 \leq n$, entonces $g^{-1}*g^{n}=g^{-1}*(g*g^{n-1})=(g^{-1}*g)*g^{n-1}=e_G*g^{n-1}=g^{n-1}$. Como podemos ver, en cualquier caso se sigue que $g^{n}*g^{-1}=g^{n-1}$. \\  
+
+iii) Note que $g^{-n}*g^{-1}=(g^{n})^{-1}*g^{-1}=(g*g^{n})^{-1}=(g^{n+1})^{-1}=g^{-(n+1)}=g^{-n-1}$. \\
+
+iv) Note que $g^{-1}*g^{-n}=g^{-1}*(g^n)^{-1}=(g^{n}*g)^{-1}=(g^{n+1})^{-1}=g^{-(n+1)}=g^{-n-1}$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo, $n,m \in \mathbb N^+$ y $g \in G$. \\
+    
+    i) $g^{n}*g^{-m}=g^{n-m}$. \\
+
+    ii) $g^{-n}*g^{m}=g^{-n+m}$. \\
+
+    iii) $g^{-n}*g^{-m}=g^{-n-m}$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Por el lema anterior tenemos que $g^n*g^{-1}=g^{n-1}$.  A continuación, consideremos $k \in \mathbb N^+$, y supongamos que $g^{n}*g^{-k}=g^{n-k}$. Luego $g^{n}*g^{-(k+1)}=g^n*(g^{-1})^{k+1}=g^n*[(g^{-1})^{k}*g^{-1}]=[g^n*(g^{-1})^k]*g^{-1}=(g^n*g^{-k})*g^{-1}=g^{n-k}*g^{-1}=g^{n-k-1}=g^{n-(k+1)}$ (la penúltima igualdad se cumple gracias al lema anterior). Así pues, concluimos por inducción que $g^n*g^{-m}=g^{n-m}$. \\
+
+ii) Por el lema anterior tenemos que $g^{-1}*g^{m}=g^{m-1}=g^{-1+m}$. A continuación, consideremos $k \in \mathbb N^+$, y supongamos que $g^{-k}*g^m=g^{-k+m}$. Luego $g^{-(k+1)}*g^{m}=(g^{-1})^{k+1}*g^m=[g^{-1}*(g^{-1})^k]*g^m=g^{-1}*[(g^{-1})^k*g^m]=g^{-1}*(g^{-k}*g^m)=g^{-1}*g^{-k+m}=g^{-1-k+m}=g^{-(k+1)+m}$ (la penúltima igualdad se cumple gracias al lema anterior). Así pues, concluimos por inducción que $g^{-n}*g^m=g^{-n+m}$. \\ 
+
+iii) Note que $g^{-n}*g^{-m}=(g^{-1})^n*(g^{-1})^{m}=(g^{-1})^{n+m}=g^{-(n+m)}=g^{-n-m}$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo, $n,m \in \mathbb N^+$ y $g \in G$. \\
+
+    i) $(g^n)^{-m}=g^{-nm}$. \\
+
+    ii) $(g^{-n})^m=g^{-nm}$. \\
+
+    iii) $(g^{-n})^{-m}=g^{nm}$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Note que $(g^{n})^{-m}=[(g^{n})^m]^{-1}=(g^{nm})^{-1}=g^{-nm}$. \\
+
+ii) Note que $(g^{-n})^m=[(g^{-1})^n]^m=(g^{-1})^{nm}=g^{-nm}$. \\
+
+iii) Note que $(g^{-n})^{-m}=[(g^{-n})^m]^{-1}=(g^{-nm})^{-1}=g^{-(-nm)}=g^{nm}$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{El siguiente teorema se demuestra fácilmente con los resultados que hemos probado hasta ahora:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $(G,*)$ un grupo, $n,m \in \mathbb Z$ y $g \in G$. \\
+
+    i) $g^n*g^m=g^{n+m}$. \\
+
+    ii) $(g^{n})^{m}=g^{nm}$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $(G,*)$ un grupo, $n,m \in \mathbb Z$ y $g \in G$. \\
+
+    i) $g^{n}*g^{m}=g^m*g^n$. \\
+
+    ii) $(g^{n})^m=(g^{m})^n$.}\\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) $g^{n}*g^{m}=g^{n+m}=g^{m+n}=g^{m}*g^n$. \\
+
+ii) $(g^{n})^m=g^{nm}=g^{mn}=(g^m)^n$.}\\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Sean $(G,*)$ un grupo, $n \in \mathbb N^+$ y $a,b \in G$. En general, no es cierto que $(a*b)^{n}=a^n*b^n$. Para que sea verdad, necesitamos que $a*b=b*a$. Nos disponemos a demostrar esto a continuación:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Lema:} Sean $(G,*)$ un grupo, $n \in \mathbb N$ y $a,b \in G$. Si $a*b=b*a$, entonces: \\
+
+    i) $a^{-1}*b=b*a^{-1}$. \\
+
+    ii) $a^{-1}*b^{-1}=b^{-1}*a^{-1}$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Note que $(a^{-1}*b)*a=a^{-1}*(b*a)=a^{-1}*(a*b)=(a^{-1}*a)*b=e_G*b=b$, así que $a^{-1}*b=b*a^{-1}$. \\
+
+ii) $a^{-1}*b^{-1}=(b*a)^{-1}=(a*b)^{-1}=b^{-1}*a^{-1}$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo, $n \in \mathbb N$ y $a,b \in G$. Si $a*b=b*a$, entonces: \\
+
+    i) $a^n*b=b*a^n$. \\
+
+    ii) $a^{-n}*b=b*a^{-n}$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Note que $a^0*b=e_G*b=b=b*e_G=b*a^{0}$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $a^k*b=b*a^k$. Luego $a^{k+1}*b=(a^k*a)*b=a^k*(a*b)=a^k*(b*a)=(a^k*b)*a=(b*a^k)*a=b*(a^k*a)=b*a^{k+1}$. Así pues, concluimos por inducción que $a^n*b=b*a^n$. \\
+
+ii) Notemos que $a^{-0}*b=a^0*b=e_G*b=b=b*e_G=b*a^0=b*a^{-0}$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $a^{-k}*b=b*a^{-k}$. Luego $a^{-(k+1)}*b=a^{-k-1}*b=(a^{-k}*a^{-1})*b=a^{-k}*(a^{-1}*b)=a^{-k}*(b*a^{-1})=(a^{-k}*b)*a^{-1}=(b*a^{-k})*a^{-1}=b*(a^{-k}*a^{-1})=b*a^{-k-1}=b*a^{-(k+1)}$. Así pues, concluimos por inducción que $a^{-n}*b=b*a^{-n}$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo, $n \in \mathbb N$ y $a,b \in G$. Si $a*b=b*a$, entonces: \\
+
+    i) $(a*b)^n=a^n*b^n$. \\
+
+    ii) Si $1 \leq n$, entonces $(a*b)^{-n}=a^{-n}*b^{-n}$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Note que $(a*b)^0=e_G=e_G*e_G=a^{0}*b^0$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $(a*b)^{k}=a^{k}*b^{k}$. Luego $(a*b)^{k+1}=(a*b)^k*(a*b)=(a^k*b^k)*(a*b)=a^k*[b^k*(a*b)]=a^k*[(b^k*a)*b]=a^{k}*[(a*b^k)*b]=a^k*[a*(b^k*b)]=(a^k*a)*(b^k*b)=a^{k+1}*b^{k+1}$. Así pues, concluimos por inducción que $(a*b)^n=a^{n}*b^n$. \\
+
+ii) De acuerdo con la hipótesis, $a*b=b*a$. Luego, como se demostró anteriormente, $a^{-1}*b^{-1}=b^{-1}*a^{-1}$. Así pues: $(a*b)^{-n}=[(a*b)^{-1}]^n=(b^{-1}*a^{-1})^n=(a^{-1}*b^{-1})^n=(a^{-1})^n*(b^{-1})^n=a^{-n}*b^{-n}$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{El siguiente teorema es simplemente una versión compacta de la proposición anterior:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $(G,*)$ un grupo, $n \in \mathbb Z$ y $a,b \in G$. Si $a*b=b*a$, entonces $(a*b)^n=a^n*b^n$.}
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $(G,*)$ un grupo, $n \in \mathbb Z$ y $a,b \in G$. Si $a*b=b*a$, entonces $a^n*b^n=b^n*a^n$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Note que $a^n*b^n=(a*b)^n=(b*a)^n=b^n*a^n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{En el siguiente ejemplo resolvemos un ejercicio sencillo relacionado con la potenciación en grupos:} \\
+
+\Large{\textbf{Ejemplo:}} \\
+
+\Large{Sea $(G,*)$ un grupo. Adicionalmente, consideremos $a,b \in G$ tales que $a \neq b$. Veamos que $a^2 \neq b^2$ o $a^3 \neq b^3$: supongamos que $a^2=b^2$ y $a^3=b^3$. Entonces:}
+\begin{align*}
+    a^3&=b^3 \\
+    a*a^2&=b*b^2 \\
+    &=b*a^2
+\end{align*}
+\Large{Tenemos entonces que $a=b$, lo cual es absurdo. Por lo tanto, necesariamente $a^2 \neq b^2$ o $a^3 \neq b^ 3$.} \\
+
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{La potenciación permite formular de manera sencilla algunos criterios de conmutatividad:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sea $(G,*)$ un grupo. Si para todo $g \in G$, $g^{2}=e_G$, entonces $(G,*)$ es abeliano.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{si cada elemento es su propio inverso, entonces el grupo es abeliano}.} \\
+
+\Large{\textbf{Demostración:} Sean $a,b \in G$. Observe que:}
+\begin{align*}
+    a*b&=(a*b)*e_G \\
+    &=(a*b)*[(b*a)*(b*a)] \\
+    &=[(a*b)*(b*a)]*(b*a) \\
+    &=[a*[b*(b*a)]]*(b*a) \\
+    &=[a*[(b*b)*a]]*(b*a) \\
+    &=[a*(e_G*a)]*(b*a) \\
+    &=(a*a)*(b*a) \\
+    &=e_G*(b*a) \\
+    &=b*a
+\end{align*}
+\Large{Tenemos entonces que $*$ es conmutativa en $G$, y por tanto que $(G,*)$ es abeliano.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $(G,*)$ un grupo. Si para todo $a \in G$ y para todo $b \in G$, $(a*b)^2=a^2*b^2$, entonces $(G,*)$ es abeliano.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Sean $a,b \in G$. Observe que:} 
+\begin{align*}
+    (a*b)^2&=a^2*b^2 \\
+    (a*b)*(a*b)&=(a*a)*(b*b) \\
+    a*[b*(a*b)]&=a*[a*(b*b)]
+\end{align*}
+\Large{Tenemos entonces que $b*(a*b)=a*(b*b)$. Es decir que $(b*a)*b=(a*b)*b$, y por tanto que $b*a=a*b$. Con lo cual $a*b=b*a$, así que $(G,*)$ es abeliano.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo y $a,b \in G$. Si existe $n \in \mathbb Z$ tal que $(a*b)^n=a^n*b^n$, $(a*b)^{n+1}=a^{n+1}*b^{n+1}$ y $(a*b)^{n+2}=a^{n+2}*b^{n+2}$, entonces $a*b=b*a$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Observe que:}
+\begin{align*}
+    (a*b)^{n+1}&=a^{n+1}*b^{n+1} \\
+    a*b*(a*b)^n&=a*a^n*b*b^n \\
+    a*b*a^n*b^n&=a*a^n*b*b^n \\
+    b*a^n&=a^n*b
+\end{align*}
+\Large{Análogamente:}
+\begin{align*}
+    (a*b)^{n+2}&=a^{n+2}*b^{n+2} \\
+    a*b*(a*b)^{n+1}&=a*a^{n+1}*b*b^{n+1} \\
+    a*b*a^{n+1}*b^{n+1}&=a*a^{n+1}*b*b^{n+1} \\
+    b*a^{n+1}&=a^{n+1}*b \\
+    b*a^n*a&=a^n*a*b
+\end{align*}
+\Large{Pero recordemos que $b*a^n=a^n*b$, luego:}
+\begin{align*}
+    b*a^n*a&=a^n*a*b \\
+    a^n*b*a&=a^n*a*b \\
+    b*a&=a*b
+\end{align*}
+\Large{Tenemos entonces que $a*b=b*a$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo y a $a,b \in G$. Si $(a*b)^3=a^3*b^3$ y $(a*b)^5=a^5*b^5$, entonces $a*b=b*a$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Observe que:}
+\begin{align*}
+    (a*b)^3&=a^3*b^3 \\
+    a*b*a*b*a*b&=a*a^2*b^2*b \\
+    b*a*b*a&=a^2*b^2 \\
+    (b*a)^2&=a^2*b^2 
+\end{align*}
+\Large{Luego $(b*a)^4=(a^2*b^2)^2$ y:}
+\begin{align*}
+    (a*b)^5&=a^5*b^5 \\
+    a*b*a*b*a*b*a*b*a*b&=a*a^4*b^4*a \\
+    b*a*b*a*b*a*b*a&=a^4*b^4 \\
+    (b*a)^4&=a^4*b^4 \\
+    (a^2*b^2)^2&=a^4*b^4 \\
+    a^2*b^2*a^2*b^2&=a^2*a^2*b^2*b^2 \\
+    b^2*a^2&=a^2*b^2 \\
+    b*b*a*a&=(b*a)^2 \\
+    b*b*a*a&=b*a*b*a \\
+    b*a&=a*b
+\end{align*}
+\Large{Tenemos entonces que $a*b=b*a$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Hasta ahora hemos descrito la potenciación y sus propiedades utilizando la \textbf{notación multiplicativa}. Sin embargo, en algunos grupos abelianos (como $(\mathbb Z,+)$ y $(\mathbb Z_n,+)$) es más común emplear la \textbf{notación aditiva}:} \\
+
+\Large{\textbf{Ejemplos:}} \\
+
+\begin{itemize}
+    \item \Large{Sean $(G,*)$ un grupo abeliano, $n \in \mathbb N$ y $g \in G$. En notación aditiva, tenemos que: \\
+
+    -- $0 \cdot g=e_G$. \\
+
+    -- $(n+1) \cdot g=(n \cdot g)*g$. \\
+
+    -- $(-n) \cdot g=n \cdot (-g)$.} \\
+
+    \item \Large{Sean $(G,*)$ un grupo abeliano, $n,m \in \mathbb Z$ y $a,b \in G$. En notación aditiva, tenemos que: \\
+
+    -- $(n \cdot a)*(m \cdot a)=(n+m) \cdot a$. \\
+
+    -- $m \cdot (n \cdot a)=(nm) \cdot a$. \\
+
+    -- $n \cdot (a*b)=(n \cdot a)*(n \cdot b)$.} \\
+\end{itemize}
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\Large{Para concluir esta sección, presentamos algunos ejercicios sencillos que ilustran cómo las propiedades de la potenciación, junto con argumentos elementales de conteo, permiten deducir resultados interesantes sobre grupos finitos:} \\
+
+\Large{\textbf{Ejemplos:}} \\
+
+\Large{Sea $(G,*)$ un grupo finito.} \\
+
+\begin{itemize}
+    \item \Large{Consideremos el siguiente conjunto: \\
+
+    -- $A=\{g \in G \hspace{0.2 cm}|\hspace{0.2 cm}g^2 \neq e_G\}$. \\
+
+    Si $A=\emptyset$, entonces $|A|=0$. Supongamos ahora que $A \neq \emptyset$. Adicionalmente, consideremos la siguiente relación de equivalencia en $A$: \\
+
+    -- $\sim=\{(a,b) \in A \times A \hspace{0.2 cm}|\hspace{0.2 cm}a=b \lor a=b^{-1}\}$. \\
+
+    Como $A$ es finito (porque $A \subseteq G$ y $G$ es finito), resulta que $A/\sim$ también es finito. Así pues, digamos que $A/\sim=\{[a_1],...,[a_m]\}$, para algunos $a_1,...,a_m \in A$ ($m \in \mathbb N^+$). Por último, note que para todo $i \in \{1,...,m\}$: \\
+
+    -- $[a_i]=\{a_i,a_i^{-1}\}$. \\
+
+    Pero $a_i \in A$, así que $a_i^2 \neq e_G$. Con lo cual, podemos asegurar que $a_i \neq a_i^{-1}$, y por tanto que $|[a_i]|=2$. Luego:}
+    \begin{align*}
+        |A|&=\left |\bigcup_{i=1}^{m}[a_i] \right| \\
+         &=\sum_{i=1}^m|[a_i]|
+    \end{align*}
+    \begin{align*}
+    &=\sum_{i=1}^m2 \\
+    &=2 \cdot m
+    \end{align*}
+    \Large{Por lo tanto, $|A|$ es par. Como podemos ver, en cualquier caso se sigue que $|A|$ es par.} \\
+    
+    \item \Large{Supongamos que $|G|$ es par. Veamos que existe $g \in G \setminus \{e_G\}$ tal que $g^2=e_G$. Consideremos los siguiente conjuntos: \\
+
+    -- $A=\{g \in G \hspace{0.2cm}|\hspace{0.2 cm}g^2 \neq e_G\}$. \\
+
+    -- $B=\{g \in G \hspace{0.2 cm}|\hspace{0.2 cm}g^2=e_G\}$. \\
+
+    Observe que $e_G \in B$. Además, $A \cap B=\emptyset$ y $G=A \cup B$, así que $|G|=|A|+|B|$. Pero en el ejemplo anterior vimos que $|A|$ es par, así que $|B|$ también debe ser par (si $|B|$ es impar, tendríamos que $|G|$ también sería impar, lo que contradice la hipótesis). Por lo tanto, necesariamente $B \neq \{e_G\}$ (de lo contrario tendríamos que $|B|=1$, lo que contradice el hecho de que $|B|$ es par). De modo pues que existe $b \in B$ tal que $b \neq e_G$. Tenemos entonces que $b \in G \setminus \{e_G\}$ y $b^2=e_G$.} \\
+
+    \item \Large{Consideremos el siguiente conjunto: \\
+
+    -- $A=\{g \in G \hspace{0.2 cm}|\hspace{0.2 cm}g^3=e_G\}$. \\
+
+    Note que $e_G \in A$. Si $A=\{e_G\}$, entonces $|A|=1$. Supongamos ahora que $A \neq \{e_G\}$. Adicionalmente, consideremos la siguiente relación de equivalenciia en $A \setminus \{e_G\}$: \\
+
+    -- $\sim=\{(a,b) \in (A \setminus \{e_G\}) \times (A \times \{e_G\}) \hspace{0.2 cm}|\hspace{0.2 cm}a=b \lor a=b^{-1}\}$. \\
+
+    Como $A \setminus \{e_G\}$ es finito (porque $A \setminus \{e_G\} \subseteq G$ y $G$ es finito), resulta que $(A \setminus \{e_G\})/\sim$ también es finito. Así pues, digamos que $(A \setminus \{e_G\})/\sim=\{[a_1],...,[a_m]\}$, para algunos $a_1,...,a_m \in A \setminus \{e_G\}$ ($m \in \mathbb N^+$). Por último, note que para todo $i \in \{1,...,m\}$: \\
+
+    -- $[a_i]=\{a_i,a_i^{-1}\}$. \\
+
+    Supongamos que $a_i=a_i^{-1}$. Es decir que $a_i^2=e_G$. Pero $a_i \in A \setminus \{e_G\}$, así que $a_i^3=e_G$. De modo pues que $a_i^3=a_i^2$, y por tanto $a_i=e_G$. Ésto es absurdo dado que $a_i \neq e_G$. Por lo tanto, necesariamente $a_i \neq a_i^{-1}$. Podemos asegurar que $|[a_i]|=2$, con lo cual:}
+    \begin{align*}
+        |A|&=\left|\{e_G\} \cup (A \setminus \{e_G\}) \right| \\
+        &=|\{e_G\}|+|A \setminus \{e_G\}| \\
+        &=1+\left |\bigcup_{i=1}^m[a_i] \right| \\
+        &=1+\sum_{i=1}^m|[a_i]| \\
+        &=1+\sum_{i=1}^m2 \\
+        &=2m+1
+    \end{align*}
+    \Large{Por lo tanto, $|A|$ es impar. Como podemos ver, en cualquier caso se sigue que $|A|$ es impar.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Los ejercicios anteriores ilustran una técnica de conteo conocida como \textbf{argumento de emparejamiento}. Esta consiste en particionar un conjunto en pares (más generalmente, en subconjuntos de igual cardinalidad) mediante una aplicación apropiada (en este caso, $x \mapsto x^{-1}$). El análisis de dicha partición permite obtener información sobre el número de elementos del conjunto. Este tipo de argumentos constituye un caso muy particular de la \textbf{teoría de acciones de grupos}. Intuitivamente, una \textbf{acción} de un grupo sobre un conjunto organiza sus elementos en bloques (llamados \textbf{órbitas}) cuyos tamaños reflejan la estructura del grupo. Al contar los elementos a través de esta partición, es posible obtener información sobre el conjunto y, en muchas ocasiones, sobre el propio grupo.}
+
+\end{document}

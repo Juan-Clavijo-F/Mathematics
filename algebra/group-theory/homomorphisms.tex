@@ -1,0 +1,579 @@
+\documentclass[10 pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[left=2cm, right=2cm, top=1.5cm, bottom=2cm]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{cancel}
+\usepackage{amsmath,amsthm,amsfonts,amscd,amssymb,amsbsy}
+
+\title{\textbf{\underline{Homomorfismos}}}
+\author{}
+\date{}
+
+\begin{document}
+
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+
+\section*{}
+
+\Large{Hasta ahora hemos estudiado los grupos de manera aislada, centrándonos en su estructura interna. Sin embargo, también resulta de gran interés comparar distintos grupos y estudiar las relaciones que existen entre ellos. Para ello introducimos los \textbf{homomorfismos}, funciones ``compatibles'' con las operaciones de los grupos. Esta compatibilidad permite comparar sus estructuras y trasladar información de un grupo a otro:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $(G,*)$ y $(H,\odot)$ grupos y $\phi:G \rightarrow H$ una función. Diremos que $\phi$ es un \textbf{homomorfismo} entre $(G,*)$ y $(H,\odot)$, si y sólo si, para todo $a \in G$ y para todo $b \in G$, $\phi(a*b)=\phi(a) \odot \phi(b)$.} \\
+\end{itemize}
+
+\begin{flushright} 
+   $\blacksquare$
+\end{flushright}
+
+\Large{Sean $(G,*)$ y $(H,\odot)$ grupos y $\phi:G \rightarrow H$ un homomorfismo entre $(G,*)$ y $(H,\odot)$. En relación a $\phi$, a veces nos referimos a $(G,*)$ como el \textbf{grupo de partida} y a $(H,\odot)$ como el \textbf{grupo de llegada}. En adelante, a menos que haya riesgo de confusión, omitimos la frase ``entre $(G,*)$ y $(H,\odot)$'' ya que el contexto permite distinguir los grupos respecto a los cuales se define el homomorfismo en cuestión.} \\
+
+\Large{Dados dos grupos cualesquiera, siempre puede construirse un homomorfismo entre ellos:} \\ 
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ y $(H,\odot)$ grupos. Adicionalmente, consideremos la siguiente función:}
+    \begin{align*}
+        \phi:G &\rightarrow H \\
+        g &\mapsto e_H
+    \end{align*}
+    \Large{Entonces $\phi$ es un homomorfismo.} \\
+\end{itemize}
+
+\Large{\textbf{Nota:} Nos referimos a este homomorfismo como el \textbf{homomorfismo trivial}.} \\
+
+\Large{\textbf{Demostración:} Sean $a,b \in G$. Note que:}
+\begin{align*}
+    \phi(a*b)&=e_H \\
+    &=e_H \odot e_H \\
+    &=\phi(a) \odot \phi(b)
+\end{align*}
+\Large{Por lo tanto, $\phi$ es un homomorfismo.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Aunque los homomorfismos se introducen como herramientas para comparar grupos y estudiar las relaciones entre ellos, el homomorfismo trivial representa un caso límite. En él, toda la información del grupo de partida se pierde, pues todos sus elementos se envían al elemento neutro del grupo de llegada. Aun así, satisface la condición fundamental de preservar la operación del grupo; la definición solo exige compatibilidad con la operación, no que la aplicación conserve una cantidad ``útil'' de información.} \\
+
+\Large{Todo grupo determina un homomorfismo que conserva íntegramente su estructura:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo. Adicionalmente, consideremos la siguiente función:}
+    \begin{align*}
+        \phi:G &\rightarrow G \\
+        g &\mapsto g
+    \end{align*}
+    \Large{Entonces $\phi$ es un homomorfismo.} \\
+\end{itemize}
+
+\Large{\textbf{Nota:} Nos referimos a este homomorfismo como el \textbf{homomorfismo identidad}.} \\
+
+\Large{\textbf{Demostración:} Sean $a,b \in G$. Note que:}
+\begin{align*}
+    \phi(a*b)&=a*b \\
+    &=\phi(a)*\phi(b) 
+\end{align*}
+\Large{Por lo tanto, $\phi$ es un homomorfismo.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Un homomorfismo puede pensarse como una forma de codificar la estructura de un grupo dentro de otro, preservando la operación. Desde esta perspectiva, el homomorfismo trivial y el homomorfismo identidad representan dos casos extremos: el primero colapsa por completo la información del grupo al enviar todos los elementos al neutro del grupo de llegada, mientras que el segundo conserva completamente la información. Los demás homomorfismos se sitúan, en cierto sentido, entre estos dos extremos.} \\
+
+\Large{Cada grupo está determinado por una única operación binaria que satisface ciertos axiomas. En consecuencia, si una aplicación es compatible con dicha operación, es natural esperar que también preserve muchas de las construcciones y propiedades que se definen únicamente a partir de ella. En otras palabras: \textit{como toda la estructura de un grupo está codificada en su operación, los homomorfismos conservan una parte esencial de dicha estructura}. Por ejemplo:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ y $(H,\odot)$ grupos y $\phi:G \rightarrow H$ una función. Si $\phi$ es un homomorfismo, entonces $\phi(e_G)=e_H$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Note que:}
+\begin{align*}
+    e_H*\phi(e_G)&=\phi(e_G) \\
+    &=\phi(e_G*e_G) \\
+    &=\phi(e_G)\odot\phi(e_G)
+\end{align*}
+\Large{Luego, como se demostró anteriormente, $\phi(e_G)=e_H$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ y $(H,\odot)$ grupos, $\phi:G \rightarrow H$ una función, $g \in G$ y $n \in \mathbb N$. Si $\phi$ es un homomorfismo, entonces: \\
+
+    i) $\phi(g^n)=\phi(g)^n$. \\
+
+    ii) $\phi(g^{-1})=\phi(g)^{-1}$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Note que $\phi(g^0)=\phi(e_G)=e_H=\phi(g)^0$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $\phi(g^k)=\phi(g)^k$. Entonces $\phi(g^{k+1})=\phi(g^{k}*g)=\phi(g^k)\odot \phi(g)=\phi(g)^k \odot \phi(g)=\phi(g)^{k+1}$. Así pues, concluimos por inducción que $\phi(g^n)=\phi(g)^n$. \\
+
+ii) Por un lado, tenemos que $\phi(g)\odot\phi(g^{-1})=\phi(g*g^{-1})=\phi(e_G)=e_H$. Por otro lado, $\phi(g^{-1}) \odot \phi(g)=\phi(g^{-1}*g)=\phi(e_G)=e_H$. Luego, por la unicidad de los inversos, $\phi(g)^{-1}=\phi(g^{-1})$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $(G,*)$ y $(H,\odot)$ grupos, $\phi:G \rightarrow H$ una función, $g \in G$ y $n \in \mathbb N$. Si $\phi$ es un homomorfismo, entonces $\phi(g^{-n})=\phi(g)^{-n}$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Note que $\phi(g^{-n})=\phi((g^{-1})^n)=\phi(g^{-1})^n=[\phi(g)^{-1}]^n=\phi(g)^{-n}$.} \\
+
+\begin{flushright}
+    $\square$ 
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ y $(H,\odot)$ grupos, $\phi:G \rightarrow H$ una función y $a,b \in G$. Si $\phi$ es un homomorfismo y $a*b=b*a$, entonces $\phi(a)\odot\phi(b)=\phi(b) \odot \phi(a)$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Note que:}
+\begin{align*}
+    \phi(a)\odot \phi(b)&=\phi(a*b) \\
+    &=\phi(b*a) \\
+    &=\phi(b) \odot \phi(a)
+\end{align*}
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Interpretando los homomorfismos como formas de codificar la estructura de un grupo dentro de otro, resulta natural que \textit{la composición de dos homomorfismos vuelva a ser un homomorfismo}: una codificación seguida de otra continúa siendo una codificación compatible con la operación:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$, $(H,\odot)$ y $(K,\oplus)$ grupos. Adicionalmente, sean $\phi:G \rightarrow H$ y $\alpha:H \rightarrow K$ funciones. Si $\phi$ y $\alpha$ son homomorfismos, entonces $\alpha \circ \phi$ también es un homomorfismo.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Sean $a,b \in G$. Note que:}
+\begin{align*}
+    (\alpha \circ \phi)(a*b)&=\alpha(\phi(a*b)) \\
+    &=\alpha(\phi(a) \odot \phi(b)) \\
+    &=\alpha(\phi(a)) \oplus \alpha(\phi(b)) \\
+    &=(\alpha \circ \phi)(a) \oplus (\alpha \circ \phi)(b)
+\end{align*}
+\Large{Por lo tanto, $\alpha \circ \phi$ es un homomorfismo.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Como un subgrupo hereda la estructura del grupo que lo contiene, es natural esperar que la imagen y la preimagen de un subgrupo bajo un homomorfismo tengan un buen comportamiento:} \\
+ 
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $(G,*)$ y $(H,\odot)$ grupos, $G_1 \subseteq G$, $H_1 \subseteq H$ y $\phi:G \rightarrow H$ una función. Adicionalmente, supongamos que $(G_1,*)$ y $(H_1,\odot)$ son subgrupos de $(G,*)$ y $(H,\odot)$, respectivamente. Si $\phi$ es un homomorfismo, entonces: \\
+
+    i) $(\phi^{-1}(H_1),*)$ es un subgrupo de $(G,*)$. \\
+
+    En otras palabras: \textit{imagen inversa de un subgrupo es subgrupo}. \\
+
+    ii) $(\phi(G_1),\odot)$ es un subgrupo de $(H,\odot)$. \\
+
+    En otras palabras: \textit{imagen de un subgrupo es subgrupo}.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Sabemos que $e_G \in G$. Además, $\phi(e_G)=e_H \in H_1$ ($e_H \in H_1$ porque $(H_1,\odot)$ es un subgrupo de $(H,\odot)$), así que $e_G \in \phi^{-1}(H_1)$. Por lo tanto, $\phi^{-1}(H_1) \neq \emptyset$. Ahora, sean $a,b \in \phi^{-1}(H_1)$. Entonces $\phi(a),\phi(b) \in H_1$. En particular, $\phi(b) \in H_1$, así que $\phi(b)^{-1} \in H$. Pero como se demostró anteriormente, $\phi(b)^{-1}=\phi(b^{-1})$. Luego $\phi(a*b^{-1})=\phi(a)\odot\phi(b^{-1})=\phi(a) \odot \phi(b)^{-1} \in H_1$ (porque $\phi(a),\phi(b)^{-1} \in H_1$). Con lo cual, $a*b^{-1}  \in \phi^{-1}(H_1)$. Por lo tanto, $(\phi^{-1}(H_1),*)$ es un subgrupo de $(G,*)$. \\
+
+ii) Sabemos que $e_G \in G_1$ ($e_G \in G_1$ porque $(G_1,*)$ es un subgrupo de $(G,*)$). Además, $\phi(e_G)=e_H$. Tenemos entonces que $e_H \in \phi(G_1)$, y por tanto que $\phi(G_1) \neq \emptyset$. Ahora, sean $a,b \in \phi(G_1)$. Por deifnición, existen $g_1,g_2 \in G$ tales que $\phi(g_1)=a$ y $\phi(g_2)=b$. Note que $\phi(g_1*g_2^{-1})=\phi(g_1) \odot \phi(g_2^{-1})=\phi(g_1) \odot \phi(g_2)^{-1}=a \odot b^{-1}$. Como $g_1*g_2^{-1} \in G_1$, concluimos que $a \odot b^{-1} \in \phi(G_1)$. Por lo tanto, $(\phi(G_1),\odot)$ es un subgrupo de $(H,\odot)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Todo homomorfismo determina de manera natural dos subgrupos distinguidos: uno del grupo de partida y otro del grupo de llegada:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $(G,*)$ y $(H,\odot)$ grupos y $\phi:G \rightarrow H$ un homomorfismo. Entonces: \\
+
+    i) El \textbf{kernel} o \textbf{núcleo} de $\phi$ se define como $\ker \phi=\phi^{-1}(\{e_H\})$. \\
+
+    ii) La \textbf{imagen} de $\phi$ se define como $\text{Im} \phi=\phi(G)$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $(G,*)$ y $(H,\odot)$ grupos y $\phi:G \rightarrow H$ una función. Si $\phi$ es un homomorfismo, entonces: \\
+
+    i) $(\ker \phi,*)$ es un subgrupo de $(G,*)$. \\
+
+    ii) $(\text{Im} \phi,\odot)$ es un subgrupo de $(H,\odot)$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Anteriormente se demostró que $(\{e_H\},\odot)$ es un subgrupo de $(H,\odot)$. Luego, por el teorema anterior, $(\phi^{-1}(\{e_H\}),*)$ es un subgrupo de $(G,*)$. Es decir, por definición, que $(\ker \phi,*)$ es un subgrupo de $(G,*)$. \\
+
+ii)Anteriormente se demostró que $(G,*)$ es un subgrupo de $(G,*)$. Luego, por el teorema anterior, $(\phi(G),\odot)$ es un subgrupo de $(H,\odot)$. Es decir, por definición, que $(\text{Im}\phi,\odot)$ es un subgrupo de $(H,\odot)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Intuitivamente, el núcleo representa aquello que el homomorfismo no distingue, es decir, la información que ``colapsa'' al aplicar la transformación; por su parte, la imagen representa aquello que el homomorfismo realmente alcanza en el grupo de llegada.} \\
+
+\Large{La interpretación intuitiva del núcleo permite anticipar su relación con la inyectividad: si el núcleo representa aquello que el homomorfismo no distingue, es natural esperar que un homomorfismo sea inyectivo precisamente cuando su núcleo sea lo más pequeño posible:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $(G,*)$ y $(H,\odot)$ grupos y $\phi:G \rightarrow H$ una función. Si $\phi$ es un homomorfismo, entonces $\phi$ es inyectiva, si y sólo si, $\ker \phi \subseteq \{e_G\}$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Supongamos que $\phi$ es un homomorfismo. \\
+
+($\rightarrow$) Supongamos que $\phi$ es inyectiva. A continuación, consideremos $a \in \ker \phi$. Entonces, por definición, $\phi(a) \in \{e_H\}$, así que $\phi(a)=e_H$. Pero como se demostró anteriormente, $\phi(e_G)=e_H$. Tenemos entonces que $\phi(a)=e_H=\phi(e_G)$, y por tanto que $a=e_G$ (dado que, por hipótesis, $\phi$ es inyectiva). De modo pues que $a \in \{e_G\}$, así que $\ker \phi \subseteq \{e_G\}$. \\
+
+($\leftarrow$) Supongamos que $\ker \phi \subseteq \{e_G\}$. A continuación, consideremos $a,b \in G$, y supongamos que $\phi(a)=\phi(b)$. Tenemos entonces que $\phi(a) \odot \phi(b)^{-1}=\phi(b) \odot \phi(b)^{-1}=e_H$. Es decir que $\phi(a)\odot\phi(b^{-1})=e_H$, y por tanto que $\phi(a*b^{-1})=e_H$. Luego $a*b^{-1} \in \ker \phi$, así que $a*b^{-1}=e_G$ (dado que, por hipótesis, $\ker \phi \subseteq \{e_G\}$). Con lo cual, $a=a*e_G=a*(b^{-1}*b)=(a*b^{-1})*b=e_G*b=b$. Por lo tanto, $\phi$ es inyectiva.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ y $(H,\odot)$ grupos y $\phi:G \rightarrow H$ un homomorfismo. Si $(G,*)$ es abeliano, entonces $(\text{Im}\phi,\odot)$ también es abeliano.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Sean $a,b \in \text{Im} \phi$. Entonces, por definición, existen $g_1,g_2 \in G$ tales que $\phi(g_1)=a$ y $\phi(g_2)=b$. Ahora, como $(G,*)$ es abeliano, resulta que $g_1*g_2=g_2*g_1$. Luego, como se demostró anteriormente, $a\odot b=\phi(g_1) \odot \phi(g_2)=\phi(g_2) \odot \phi(g_1)=b\odot a$. Por lo tanto, $(\text{Im}\phi,\odot)$ también es abeliano.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Recordemos que los homomorfismos describen formas de trasladar la estructura de un grupo a otro. Cuando dicho traslado no pierde información y además alcanza toda la estructura del grupo de llegada, ambos grupos resultan, desde el punto de vista algebraico, indistinguibles. Esta idea conduce a la noción de \textbf{isomorfismo}:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $(G,*)$ y $(H,\odot)$ grupos y $\phi:G \rightarrow H$ una función. Diremos que $\phi$ es un \textbf{isomorfismo} entre $(G,*)$ y $(G,\odot)$, si y sólo si, $\phi$ es un homomorfismo y una función biyectiva.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Sean $(G,*)$ y $(H,\odot)$ grupos y $\phi:G \rightarrow H$ un isomorfismo entre $(G,*)$ y $(H,\odot)$. En adelante, a menos que haya riesgo de confusión, omitimos la frase ``entre $(G,*)$ y $(H,\odot)$'' ya que el contexto permite distinguir los grupos respecto a los cuales se define el isomorfismo en cuestión.} \\
+
+\Large{Un isomorfismo puede interpretarse como una ``codificación perfecta'' de la estructura de un grupo en otro. Como durante esta codificación no se pierde información, debe ser posible recuperar íntegramente la estructura original. Es natural esperar, entonces, \textit{que el inverso de un isomorfismo también sea un isomorfismo}:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ y $(H,\odot)$ grupos y $\phi:G \rightarrow H$ una función. Si $\phi$ es un isomorfismo, entonces $\phi^{-1}$ también es un isomorfismo.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Como $\phi$ es biyectiva (en particular), existe $\phi^{-1}:H \rightarrow G$, que también es una función biyectiva. A continuación, consideremos $a,b \in H$. Note que:}
+\begin{align*}
+    a \odot b&=(\phi\circ \phi^{-1})(a) \odot (\phi \circ \phi^{-1})(b) \\
+    &=\phi(\phi^{-1}(a)) \odot \phi(\phi^{-1}(b)) \\
+    &=\phi(\phi^{-1}(a)*\phi^{-1}(b)) 
+\end{align*}
+\Large{Luego:}
+\begin{align*}
+    \phi^{-1}(a \odot b)&=\phi^{-1}(a)*\phi^{-1}(b) 
+\end{align*}
+\Large{Por lo tanto, $\phi^{-1}$ también es un isomorfismo.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $(G,*)$ y $(H,\odot)$ grupos. Diremos que $(G,*)$ y $(H,\odot)$ son \textbf{isomorfos}, y escribimos \underline{$(G,*) \simeq (H,\odot)$}, si y sólo si, existe una función $\phi:G \rightarrow H$ tal que $\phi$ es un isomorfismo.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{La interpretación de los isomorfismos como una igualdad estructural entre grupos sugiere que la relación de isomorfía debería comportarse como una igualdad. En efecto, se trata de una relación de equivalencia:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $(G,*)$, $(H,\odot)$ y $(K,\oplus)$ grupos. \\ 
+
+    i) $(G,*) \simeq (G,*)$. \\
+
+    En otras palabras: \textit{$\simeq$ es reflexiva}. \\
+
+    ii) Si $(G,*) \simeq (H,\odot)$, entonces $(H,\odot) \simeq (G,*)$. \\
+
+    En otras palabras: \textit{$\simeq$ es simétrica}. \\
+
+    iii) Si $(G,*) \simeq (H,\odot)$ y $(H,\odot) \simeq (K,\oplus)$, entonces $(G,*) \simeq (K,\oplus)$. \\
+
+    En otras palabras: \textit{$\simeq$ es transitiva}.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Consideremos el homomorfismo identidad:
+\begin{align*}
+    \phi:G &\rightarrow G \\
+    g &\mapsto g
+\end{align*}
+Es claro que $\phi$ es biyectiva. De modo pues que $\phi$ es un isomorfismo, así que $(G,*) \simeq (G,*)$. \\
+
+ii) Supongamos que $(G,*) \simeq (H,\odot)$. Entonces, por definición, existe un isomorfismo $\gamma:G \rightarrow H$. Pero como se demostró anteriormente, $\gamma^{-1}:H \rightarrow G$ también es un isomorfismo. Con lo cual, $(H,\odot) \simeq (G,*)$. \\
+
+iii) Supongamos que $(G,*) \simeq (H,\odot)$ y $(H,\odot) \simeq (K,\oplus)$. Entonces, por definición, existen isomorfismos $\alpha:G \rightarrow H$ y $\theta:H \rightarrow K$. Como se demostró anteriormente, $\theta \circ \alpha$ es un homomorfismo (porque $\alpha$ y $\theta$ son, en particular, homomorfismos). Y sabemos que $\theta \circ \alpha$ también es biyectiva (porque $\alpha$ y $\theta$ son, en particular, biyectivas). De modo pues que $\theta \circ \alpha$ es un isomorfismo, y por tanto $(G,*) \simeq (K,\oplus)$.}\\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Puesto que los isomorfismos representan una igualdad estructural entre grupos, es natural esperar que \textit{las propiedades verdaderamente estructurales no cambien al pasar de un grupo a otro mediante un isomorfismo}. A tales propiedades se les denomina \textbf{invariantes por isomorfismo}. Por ejemplo:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ y $(H,\odot)$ grupos. Si $(G,*) \simeq (H,\odot)$, entonces $(G,*)$ es abeliano, si y sólo si, $(H,\odot)$ es abeliano.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Como $(G,*) \simeq (H,\odot)$, existe un isomorfismo $\phi:G \rightarrow H$. Y como se demostró anteriormente, $\phi^{-1}:H \rightarrow G$ también es un isomorfismo. \\
+
+($\rightarrow$) Supongamos que $(G,*)$ es abeliano. Entonces, como se demostró anteriormente, $(\text{Im}\phi,\odot)$ también es abeliano. Pero $\text{Im}\phi=H$ (porque $\phi$ es sobreyectiva), así que $(H,\odot)$ es abeliano.  \\
+
+($\rightarrow$) Supongamos que $(H,\odot)$ es abeliano. Entonces, como se demostró anteriormente, $(\text{Im}\phi^{-1},*)$ también es abeliano. Pero $\text{Im}\phi^{-1}=G$ (porque $\phi^{-1}$ es sobreyectiva), así que $(G,*)$ es abeliano.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ y $(H,\odot)$ grupos y $\phi:G \rightarrow H$ una función. Adicionalmente, sean $G_1 \subseteq G$ y $H_1 \subseteq H$. Si $\phi$ es un isomorfismo, entonces: \\
+
+    i) $(G_1,*)$ es un subgrupo de $(G,*)$, si y sólo si, $(\phi(G_1),\odot)$ es un subgrupo de $(H,\odot)$. \\
+
+    ii) $(H_1,\odot)$ es un subgrupo de $(H,\odot)$, si y sólo si, $(\phi^{-1}(H_1),*)$ es un subgrupo de $(G,*)$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) ($\rightarrow$) Supongamos que $(G_1,*)$ es un subgrupo de $(G,*)$. Entonces, como se demostró anteriormente, $(\phi(G_1),\odot)$ es un subgrupo de $(H,\odot)$. \\
+
+($\leftarrow$) Supongamos que $(\phi(G_1),\odot)$ es un subgrupo de $(H,\odot)$. Entonces, como se demostró anteriormente, $(\phi^{-1}(\phi(G_1)),*)$ es un subgrupo de $(G,*)$. Y como $\phi$ es biyectiva, resulta que $\phi^{-1}(\phi(G_1))=G_1$. Con lo cual, $(G_1,*)$ es un subgrupo de $(G,*)$. \\
+
+ii) ($\rightarrow$) Supongamos que $(H_1,\odot)$ es un subgrupo de $(H,\odot)$. Entonces, como se demostró anteriormente, $(\phi^{-1}(H_1),*)$ es un subgrupo de $(G,*)$. \\
+
+($\leftarrow$) Supongamos que $(\phi^{-1}(H_1),*)$ es un subgrupo de $(G,*)$. Entonces, como se demostró anteriormente, $(\phi(\phi^{-1}(H_1)),\odot)$ es un subgrupo de $(H,\odot)$. Y como $\phi$ es biyectiva, resulta que $\phi(\phi^{-1}(H_1))=H_1$. Con lo cual, $(H_1,\odot)$ es un subgrupo de $(H,\odot)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Una vez que se sabe que dos grupos son isomorfos, deja de tener sentido distinguirlos desde el punto de vista de la teoría de grupos. Aunque puedan diferir en la naturaleza o el nombre de sus elementos, ambos representan exactamente la misma estructura algebraica. Por ello, cualquier propiedad que dependa únicamente de dicha estructura será compartida por ambos. En este sentido, \textit{los isomorfismos permiten reconocer cuándo dos grupos distintos representan, en esencia, un mismo objeto algebraico}.} \\
+
+\Large{Nuestro objetivo ahora es demostrar el \textbf{teorema de Cayley}. Para ello, debemos introducir el \textbf{grupo de permutaciones} de un conjunto:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sea $G$ un conjunto no vacío. El conjunto de \textbf{permutaciones} de $G$ se define como: \\
+
+    -- $\text{Sym}(G)=\{f:G \rightarrow G \hspace{0.2 cm}|\hspace{0.2 cm}\text{f es biyectiva}\}$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Más adelante estudiamos los grupos de permutaciones con más detalle.} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $G$ un conjunto no vacío. Entonces $(\text{Sym}(G),\circ)$ es un grupo.} \\
+\end{itemize}
+
+\Large{\textbf{Nota:} Nos referimos a este grupo como el \textbf{grupo de permutaciones de G}.} \\
+
+\Large{\textbf{Demostración:} Sean $\alpha,\beta \in \text{Sym}(G)$. Entonces, por definición, $\alpha$ y $\beta$ son biyectivas. Luego $\alpha \circ \beta$ también es biyectiva, así que $\alpha \circ \beta \in \text{Sym}(G)$. Por lo tanto, $\circ$ es una operación binaria en $\text{Sym}(G)$. Además, sabemos que: \\
+
+-- $\circ$ es asociativa en $\text{Sym}(G)$. \\
+
+-- $I_G \in \text{Sym}(G)$ (donde $I_G$ es la función identidad en $G$), y para todo $\alpha \in \text{Sym}(G)$, $\alpha \circ I_G=I_G \circ \alpha=\alpha$. \\
+
+-- Para todo $\alpha \in \text{Sym}(G)$, existe $\alpha^{-1}$ (la función inversa de $\alpha)$. Además, $\alpha^{-1} \in \text{Sym}(G)$ y $\alpha \circ \alpha^{-1}=\alpha^{-1} \circ \alpha=I_G$. \\
+
+Por lo tanto, ($\text{Sym}(G),\circ$) es un grupo.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema de Cayley:} Sea $(G,*)$ un grupo. Entonces existe un subgrupo $(H,\circ)$ de $(\text{Sym}(G),\circ)$ tal que $(G,*) \simeq (H,\circ)$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{todo grupo es isomorfo a un subgrupo de un grupo de permutaciones}.} \\
+
+\Large{\textbf{Demostración:} Sea $g \in G$. Consideremos la siguiente función:}
+\begin{align*}
+    T_g:G &\rightarrow G \\
+    x &\mapsto g*x
+\end{align*}
+\Large{Veamos que $T_g$ es biyectiva: \\
+
+-- Sean $a,b \in G$ tales que $T_g(a)=T_g(b)$. Es decir que $g*a=g*b$. Luego, como se demostró anteriormente, $a=b$. Por lo tanto, $T_g$ es inyectiva. \\
+
+-- Sea $a \in G$. Como $g^{-1}*a \in G$ (porque $(G,*)$ es un grupo), podemos evaluar en $T_g$ para obtener que $T_g(g^{-1}*a)=g*(g^{-1}*a)=(g*g^{-1})*a=e_G*a=a$. Por lo tanto, $T_g$ es sobreyectiva. \\
+
+Así pues, tiene sentido considerar el siguiente conjunto: \\
+
+-- $H=\{f \in \text{Sym}(G) \hspace{0.2 cm}|\hspace{0.2 cm}(\exists g \in G)(f=T_g)\}$. \\
+
+En otras palabras: $H=\{T_g \hspace{0.2 cm}|\hspace{0.2 cm}g \in G\}$. Ya vimos que cada $T_g$ es biyectiva, así que $H \subseteq \text{Sym}(G)$. Veamos ahora que $(H,\circ)$ es un subgrupo de $(\text{Sym}(G),\circ)$. Para empezar, note que $T_{e_G} \in H$, y por tanto $H \neq \emptyset$. A continuación, consideremos $f,h \in H$. Entonces, por definición, existen $a,b \in G$ tales que $f=T_a$ y $h=T_b$. Ahora, sea $g \in G$, y veamos que $h^{-1}=T_{b^{-1}}$:}
+\begin{align*}
+    (h \circ T_{b^{-1}})(g)&=h(T_{b^{-1}}(g)) \\
+    &=h(b^{-1}*g) \\
+    &=b*(b^{-1}*g) \\
+    &=(b*b^{-1})*g \\
+    &=e_G*g \\
+    &=g
+\end{align*}
+\begin{align*}
+    (T_{b^{-1}}\circ h)(g)&=T_{b^{-1}}(h(g)) \\
+    &=T_{b^{-1}}(b*g) \\
+    &=b^{-1}*(b*g) \\
+    &=(b^{-1}*b)*g \\
+    &=e_G*g \\
+    &=g
+\end{align*}
+\Large{Sea $g \in G$ nuevamente, y  veamos también que $f \circ h^{-1}=T_{a*b^{-1}}$:}
+\begin{align*}
+    (f \circ h^{-1})(g)&=f(h^{-1}(g)) \\
+    &=f(T_{b^{-1}}(g)) \\
+    &=f(b^{-1}*g) \\
+\end{align*}
+\begin{align*}
+    &=a*(b^{-1}*g) \\
+    &=(a*b^{-1})*g \\
+    &=T_{a*b^{-1}}(g)
+\end{align*}
+\Large{Como $a*b^{-1} \in G$, tenemos entonces que $f*h^{-1} \in H$. Por lo tanto, $(H,\circ)$ es un subgrupo de $(\text{Sym}(G),\circ)$. Por último, consideremos la siguiente función:}
+\begin{align*}
+    \phi:G &\rightarrow H \\
+    g &\mapsto T_g
+\end{align*}
+\Large{Comprobemos que $\phi$ es un isomorfismo: \\
+
+-- Sea $a,b \in G$. Note que:
+\begin{align*}
+    \phi(a*b)&=T_{a*b}
+\end{align*}
+A continuación, consideremos $g \in G$. Observe que:
+\begin{align*}
+    T_{a*b}(g)&=(a*b)*g \\
+    &=a*(b*g) \\
+    &=a*T_b(g) \\
+    &=T_a(T_b(g)) \\
+    &=(T_a \circ T_b)(g)
+\end{align*}
+De modo pues que $T_{a*b}=T_a \circ T_b$. Luego $\phi(a*b)=T_{a*b}=T_a \circ T_b=\phi(a) \circ \phi(b)$. Con lo cual, $\phi$ es un homomorfismo. \\
+
+-- Sean $a,b \in \phi$ tales que $\phi(a)=\phi(b)$. Es decir que $T_a=T_b$. Luego, en particular:
+\begin{align*}
+    a&=a*e_G \\
+    &=T_a(e_G) \\
+    &=T_b(e_G) \\
+    &=b*e_G \\
+    &=b
+\end{align*}
+Tenemos entonces que $a=b$, y por tanto que $\phi$ es inyectiva. Por último, consideremos $f \in H$. Entonces, por definición, existe $g \in G$ tal que $f=T_g$. Luego $\phi(g)=T_g=f$. Por lo tanto, $\phi$ también es sobreyectiva. Con lo cual, $\phi$ es biyectiva. \\
+
+Como $\phi$ es un isomorfismo, concluimos que $(G,*) \simeq (H,\circ)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Sea $(G,*)$ un grupo. A partir de $G$ obtenemos el grupo $(\text{Sym}(G),\circ)$, que no depende de la estructura de grupo de $(G,*)$. El \textbf{grupo de automorfismos} de $(G,*)$ sí depende de su estructura de grupo, y será importante más adelante.} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sea $(G,*)$ un grupo. El conjunto de \textbf{automorfismos} de $(G,*)$ se define como: \\
+
+    -- $\text{Aut}(G,*)=\{f \in \text{Sym}(G) \hspace{0.2 cm}|\hspace{0.2 cm}\text{f es un homomorfismo}\}$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{Aut$(G,*)$ es el conjunto de isomorfismos entre $(G,*)$ y sí mismo}.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $(G,*)$ un grupo. Entonces $(\text{Aut}(G,*),\circ)$ es un subgrupo de $(\text{Sym}(G),\circ)$.} \\
+\end{itemize}
+
+\Large{\textbf{Nota:} Nos referimos a este grupo como el \textbf{grupo de automorfismos de (G,*)}.} \\
+
+\Large{\textbf{Demostración:} Es claro que $\text{Aut}(G,*) \subseteq \text{Sym}(G)$. A continuación, consideremos $I_G$ (la función identidad en $G$). Como se demostró anteriormente, dicha función es un homomorfismo. Además, sabemos que $I_G$ es biyectiva. Luego, de acuerdo con la definición, $I_G \in \text{Aut}(G,*)$, así que $\text{Aut}(G,*) \neq \emptyset$. Ahora, sean $\alpha,\beta \in \text{Aut}(G,*)$. Entonces, por definición, $\alpha$ y $\beta$ son isomorfismos. De modo pues que $\beta^{-1}$ es un isomorfismo, y por tanto $\alpha \circ \beta^{-1}$ también es un isomorfismo (como se demostró anteriormente). Tenemos entonces que $\alpha \circ \beta^{-1} \in \text{Aut}(G,*)$, y por tanto que $(\text{Aut}(G,*),\circ)$ es un subgrupo de $(\text{Sym}(G),\circ)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Terminamos esta unidad estableciendo un par de hechos relacionados con grupos de automorfismos:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $(G,*)$ un grupo finito. Adicionalmente, consideremos la siguiente función:}
+    
+    \begin{align*}
+        \alpha:G &\rightarrow G \\
+        g &\mapsto g^2
+    \end{align*}
+    \Large{Si $(G,*)$ es abeliano y para todo $g \in G \setminus \{e_G\}$, $g^2 \neq e_G$, entonces $\alpha \in \text{Aut}(G,*)$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Sean $a,b \in G$. Como $(G,*)$ es abeliano, resulta que $a*b=b*a$. Luego $(a*b)^2=a^2*b^2$, así que:}
+\begin{align*}
+    \alpha(a*b)&=(a*b)^2 \\
+    &=a^2*b^2 \\
+    &=\alpha(a)*\alpha(b)
+\end{align*}
+\Large{Con lo cual, $\alpha$ es un homomorfismo. A continuación, veamos que $\alpha$ es una función biyectiva: \\
+
+-- Sea $g \in \ker \alpha$ (esto tiene sentido, pues acabamos de ver que $\alpha$ es un homomorfismo). Entonces $\alpha(g) \in \{e_G\}$; es decir, $g^2=e_G$. Y de acuerdo con la hipótesis, necesariamente $g=e_G$ (pues si $g \neq e_G$ tendríamos que $g^2 \neq e_G$, lo cual es absurdo). De modo pues que $g \in \{e_G\}$, así que $\ker \alpha \subseteq \{e_G\}$. Por lo tanto, como se demostró anteriormente, $\alpha$ es inyectiva. \\ 
+
+-- Como $(G,*)$ es un grupo finito, tenemos por definición que $G$ es finito. Con lo cual, $\alpha$ es inyectiva, si y sólo si, $\alpha$ es sobreyectiva. Y como ya sabemos que $\alpha$ es inyectiva, podemos concluir que $\alpha$ también es sobreyectiva. \\
+
+Tenemos entonces que $\alpha \in \text{Aut}(G,*)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $(G,*)$ un grupo. Adicionalmente, consideremos la siguiente función:}
+    \begin{align*}
+        \alpha:G &\rightarrow G \\
+        g &\mapsto g^{-1}
+    \end{align*}
+    \Large{Entonces $\alpha \in \text{Aut}(G,*)$, si y sólo si, $(G,*)$ es abeliano.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $\alpha \in \text{Aut}(G,*)$. Es decir, por definición, que $\alpha$ es un isomorfismo. A continuación, consideremos $a,b \in G$. Observe que:
+\begin{align*}
+    \alpha(a*b)&=\alpha(a)*\alpha(b) \\
+    &=a^{-1}*b^{-1} \\
+    &=(b*a)^{-1} \\
+    &=\alpha(b*a)
+\end{align*}
+\Large{De modo pues que $\alpha(a*b)=\alpha(b*a)$. Y como $\alpha$ es inyectiva (en particular), concluimos que $a*b=b*a$. Por lo tanto, $(G,*)$ es abeliano.} \\
+
+($\leftarrow$) Supongamos que $(G,*)$ es abeliano. A continuación, veamos que $\alpha$ es un homomorfismo: sean $a,b \in G$. Como $a*b=b*a$, resulta que $(a*b)^{-1}=a^{-1}*b^{-1}$. Luego $\alpha(a*b)=(a*b)^{-1}=a^{-1}*b^{-1}=\alpha(a)*\alpha(b)$. Para terminar, veamos que $\alpha$ es una función biyectiva: \\
+
+-- Sea $g \in \ker \alpha$. Entonces $\alpha(g) \in \{e_G\}$; es decir, $g^{-1}=e_G$. Además, sabemos que $e_G=g*g^{-1}=g*e_G=g$, así que $g=e_G$. De modo pues que $g \in \{e_G\}$, y por tanto $\ker \alpha \subseteq \{e_G\}$. Con lo cual, como se demostró anteriormente, $\alpha$ es inyectiva. \\
+
+-- Sea $g \in G$. Sabemos que $g^{-1} \in G$. Con lo cual, $\alpha(g^{-1})=(g^{-1})^{-1}=g$. Por lo tanto, $\alpha$ es sobreyectiva. \\
+
+Tenemos entonces que $\alpha \in \text{Aut}(G,*)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\end{document}

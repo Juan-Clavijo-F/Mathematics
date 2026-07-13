@@ -1,0 +1,143 @@
+\documentclass[10 pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[left=2cm, right=2cm, top=1.5cm, bottom=2cm]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{cancel}
+\usepackage{amsmath,amsthm,amsfonts,amscd,amssymb,amsbsy}
+
+\title{\textbf{\underline{Productos finitos}}}
+\author{}
+\date{}
+
+\begin{document}
+
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+
+\section*{}
+
+\Large{Introducimos ahora la \textbf{notación productoria}, el análogo de la notación de sumatoria para grupos arbitrarios. Esta notación nos permitirá expresar de manera compacta productos finitos de elementos de un grupo:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sea $(G,*)$ un grupo. Adicionalmente, consideremos $n,p \in \mathbb N$ y una función $f:\mathbb N \rightarrow G$. Establecemos inductivamente que: \\
+
+    i) $\displaystyle \prod_{i=n}^{n+0}f(i)=f(n)$. \\
+
+ii) $\displaystyle \prod_{i=n}^{n+(p+1)}f(i)=\left[ \displaystyle \prod_{i=1}^{n+p}f(i) \right]*f(n+(p+1))$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Sea $(G,*)$ un grupo. Adicionalmente, consideremos $n,p \in \mathbb N$ y una función $f:\mathbb N \rightarrow G$. Observe que: \\
+
+-- $\displaystyle \prod_{i=n}^{n+1}f(i)=\left[ \displaystyle \prod_{i=1}^{n+0}f(i) \right]*f(n+1)=f(n)*f(n+1)$. \\
+
+-- $\displaystyle \prod_{i=n}^{n+2}f(i)=\left[ \displaystyle \prod_{i=1}^{n+1}f(i) \right]*f(n+2)=f(n)*f(n+1)*f(n+2)$. \\
+
+-- $\displaystyle \prod_{i=n}^{n+3}f(i)=\left[ \displaystyle \prod_{i=1}^{n+2}f(i) \right]*f(n+3)=f(n)*f(n+1)*f(n+2)*f(n+3)$. \\
+
+Intuitivamente: \\
+
+-- $\displaystyle \prod_{i=n}^{n+p}f(i)=f(n)*f(n+1)* \cdot \cdot \cdot *f(n+p)$.} \\
+
+\Large{Como ocurre con la potenciación, en algunos grupos abelianos se utiliza la notación aditiva, por lo cual la notación productoria se cambia por la notación sumatoria:} \\
+
+\Large{\textbf{Ejemplo:}} \\
+
+\Large{Consideremos el grupo $(\mathbb Z,+)$. Adicionalmente, consideremos la siguiente función:}
+\begin{align*}
+    f: \mathbb N& \rightarrow \mathbb Z \\
+    i & \mapsto i 
+\end{align*}
+\Large{Para todo $i \in \mathbb N$, $f(i)=i$. Luego: \\
+
+-- $\sum_{i=1}^{1}i=1$.  \\
+
+-- $\sum_{i=1}^{2}i=1+2=3$. \\
+
+-- $\sum_{i=1}^{3}i=1+2+3=6$.  \\
+
+-- $\sum_{i=1}^{4}i=1+2+3+4=10$.  \\
+
+-- $\sum_{i=1}^{5}i=1+2+3+4+5=15$.}\\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{A continuación se describen las propiedades más importantes de la notación productoria:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $(G,*)$ un grupo. Adicionalmente, consideremos $n,p \in \mathbb N$ y una función $f:\mathbb N \rightarrow G$. Entonces $\prod_{i=n}^{n+p}f(i) \in G$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $(G,*)$ un grupo. Adicionalmente, consideremos $n,p,k \in \mathbb N$ y una función $f:\mathbb N \rightarrow G$. Si $n \leq k<n+p$, entonces:}
+    \begin{align*}
+        \prod_{i=n}^{{n+p}}f(i)&=\left[\prod_{i=n}^{k}f(i) \right]* \left[\prod_{i=k+1}^{n+p}f(i) \right]
+    \end{align*}
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sea $(G,*)$ un grupo. Adicionalmente, consideremos $n,p \in \mathbb N$ y una función $f:\mathbb N \rightarrow G$. Si $n<n+p$, entonces:}
+    \begin{align*}
+        \prod_{i=n}^{n+p}f(i)&=f(n)*\left[\prod_{i=n+1}^{n+p}f(i)\right]
+    \end{align*}
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $(G,*)$ un grupo. Adicionalmente, consideremos $n,p,k \in \mathbb N$ y una función $f:\mathbb N \rightarrow G$. Entonces:}
+    \begin{align*}
+        \prod_{i=n}^{n+p}f(i)&=\prod_{i=n+k}^{n+p+k}f(i-k)
+    \end{align*}
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $(G,*)$ un grupo. Adicionalmente, consideremos $n,p \in \mathbb N$ y funciones $f:\mathbb N \rightarrow G$ y $g:\mathbb N \rightarrow G$. Si $(G,*)$ es abeliano, entonces:}
+    \begin{align*}
+        \prod_{i=n}^{n+p}[f(i)*g(i)]&=\prod_{i=n}^{n+p}f(i) \, * \, \prod_{i=n}^{n+p}g(i)
+    \end{align*}
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $(G,*)$ un grupo. Adicionalmente, consideremos $n,p \in \mathbb N$, $k \in \mathbb Z$ y una función $f:\mathbb N \rightarrow G$. Si $(G,*)$ es abeliano, entonces:}
+    \begin{align*}
+        \prod_{i=n}^{n+p}f(i)^k&=\left[\prod_{i=n}^{n+p}f(i) \right]^k
+    \end{align*}
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Todas las propiedades enunciadas se demuestran fácilmente por inducción.} \\
+
+\end{document}

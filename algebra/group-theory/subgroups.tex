@@ -1,0 +1,390 @@
+\documentclass[10 pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[left=2cm, right=2cm, top=1.5cm, bottom=2cm]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{cancel}
+\usepackage{amsmath,amsthm,amsfonts,amscd,amssymb,amsbsy}
+
+\title{\textbf{\underline{Subgrupos}}}
+\author{}
+\date{}
+
+\begin{document}
+
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+
+\section*{}
+
+\Large{Los \textbf{subgrupos} constituyen uno de los primeros instrumentos para estudiar la estructura de un grupo. En algunas situaciones son de interés por sí mismos, pues poseen propiedades que vale la pena analizar; en otras, sirven como una herramienta para obtener información acerca del grupo que los contiene. Por ejemplo, el estudio de los subgrupos puede permitir demostrar que dos grupos no son \textbf{isomorfos}, establecer que un grupo no es \textbf{cíclico} o describir con mayor detalle su estructura interna.} \\
+
+\begin{itemize}
+\item \Large{\textbf{Definición:} Sean $(G,*)$ un grupo y $H \subseteq G$. Diremos que $(H,*)$ es un \textbf{subgrupo} de $(G,*)$, y escribimos \underline{$(H,*) \leq (G,*)$}, si y sólo si, $(H,*)$ es un grupo.} \\
+\end{itemize}
+
+\begin{flushright} 
+   $\blacksquare$
+\end{flushright}
+
+\Large{Sean $(G,*)$ un grupo y $H \subseteq G$. Además, supongamos que $(H,*)$ es un subgrupo de $(G,*)$. Describamos con precisión qué significa esto: \\
+
+-- $*$ es un operación binaria en $H$. Es decir que para todo $a \in H$ y para todo $b \in H$, $a*b \in H$. \\
+
+-- $*$ es asociativa en $H$. Es decir que para todo $a \in H$, para todo $b \in H$ y para todo $c \in H$, $a*(b*c)=(a*b)*c$. \\
+
+-- $H$ tiene elemento neutro con respecto a $*$. \\
+
+-- Para todo $h \in H$, $h$ tiene inverso respecto a $*$. \\
+
+Como podemos ver, $(H,*)$ es, por así decirlo, un grupo más ``pequeño'' dentro de $(G,*)$. Sin embargo, no se trata de cualquier grupo, pues $(H,*)$ ``hereda'' la estructura de $(G,*)$: la operación en $H$ es precisamente la misma que la de $G$, restringida a los elementos de $H$. Vamos a confirmar esto con algunos resultados:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo y $H \subseteq G$. Si $(H,*)$ es un subgrupo de $(G,*)$, entonces $e_H=e_G$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Por un lado, tenemos que $e_H*e_H=e_H$. Por otro lado, tenemos que $e_G*e_H=e_H$ (porque $e_H \in H \subseteq G$). De modo pues que $e_H*e_H=e_G*e_H$, así que $e_G=e_H$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $(G,*)$ un grupo, $H \subseteq G$ y $h \in H$, y supongamos que $(H,*)$ es un subgrupo de $(G,*)$. Adicionalmente, sean $h_1 \in H$ y $h_2 \in G$ los inversos de $h$ en $H$ y $G$, respectivamente. Entonces $h_1=h_2$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Note que $h*h_1=e_H=e_G=h*h_2$. Por lo tanto, $h_1=h_2$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposción:} Sean $(G,*)$ un grupo y $H \subseteq G$. Adicionalmente, supongamos que $(H,*)$ es un subgrupo de $(G,*)$. Si $(G,*)$ es abeliano, entonces $(H,*)$ también es abeliano.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{los subgrupos de un grupo abeliano también son abelianos}.} \\
+
+\Large{\textbf{Demostración:} Sean $h_1,h_2 \in H$. Como $H \subseteq G$, tenemos entonces que $h_1,h_2 \in G$, y por tanto que $h_1*h_2=h_2*h_1$ (pues $(G,*)$ es abeliano). Con lo cual, $(H,*)$ es abeliano.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Más adelante veremos que \textit{un grupo no abeliano podría tener subgrupos abelianos}.} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo y $K \subseteq H \subseteq G$. Si $(H,*) \leq (G,*)$ y $(K,*) \leq (H,*)$, entonces $(K,*) \leq (G,*)$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{la relación $\leq$ es transitiva}.} \\
+
+\Large{\textbf{Demostración:} Como $K \subseteq H \subseteq G$, resulta que $K \subseteq G$. Además, tenemos por hipótesis que $(K,*)$ es un grupo (porque $(K,*)$ es un subgrupo de $(H,*)$), así que $(K,*)$ es un subgrupo de $(G,*)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Todo grupo tiene al menos dos subgrupos (no necesariamente distintos), que llamaremos \textbf{subgrupos triviales}.} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $(G,*)$ un grupo. Entonces $(\{e_G\},*)$ es un subgrupo de $(G,*)$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Observe que: \\
+
+-- Sean $a,b \in \{e_G\}$. Entonces $a=b=e_G$, y por tanto $a*b=e_G*e_G=e_G \in \{e_G\}$. Luego $*$ es una operación binaria en $\{e_G\}$. \\
+
+-- Sean $a,b,c \in \{e_G\}$. Entonces $a=b=c=e_G$, y por tanto $a*(b*c)=e_G*(e_G*e_G)=e_G*e_G=(e_G*e_G)*e_G=(a*b)*c$. Luego $*$ es asociativa en $\{e_G\}$. \\
+
+-- Sea $a \in \{e_G\}$. Entonces $a=e_G$, así que $a*e_G=e_G*a=e_G*e_G=e_G$. Por lo tanto, $e_G$ es el elemento neutro de $\{e_G\}$ con respecto a $*$. \\
+
+-- Sea $a \in \{e_G\}$. Entonces $a=e_G$. Ahora, sabemos que $e_G^{-1}=e_G$, así que $a^{-1}=a$. Por lo tanto, $a$ tiene inverso respecto a $*$. \\
+
+Tenemos entonces que $(\{e_G\},*)$ es un subgrupo de $(G,*)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $(G,*)$ un grupo. Entonces $(G,*)$ es un subgrupo de $(G,*)$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{la relación $\leq$ es reflexiva}.} \\
+
+\Large{\textbf{Demostración:} Claramente $G \subseteq G$. Y por hipótesis $(G,*)$ es un grupo. Luego $(G,*)$ es un subgrupo de $(G,*)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sea $(G,*)$ un grupo. En adelante, $(\{e_G\},*)$ y $(G,*)$ se denominan \textbf{subgrupos triviales} de $(G,*)$.} \\
+\end{itemize}
+
+\Large{\textbf{Observación:} los subgrupos triviales de $(G,*)$ coinciden, si y sólo, $G=\{e_G\}$.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{La relación $\leq$ es reflexiva, antisimétrica (no lo hemos probado, pero es fácil hacerlo) y transitiva, así que determina un orden parcial sobre el conjunto de todos los subgrupos de un grupo. Este orden posee una estructura de \textbf{retículo}, conocida como el \textbf{retículo de subgrupos}, cuyo estudio proporciona una perspectiva muy útil sobre la organización interna de un grupo.} \\
+
+\Large{Con un poco más de información sobre un grupo, es posible deducir la existencia de ciertos subgrupos y algunas de sus propiedades:} \\
+
+\Large{\textbf{Ejemplo:}} \\
+
+\Large{Sea $(G,*)$ un grupo abeliano. Adicionalmente, consideremos $a,b \in G \setminus \{e_G\}$ tales que $a \neq b$ y $a^2=b^2=e_G$. Veamos que $(G,*)$ tiene un subgrupo de orden $4$. Para ello, consideremos el siguiente conjunto: \\
+
+-- $H=\{e_G,a,b,a*b\}$. \\
+
+Observe que: \\
+
+-- Claramente $*$ es una operación binaria en $H$. \\
+
+-- Claramente $*$ es asociativa en $H$. \\
+
+-- Claramente $e_H$ es el elemento neutro de $H$ con respecto a $*$.  \\
+
+-- Sea $h \in H$. Si $h=e_G$, entonces $h^{-1}=e_G$. Si $h=a$, entonces $h^{-1}=a$ (porque $a^2=e_G$, lo que implica que $a=a^{-1}$). Si $h=b$, entonces $h^{-1}=b$ (porque $b^2=e_G$, lo que implica que $b=b^{-1}$). Y si $h=a*b$, entonces $h=a*b$ (como $(G,*)$ es abeliano y $a,b \in G$, resulta que $(a*b)^2=a^2*b^2=e_G*e_G=e_G$. Con lo cual, $(a*b)^{-1}=a*b$). Como podemos ver, en cualquier caso se sigue que $h^{-1} \in H$. Por lo tanto, $h$ tiene inverso respecto a $*$. \\
+
+Por último, note que $a \neq e_G$, $b \neq e_G$, $a \neq b$, $a*b \neq e_G$ (de lo contrario tendríamos que $a=b^{-1}=b$, lo cual es absurdo), $a*b \neq a$ (porque $b \neq e_G$) y $a*b \neq b$ (porque $a \neq e_G$). Tenemos entonces que $|H|=4$. De este modo, concluimos que $(H,*)$ es un subgrupo de $(G,*)$ de orden $4$.} \\ 
+
+\Large{\textbf{Nota:} Este ejemplo ilustra una idea que aparecerá con frecuencia a lo largo de la teoría de grupos: \textit{la estructura global de un grupo ``impone'' restricciones y da lugar a subestructuras con propiedades específicas}.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Sean $(G,*)$ un grupo y $H\subseteq G$. Para demostrar que $(H,*)$ es un subgrupo de $(G,*)$, en principio habría que verificar que $(H,*)$ cumple todas las propiedades que caracterizan a un grupo. Sin embargo, esta tarea puede simplificarse aprovechando que $H$ hereda la operación de $G$ y que $(G,*)$ ya posee estructura de grupo. A continuación establecemos algunos criterios que facilitan esta verificación:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $(G,*)$ un grupo y $H \subseteq G$. Si $H \neq \emptyset$ y para todo $a \in H$ y para todo $b \in H$, $a*b^{-1} \in H$, entonces $(H,*)$ es un subgrupo de $(G,*)$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} De acuerdo con la hipótesis, $H \neq \emptyset$, así que existe $h_0 \in H$. A continuación, note que: \\
+
+(1) De acuerdo con la hipótesis, $h_0*h_0^{-1} \in H$. Pero $h_0*h_0^{-1}=e_G$, así que $e_G \in H$. \\
+
+(2) Sea $h \in H$. Como $e_G,h \in H$ (en (1) vimos que $e_G \in H$), resulta que $e_G*h^{-1} \in H$. Pero $e_G*h^{-1}=h^{-1}$, así que $h^{-1} \in H$. \\
+
+(3) Sean $h_1,h_2 \in H$. En (2) vimos que $h_2^{-1} \in H$. Luego $h_1*(h_2^{-1})^{-1} \in H$. Pero $(h_2^{-1})^{-1}=h_2$, así que $h_1*(h_2^{-1})^{-1}=h_1*h_2$, y por tanto $h_1*h_2 \in H$. \\
+ 
+Tenemos entonces que: \\
+
+-- De acuerdo con (3), $*$ es una operación binaria en $H$. \\
+
+-- Sean $a,b,c \in H$. Como $H \subseteq G$, tenemos también que $a,b,c \in G$, y por tanto que $a*(b*c)=(a*b)*c$. Luego $*$ es asociativa en $H$. \\
+
+-- De acuerdo con (1), $e_G \in H$. Luego $e_G$ es el elemento neutro de $H$ con respecto a $*$. \\
+
+-- Sea $h \in H$. De acuerdo con (2), $h^{-1} \in H$, así que $h^{-1}$ es el inverso (en $H$) de $h$ con respecto a $*$. \\
+
+Por lo tanto, $(H,*)$ es un subgrupo de $(G,*)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $(G,*)$ un grupo y $H \subseteq G$. Si: \\
+
+    -- $H \neq \emptyset$. \\
+
+    -- $*$ es una operación binaria en $H$. \\
+
+    -- Para todo $h \in H$, $h^{-1} \in H$. \\
+
+    entonces $(H,*)$ es un subgrupo de $(G,*)$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} De acuerdo con la hipótesis, tenemos que $H \neq \emptyset$. A continuación, consideremos $a,b \in H$. Como $b \in H$, tenemos que $b^{-1} \in H$. Y como $*$ es una operación binaria en $H$, resulta que $a*b^{-1} \in H$. Luego, por el teorema anterior, $(H,*)$ es un subgrupo de $(G,*)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $(G,*)$ un grupo y $H \subseteq G$. Si: \\
+
+    -- $H \neq \emptyset$. \\
+
+    -- $H$ es finito. \\
+
+    -- $*$ es una operación binaria en $H$. \\
+
+    entonces $(H,*)$ es un subgrupo de $(G,*)$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Sean $h \in H$. Si $h=e_G$, es inmediato que $h^{-1} \in H$ (pues $e_G^{-1}=e_G$ y $h=e_G$). Supongamos entonces que $h \neq e_G$. Claramente $h^{1}=h$, así que $h^1 \in H$. Ahora, consideremos $k \in \mathbb N^+$, y supongamos que $h^k \in H$. Como $*$ es una operación binaria en $H$ y $h,h^k \in H$, resulta que $h*h^{k} \in H$; ésto es, $h^{k+1} \in H$. Así pues, concluimos por inducción que $h^{n} \in H$, para todo $n \in \mathbb N^+$.  A continuación, consideremos la siguiente función:}
+\begin{align*}
+    \phi: \mathbb N^+ &\rightarrow H \\
+    n&\mapsto h^n
+\end{align*}
+\Large{Como $h^n \in H$, para todo $n \in \mathbb N^+$, la función $\phi$ está bien definida. Además, note que $\phi$ no puede ser inyectiva. En efecto: si $\phi$ fuera inyectiva, entonces $\phi(\mathbb N^+)$ sería infinito (contable). Pero $\phi(\mathbb N^+) \subseteq H$, y se supone que $H$ es finito, por lo que $\phi(\mathbb N^+)$ también debe ser finito. De modo pues que $\phi(\mathbb N^+)$ es finito e infinito, lo cual es absurdo. Así pues, existen $i,j \in \mathbb N^+$ tales que $\phi(i)=\phi(j)$ pero $i \neq j$. Sin pérdida de generalidad, supongamos que $i<j$. Tenemos entonces $j=i+k$, para algún $k \in \mathbb N^+$, así que $h^i=h^{j}=h^{i+k}=h^{i}*h^{k}$. Luego, como se demostró anteriormente, $h^k=e_G$. Y como $h \neq e_G$, necesariamente $1<k$. Con lo cual, $h*h^{k-1}=h^{k-1}*h=h^{k}=e_G$, así que $h^{-1}=h^{k-1}$. Pero $h^{k-1} \in H$ (lo demostramos al principio por inducción), así que $h^{-1} \in H$. Luego, por el corolario anterior, $(H,*)$ es un subgrupo de $(G,*)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Veamos algunas aplicaciones del teorema anterior:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo y $n \in \mathbb N^+$. A continuación, consideremos el siguiente conjunto: \\
+
+    -- $H=\{g \in G \hspace{0.2 cm}|\hspace{0.2 cm}g^n=e_G\}$. \\
+
+    Si $(G,*)$ es abeliano, entonces $(H,*)$ es un subgrupo de $(G,*)$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Sabemos que $e_G \in G$ y $e_G^n=e_G$. Tenemos entonces que $e_G \in H$, y por tanto que $H \neq \emptyset$. Ahora, sean $a,b \in H$. Entonces $a^n=e_G$ y $b^n=e_G$. Como $(G,*)$ es abeliano, tenemos que $a*b^{-1}=b^{-1}*a$, y por tanto que $(a * b^{-1})^n=a^n*(b^{-1})^n=a^n * (b^n)^{-1}=e_G*e_G^{-1}=e_G*e_G=e_G$. De modo pues que $a*b^{-1} \in H$, así que $(H,*)$ es un subgrupo de $(G,*)$ (de acuerdo con el teorema anterior).} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo y $n \in \mathbb Z$. A continuación, consideremos el siguiente conjunto: \\
+
+    -- $H=\{g \in G \hspace{0.2 cm})|\hspace{0.2 cm}(\exists x \in G)(g=x^n)\}$. \\
+
+    Si $(G,*)$ es abeliano, entonces $(H,*)$ es un subgrupo de $(G,*)$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Sabemos que $e_G \in G$ y que $e_G^{n}=e_G$. Tenemos entonces que $e_G \in H$, y por tanto que $H \neq \emptyset$. Ahora, sean $a,b \in H$. Entonces existen $g_1,g_2 \in G$ tales que $a=g_1^n$ y $b=g_2^n$. Como $(G,*)$ es abeliano, tenemos que $g_1*g_2^{-1}=g_2^{-1}*g_1$. Luego $a * b^{-1}=g_1^n*(g_2^n)^{-1}=g_1^{n}*(g_2^{-1})^n=(g_1*g_2^{-1})^n$, con $g_1*g_2^{-1} \in G$. De modo pues que $a*b^{-1} \in H$, así que $(H,*)$ es un subgrupo de $(G,*)$ (de acuerdo con el teorema anterior).} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $(G,*)$ un grupo y $\{H_i\}_{i \in I}$ una familia de subconjuntos de $G$. Si para todo $i \in I$, $(H_i,*)$ es un subgrupo de $(G,*)$, entonces $(\bigcap_{i\in I}H_i,*)$ es un subgrupo de $(G,*)$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{intersección de subgrupos tamién es un subgrupo}.} \\
+
+\Large{\textbf{Demostración:} Sea $i \in I$. De acuerdo con la hipótesis, $(H_i,*)$ es un subgrupo de $(G,*)$. Luego $e_{H_i}=e_G$ (como se demostró anteriormente), así que $e_G \in H_i$. De modo pues que $e_G \in \bigcap_{i \in I}H_i$, y por tanto $\bigcap_{i \in I}H_i \neq \emptyset$. Ahora, consideremos $a,b \in \bigcap_{i \in I}H_i$. Por definición, $a \in H_i$ y $b \in H_i$ (recordemos que $i \in I$ es arbitrario). Como $(H_i,*)$ es un subgrupo de $(G,*)$, resulta que $b^{-1} \in H_i$ ($b$ tiene inverso en $H_i$, y dicho inverso es precisamente $b^{-1}$). Y como $*$ es una operación binaria en $H_i$, tenemos que $a*b^{-1} \in H_i$. Luego $a*b^{-1} \in \bigcap_{i \in I}H_i$, así que $(\bigcap_{i \in I} H_{i},*)$ es un subgrupo de $(G,*)$ (de acuerdo con el teorema anterior).} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{En general, la unión de subgrupos no es un subgrupo. En el caso de la unión de dos subgrupos, es posible describir exactamente cuándo la unión vuelve a ser un subgrupo:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo, $H_1 \subseteq G$ y $H_2 \subseteq G$. Si $(H_1,*)$ y $(H_2,*)$ son subgrupos de $(G,*)$, entonces $(H_1 \cup H_2,*)$ es un subgrupo de $(G,*)$, si y sólo si, $H_1 \subseteq H_2$ o $H_2 \subseteq H_1$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Supongamos que $(H_1,*)$ y $(H_2,*)$ son subgrupos de $(G,*)$. \\
+
+($\rightarrow$) Supongamos que $(H_1 \cup H_2,*)$ es un subgrupo de $(G,*)$. Adicionalmente, supongamos que $H_1 \nsubseteq H_2$. Es decir que existe $h_1 \in H_1$ tal que $h_1 \notin H_2$. A continuación, consideremos $h_2 \in H_2$. Tenemos entonces que $h_1,h_2 \in H_1 \cup H_2$, y por tanto que $h_1*h_2 \in H_1 \cup H_2$ (porque $*$ es una operación binaria en $H_1 \cup H_2$). De modo pues que $h_1*h_2 \in H_1$ o $h_1*h_2 \in H_2$. Si $h_1*h_2 \in H_2$, entonces $(h_1*h_2)*h_2^{-1} \in H_2$ (pues $(H_2,*)$ es un subgrupo de $(G,*)$). Pero $(h_1*h_2)*h_2^{-1}=h_1*(h_2*h_2^{-1})=h_1*e_G=h_1$. Tenemos entonces que $h_1 \in  H_2$, lo cual es absurdo. Así pues, necesariamente $h_1*h_2 \in H_1$. Luego $h_1^{-1}*(h_1*h_2) \in H_1$ (pues $(H_1,*)$ es un subgrupo de $(G,*)$), y por tanto $h_2 \in H_1$. Con lo cual, $H_2 \subseteq H_1$. \\
+
+($\leftarrow$) Supongamos que $H_1 \subseteq H_2$ o $H_2 \subseteq H_1$. Entonces $(H_1 \cup H_2,*)=(H_2,*)$ o $(H_1 \cup H_2,*)=(H_1,*)$. Como podemos ver, en cualquier caso resulta que $(H_1 \cup H_2,*)$ es un subgrupo de $(G,*)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Entendamos por qué el resultado anterior era de esperarse: sean $(G,*)$ un grupo, $H_1 \subseteq G$ y $H_2 \subseteq G$. Adicionalmente, supongamos que $(H_1,*)$ y $(H_2,*)$ son subgrupos de $(G,*)$. Ahora, supongamos que existen $h_1 \in H_1 \setminus H_2$ y $h_2 \in H_2 \setminus H_1$. La ``clausura'' de $*$ está asegurada al operar pares de elementos en $H_1$ y pares de elementos en $H_2$. Sin embargo, nada nos asegura que $h_1*h_2 \in H_1 \cup H_2$ (pues $(h_1,h_2) \notin H_1 \times H_1$ y $(h_1,h_2) \notin H_2 \times H_2$). De hecho, es fácil ver que $h_1*h_2 \notin H_1 \cup H_2$ (por ejemplo: si $h_1*h_2 \in H_1$, entonces $h_1^{-1}*(h_1*h_2) \in H_1$. Luego $h_2 \in H_1$, lo cual es absurdo). Por lo tanto, para no ``salirnos'' de $H_1 \cup H_2$ al operar pares de elementos en dicho conjunto, necesariamente $H_1 \setminus H_2=\emptyset$ o $H_2 \setminus H_1=\emptyset$. Es decir que $H_1 \subseteq H_2$ o $H_2 \subseteq H_1$, precisamente lo que dice la proposición anterior.} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $(G,*)$ un grupo, $H_1 \subseteq G$ y $H_2 \subseteq G$. Adicionalmente, supongamos que $(H_1,*)$ y $(H_2,*)$ son subgrupos de $(G,*)$. Si $G=H_1 \cup H_2$, entonces $H_1=G$ o $H_2=G$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{ningún grupo puede ser la unión de dos subgrupos propios}.} \\
+
+\Large{\textbf{Demostración:} Como $G=H_1 \cup H_2$ y $(G,*)$ es un grupo (por hipótesis), resulta que $(H_1 \cup H_2,*)$ es un grupo. De modo pues que $(H_1 \cup H_2,*)$ es un subgrupo de $(G,*)$. Luego, por la proposición anterior, $H_1 \subseteq H_2$ o $H_2 \subseteq H_1$. En el primer caso se sigue que $G=H_1 \cup H_2=H_2$. En el segundo caso se sigue que $G=H_1 \cup H_2=H_1$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{El resultado anterior muestra que un grupo no puede ser la unión de dos de sus subgrupos propios. Sin embargo, la situación cambia al considerar la unión de tres subgrupos. Entendamos por qué esto tiene sentido. Sean $(G,*)$ un grupo, $H_1 \subseteq G$, $H_2 \subseteq G$ y $H_3 \subseteq G$. Adicionalmente, supongamos que $(H_1,*)$, $(H_2,*)$ y $(H_3,*)$ son subgrupos de $(G,*)$. Consideremos $a,b\in H_1\cup H_2\cup H_3$. Si $a,b\in H_1$ o $a,b\in H_2$ o $a,b\in H_3$, entonces $a*b\in H_1\cup H_2\cup H_3$, pues la operación es ``cerrada'' en cada uno de estos conjuntos. Supongamos ahora, por ejemplo, que $a\in H_1\setminus H_2$ y $b\in H_2\setminus H_1$. Anteriormente vimos que necesariamente $a*b\notin H_1\cup H_2$. No obstante, aún es posible que $a*b\in H_3$. Es decir, aunque el producto salga de los dos subgrupos de los que provienen sus factores, todavía puede permanecer en la unión gracias al tercer subgrupo. El punto esencial es que la presencia de un tercer subgrupo puede evitar el problema de clausura que necesariamente aparece al considerar únicamente la unión de dos subgrupos.} \\
+
+\Large{Hasta este momento nos hemos concentrado principalmente en reconocer subgrupos. Sin embargo, en muchas situaciones partimos de un subconjunto cualquiera y queremos construir un subgrupo a partir de él. Naturalmente, el más interesante será el menor de todos los que lo contienen. La siguiente definición formaliza esta idea:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $(G,*)$ un grupo y $A \subseteq G$. Adicionalmente, consideremos el siguiente conjunto: \\
+
+    -- $\Im=\{H \subseteq G \hspace{0.2 cm}|\hspace{0.2 cm} (H,*)\, \text{es un subgrupo de } \, (G,*) \land A \subseteq H\}$. \\
+
+   Entonces: \\
+
+   -- $\langle A,* \rangle= \bigcap \Im$. \\
+
+   Nos referimos a $(\langle A,* \rangle,*)$ como el \textbf{subgrupo} (de $(G,*)$) \textbf{generado por $A$}.} \\
+\end{itemize}
+
+\Large{\textbf{Observación:} Como $A \subseteq G$ y $(G,*)$ es un subgrupo de $(G,*)$ (como se demostró anteriormente), resulta que $G \in \Im$. Por lo tanto, $\Im \neq \emptyset$. Además, note que $(\langle A,* \rangle,*)$ efectivamente es un subgrupo de $(G,*)$ (pues la intersección de subgrupos también es un subgrupo). Por último, note que $A \subseteq \langle A,* \rangle$.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{\textbf{Ejemplo:}} \\
+
+\Large{Sean $(G,*)$ un grupo, $H \subseteq G$ y $K \subseteq G$. Supongamos ahora que $(H,*)$ y $(K,*)$ son subgrupos de un grupo $(G,*)$. Anteriormente vimos que $(H \cap K,*)$ es un subgrupo de $(G,*)$ tal que $H \cap K \subseteq H$ y $H \cap K \subseteq K$. Además, $(\langle H \cup K \rangle,*)$ es un subgrupo de $(G,*)$ tal que $H \subseteq \langle H \cup K\rangle$ y $K \subseteq \langle H \cup K \rangle$.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Sean $(G,*)$ un grupo y $A \subseteq G$.  En adelante, siempre que no haya riesgo de confusión con el grupo en cuestión, escribiremos ``$\langle A \rangle$'' en lugar de ``$\langle A,*\rangle$''. En algunas ocasiones decimos que $A$ es el \textbf{conjunto generador} de $\langle A \rangle$. El siguiente resultado muestra que $(\langle A \rangle,*)$ es simplemente el subgrupo más ``pequeño'' de $(G,*)$ que contiene a $A$:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $(G,*)$ un grupo, $A \subseteq G$ y $H \subseteq G$. Adicionalmente, supongamos que $(H,*)$ es un subgrupo de $(G,*)$. Si $A \subseteq H$, entonces $\langle A \rangle \subseteq H$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Sabemos que $\langle A \rangle =\bigcap \Im$, donde: \\
+
+-- $\Im=\{H \subseteq G \hspace{0.2 cm}|\hspace{0.2 cm} (H,*)\, \text{es un subgrupo de } \, (G,*) \land A \subseteq H\}$. \\
+
+Como $(H,*)$ es un subgrupo de $(G,*)$ y $A \subseteq H$, resulta que $H \in \Im$. Con lo cual, es inmediato que $\langle A \rangle \subseteq H$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sea $(G,*)$ un grupo. Entonces $\langle \emptyset \rangle=\{e_G\}$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\subseteq$) Sabemos que $\emptyset \subseteq \{e_G\}$. Y como $(\{e_G\},*)$ es un subgrupo de $(G,*)$, concluimos que $\langle \emptyset \rangle \subseteq \{e_G\}$ (de acuerdo con la proposición anterior). \\
+
+($\supseteq$) Como $(\langle A \rangle,*)$ es un subgrupo de $(G,*)$, resulta que $e_G \in \langle A \rangle$. De modo pues que $\{e_G\} \subseteq \langle A \rangle$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Cuando el conjunto generador es finito, hablamos de \textbf{subgrupos finitamente generados}:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $(G,*)$ un grupo y $g_1,...,g_n \in G$ ($n \in \mathbb N^+$). Entonces: \\
+
+    -- $\langle g_1,...,g_n\rangle=\langle \{g_1,...,g_n\}\rangle$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $(G,*)$ un grupo y $H \subseteq G$. Diremos que $(H,*)$ es \textbf{finitamente generado}, si y sólo si, existen $g_1,...,g_n \in G$ ($n \in \mathbb N^+$) tales que $H=\langle g_1,...,g_n \rangle$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Aunque la definición de subgrupo generado es completamente general, en situaciones particulares es posible obtener descripciones mucho más sencillas. Esto ocurre, por ejemplo, cuando el conjunto generador consta de un solo elemento, cuando el grupo ambiente es abeliano o cuando las relaciones entre los generadores permiten simplificar la expresión de sus elementos, como sucede en el caso del \textbf{grupo dihedral}. Estas caracterizaciones se estudiarán cuando resulten necesarias. La primera aplicación importante de esta noción aparecerá en el estudio de los \textbf{grupos cíclicos}. Más adelante volveremos a ella al estudiar el grupo dihedral y los \textbf{grupos simétricos}, donde el lenguaje de generadores permitirá describir estos grupos de una forma especialmente compacta y comprender mejor su estructura.} \\
+
+\end{document}
