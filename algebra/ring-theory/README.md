@@ -2,7 +2,9 @@
 
 This section contains my personal notes on ring theory.
 
-The project is currently under active development. New material will be added as the notes continue to evolve.
+> **Status:** In progress.
+>
+> The notes are not yet complete and are currently being expanded and revised. New material and improvements will be added as the project continues to develop.
 
 ---
 
