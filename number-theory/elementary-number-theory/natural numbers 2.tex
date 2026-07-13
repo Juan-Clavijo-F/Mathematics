@@ -1,0 +1,479 @@
+\documentclass[10 pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[left=2cm, right=2cm, top=1.5cm, bottom=2cm]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{cancel}
+\usepackage{amsmath,amsthm,amsfonts,amscd,amssymb,amsbsy}
+
+\title{\textbf{\underline{Los naturales}}}
+\author{}
+\date{}
+
+\begin{document}
+
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+
+\section*{}
+
+\LARGE{\textbf{\underline{Orden}}}\\ \\
+
+\Large{Una vez construidos los números naturales, el siguiente paso fundamental es introducir una noción de \textbf{orden} que permita compararlos entre sí. Esta estructura de orden es esencial para desarrollar propiedades clave como la \textbf{inducción}, la \textbf{buena ordenación} y el análisis de \textbf{sucesiones}. En esta sección definiremos rigurosamente el orden usual en los números naturales y estudiaremos sus propiedades básicas.} \\
+
+\Large{El orden usual en los números naturales puede describirse en términos de una relación estricta. Por ello, introducimos primero la relación ``$<$'', y posteriormente definimos la relación ``$\leq$'' a partir de ella:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $n,m \in \mathbb N$. Diremos que $n$ \textbf{es menor que} $m$, y escribimos \underline{$n<m$}, si y sólo si, $n \in m$. Adicionalmente, diremos que $n$ \textbf{no es menor que} $m$, y escribimos \underline{$n \nless m$}, si y sólo si, $\neg(n<m)$.} \\ 
+\end{itemize}
+
+\Large{\textbf{Observación:} De acuerdo con la definición, $n \nless m$, si y sólo si, $n \notin m$.} \\
+
+\begin{flushright}
+   $\blacksquare$
+\end{flushright}
+
+\Large{\textbf{Ejemplo:}} \\
+
+\Large{Anteriormente vimos que: \\
+
+-- $5=\{0,1,2,3,4\}$. \\
+
+Tenemos entonces que $0<5$, $1<5$, $2<5$, $3<5$ y $4<5$. Además, tenemos por ejemplo que $6 \nless 5$.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{El siguiente resultado proporciona una caracterización de la relación $<$:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Entonces $n<m$, si y sólo si, $n \subset m$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $n<m$. Es decir que $n \in m$. Luego, como se demostró anteriormente, $n \subset m$. \\
+
+($\leftarrow$) Supongamos que $n \subset m$. Luego, como se demostró anteriormente, $n \in m$. Es decir que $n<m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $n \in \mathbb N$. Si $n \neq 0$, entonces $0<n$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{todo número natural diferente de cero es mayor que cero}.} \\
+
+\Large{\textbf{Demostración:} Consideremos el siguiente conjunto: \\
+
+-- $S=\{k \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm}k \neq 0 \rightarrow 0 \in k \}$. \\
+
+Por definición, es claro que $0 \in S$. A continuación, consideremos $k \in S$. Supongamos ahora que $k^+ \neq 0$. Consideremos dos casos: \\
+
+($\ast$) Si $k=0$, entonces $k^+=\{0\}$. Con lo cual, $0 \in k^+$. \\
+
+($\ast$) Supongamos que $k \neq 0$. Entonces $0 \in k$ (dado que $k \in S$). Tenemos entonces que $0 \in k$ y $k \in k^+$, y por tanto que $0 \in k^+$ (como se demostró anteriormente). \\
+
+De modo pues que $k^+ \in S$. Luego $S$ es inductivo, así que $S=\mathbb N$. De este modo, como $n \in S$ y $n \neq 0$, concluimos que $0<n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $n \in \mathbb N$. Entonces $n \nless n$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{ningún número natural es menor que sí mismo}.} \\
+
+\Large{\textbf{Demostración:} Como se demostró anteriormente, $n \notin n$. Es decir que $n \nless n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $n \in \mathbb N$. Entonces $n<n^+$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Como $n \in n^+$ (dado que $n^+=n \cup \{n\}$), resulta que $n<n^+$ (de acuerdo con la definición).} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $n,m \in \mathbb N$. Diremos que $n$ \textbf{es menor o igual que} $m$, y escribimos \underline{$n \leq m$}, si y sólo si, $n<m$ o $n=m$. Adicionalmente, diremos que $n$ \textbf{no es menor o igual que} $m$, y escribimos \underline{$n \nleq m$}, si y sólo si $\neg (n \leq m)$.} \\
+\end{itemize}
+
+\Large{\textbf{Observación:} De acuerdo con la definición, $n \nleq m$, si y sólo si, $n \nless m$ y $n \neq m$.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{\textbf{Ejemplo:}} \\
+
+\Large{Anteriormente vimos que $0<5$, $1<5$, $2<5$, $3<5$ y $4<5$. Con lo cual, $0 \leq 5$, $1 \leq 5$, $2 \leq 5$, $3 \leq 5$ y $4 \leq 5$. Además, tenemos por ejemplo que $6 \nleq 5$.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{El siguiente resultado proporciona una caracterización de la relación $\leq$:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Entonces $n \leq m$, si y sólo si, $n \subseteq m$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $n \leq m$. Entonces $n<m$ o $n=m$. Consideremos ambos casos: \\
+
+($\ast$) Supongamos que $n<m$. Entonces, como se demostró anteriormente, $n \subset m$. En particular, $n \subseteq m$. \\
+
+($\ast$) Supongamos que $n=m$. Como $n \subseteq n$ y $n=m$, resulta que $n \subseteq m$. \\
+
+Como podemos ver, en cualquier caso se sigue que $n \subseteq m$. \\
+
+($\leftarrow$) Supongamos que $n \subseteq m$. Consideremos dos casos: \\
+
+($\ast$) Supongamos que $m \subseteq n$. Entonces $n=m$ (porque $n \subseteq m$ y $m \subseteq n$). \\
+
+($\ast$) Supongamos que $m \nsubseteq n$. Tenemos entonces que $n \subseteq m$ y $m \nsubseteq n$. Es decir que $n \subset m$. Luego, como se demostró anteriormente, $n<m$. \\
+
+Como podemos ver, en cualquier caso se sigue que $n<m$ o $n=m$. Por lo tanto, $n \leq m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $n \in \mathbb N$. Entonces $n \leq n$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{la relación $\leq$ es reflexiva}.} \\
+
+\Large{\textbf{Demostración:} Como $n=n$, tenemos por definición que $n \leq n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $k,n,m \in \mathbb N$. \\
+
+    i) Si $k<n$ y $n<m$, entonces $k<m$. \\
+
+    En otras palabras: \textit{la relación $<$ es transitiva.} \\
+
+    ii) Si $k \leq n$ y $n<m$, entonces $k<m$. \\
+
+    iii) Si $k<n$ y $n \leq m$, entonces $k<m$. \\
+
+    iv) Si $k \leq n$ y $n \leq m$, entonces $k \leq m$. \\
+
+    En otras palabras: \textit{la relación $\leq$ es transitiva}.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) De acuerdo con la hipótesis, $k \in n$ y $n \in m$. Luego, como se demostró anteriormente, $k \in m$. Es decir que $k<m$. \\
+
+ii) De acuerdo con la hipótesis, $k \subseteq n$ y $n \subset m$. Tenemos entonces $k \subset m$, y por tanto que $k<m$. \\
+
+iii) De acuerdo con la hipótesis, $k \subset n$ y $n \subseteq m$. Tenemos entonces que $k \subset m$, y por tanto que $k<m$. \\
+
+iv) De acuerdo con la hipótesis, $k \subseteq n$ y $n \subseteq m$. Tenemos entonces que $k \subseteq m$, y por tanto que $k \leq m$.}\\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Si $n \leq m$ y $m \leq n$, entonces $n=m$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{la relación $\leq$ es antisimétrica}.} \\
+
+\Large{\textbf{Demostración:} Como $n \leq m$ y $m \leq n$, resulta que $n \subseteq m$ y $m \subseteq n$ (como se demostró anteriormente). Por lo tanto, $n=m$. \\
+
+\underline{Otra demostración:} Supongamos que $n \neq m$. Entonces las hipótesis implican que $n<m$ y $m<n$. De modo pues que $n<n$ (por transitividad), lo cual es absurdo.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Entonces $n<m$, si y sólo si, $n^+ \leq m$.} \\
+\end{itemize} 
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $n<m$. Consideremos el siguiente conjunto: \\
+
+-- $S=\{k \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm}n<k \rightarrow n^+ \leq k\}$. \\
+
+Por definición, es claro que $0 \in S$ (pues $0 \leq n$). A continuación, consideremos $k \in S$ y supongamos que $n<k^+$. Es decir que $n \in k^+$, así que $n \in k$ o $n=k$. Consideremos ambos casos: \\
+
+($\ast$) Si $n \in k$, entonces $n<k$ (por definición). Luego $n^+ \leq k$ (dado que $k \in S$). Y como $k<k^+$, resulta que $n^+<k^+$. Con lo cual, $n^+ \leq k^+$. \\
+
+($\ast$) Si $n=k$, entonces $n^+=k^+$. De modo pues que, por definición, $n^+ \leq k^+$. \\
+
+Tenemos entonces que $k^+ \in S$. Luego $S$ es inductivo, así que $S=\mathbb N$. De este modo, como $m \in S$ y $n<m$, concluimos que $n^+ \leq m$. \\
+
+($\leftarrow$) Supongamos que $n^+ \leq m$. De modo pues que $n<n^+$ (como se demostró anteriormente) y $n^+ \leq m$ (por hipótesis). Luego $n<m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sea $n \in \mathbb N$. Si $n \neq 0$, entonces $1 \leq n$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Como $n \neq 0$, resulta que $0<n$ (como se demostró anteriormente). Luego, por la proposición anterior, $0^+ \leq n$. Es decir que $1 \leq n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{El siguiente teorema se conoce como \textbf{tricotomía}:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $n,m \in \mathbb N$. Entonces: \\
+
+    i) $n<m$ o $n=m$ o $m<n$. \\
+
+    ii) $n \nless m$ o $n \neq m$. \\
+
+    iii) $n \nless m$ o $m \nless n$. \\
+
+    iv) $n \neq m$ o $m \nless n$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{se cumple exactamente una de las siguientes relaciones: $n<m$, $n=m$ o $m<n$}.} \\
+
+\Large{\textbf{Demostración:} \\
+
+i) Consideremos el siguiente conjunto: \\
+
+-- $S=\{k \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm}(n<k) \lor (k=n) \lor (k<n) \}$. \\
+
+Si $n=0$, entonces $0 \in S$. Y si $n \neq 0$, entonces $0<n$ (como se demostró anteriormente), así que $0 \in S$. Como podemos ver, en cualquier caso se sigue que $0 \in S$. Ahora, sea $k \in S$. Consideremos tres casos: \\
+
+($\ast$) Supongamos que $n<k$. Como $k<k^+$, resulta que $n<k^+$. Por lo tanto, $k^+ \in S$. \\
+
+($\ast$) Supongamos que $n=k$. Entonces $n^+=k^+$ (como se demostró anteriormente). Ahora, como $n<n^+$ y $n^+=k^+$, resulta que $n<k^+$. Por lo tanto, $k^+ \in S$. \\
+
+($\ast$) Supongamos que $k<n$. Entonces, como se demostró anteriormente, $k^+ \leq n$. Es decir que $k^+<n$ o $k^+=n$. En cualquier caso se sigue que $k^+ \in S$. \\
+
+Tenemos entonces que $S$ es inductivo, así que $S=\mathbb N$. De este modo, como $m \in S$, concluimos que $n<m$ o $n=m$ o $m<n$. \\ 
+
+ii) Supongamos que $n<m$ y $n=m$. Tenemos entonces que $n<n$, lo cual es absurdo. Así pues, necesariamente $n \nless m$ o $n \neq m$. \\
+
+iii) Supongamos que $n<m$ y $m<n$. Tenemos entonces que $n<n$, lo cual es absurdo. Así pues, necesariamente $n \nless m$ o $m \nless n$. \\
+
+iv) Supongamos que $n=m$ y $m<n$. Tenemos entonces que $m<m$, lo cual es absurdo. Así pues, necesariamente $n \neq m$ o $m \nless n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $n,m \in \mathbb N$. Entonces $n \leq m$ o $m \leq n$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{todos los números naturales son comparables respecto a la relación $\leq$}.} \\
+
+\Large{\textbf{Demostración:} Por tricotomía, $n<m$ o $n=m$ o $m<n$. Pero $n<m$ o $n=m$ quiere decir, por definición, que $n \leq m$. Similarmente: $m<n$ implica, por definición, que $m \leq n$. De modo pues que $n \leq m$ o $m \leq n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $n,m \in \mathbb N$. \\
+
+    i) $n<m$, si y sólo si, $m \nleq n$. \\
+
+    ii) $n \leq m$, si y sólo si, $m \nless n$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) ($\rightarrow$) Supongamos que $n<m$. Entonces, por tricotomía, $m \nless n$ y $n \neq m$. Es decir que $m \nleq n$. \\
+
+($\leftarrow$) Supongamos que $m \nleq n$. Es decir que $m \nless n$ y $n \neq m$. Por tricotomía, resulta necesariamente que $n<m$. \\
+
+ii) ($\rightarrow$) Supongamos que $n \leq m$. Es decir que $n<m$ o $n=m$. En cualquier caso se sigue por tricotomía que $m \nless n$. \\
+
+($\leftarrow$) Supongamos que $m \nless n$. Entonces, por tricotomía, $n<m$ o $n=m$. Es decir que $n \leq m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. \\
+
+    i) $n<m$, si y sólo si, $n^+<m^+$. \\
+
+    ii) $n \leq m$, si y sólo si, $n^+ \leq m^+$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) ($\rightarrow$) Supongamos que $n<m$. Entonces, como se demostró anteriormente, $n^+ \leq m$. Además, sabemos que $m<m^+$. De modo pues que $n^+<m^+$. \\
+
+($\leftarrow$) Supongamos que $n^+<m^+$. Adicionalmente, supongamos que $n \nless m$. Es decir que $m \leq n$. Y como $n<n^+$, resulta que $m<n^+$. Tenemos entonces que $m^+ \leq n^+$, y por tanto que $n^+ \nless m^+$, lo cual es absurdo. Así pues, necesariamente $n<m$. \\
+
+ii) ($\rightarrow$) Supongamos que $n \leq m$. Como $m<m^+$, resulta que $n<m^+$. Luego, como se demostró anteriormente, $n^+ \leq m^+$. \\
+
+($\leftarrow$) Supongamos que $n^+ \leq m^+$. Entonces $m^+ \nless n^+$. Adicionalmente, supongamos que $n \nleq m$. Es decir que $m<n$, y por tanto que $m^+<n^+$ (de acuerdo con la parte anterior), lo cual es absurdo. Así pues, necesariamente $n \leq m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Entonces $n \leq m$, si y sólo si, $n<m^+$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $n \leq m$. Como $m<m^+$, resulta que $n<m^+$. \\
+
+($\leftarrow$) Supongamos que $n<m^+$. Entonces $n^+ \leq m^+$. Luego, por la proposición anterior, $n \leq m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n \in \mathbb N$. \\
+    
+    i) Si $n \leq m<n^+$, entonces $n=m$. \\
+
+    ii) Si $n<m \leq n^+$, entonces $n^+=m$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{no existen números naturales entre naturales consecutivos}.} \\
+
+\Large{\textbf{Demostración:} \\
+
+i) Tenemos en particular que $m<n^+$. Luego $m^+ \leq n^+$, y por tanto $m \leq n$. Como $n \leq m$ y $m \leq n$, concluimos que $n=m$. \\
+
+ii) Tenemos en particular que $n<m$, así que $n^+ \leq m$. Como $n^+ \leq m$ y $m \leq n^+$, concluimos que $n^+=m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{La relación $\leq$ es \textbf{reflexiva}, \textbf{antisimétrica}, \textbf{transitiva} y \textbf{total}, por lo que define un \textbf{orden total} en $\mathbb N$. Una vez establecido este orden, podemos introducir nociones como \textbf{mínimo}, \textbf{máximo}, \textbf{cota inferior} y \textbf{cota superior}. En este contexto, demostraremos un par de resultados fundamentales sobre la existencia de mínimos y máximos en subconjuntos de $\mathbb N$:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sea $A \subseteq \mathbb N$. Si $A \neq \emptyset$ y $A$ es acotado superiormente, entonces existe $a \in \mathbb N$ tal que $a=\max(A)$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{todo conjunto de números naturales que sea no vacío y acotado superiormente tiene máximo}.} \\
+
+\Large{\textbf{Demostración:} Consideremos el siguiente conjunto: \\
+
+-- $B=\{k \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm}(\exists t\in A)(k \leq t)\}$. \\
+
+De acuerdo con la hipótesis, existe $n \in A$ (porque $A$ es no vacío). Y como se demostró anteriormente, $0 \leq n$ (pues $n=0$ o $0<n$). Tenemos entonces que $0 \in B$. Ahora, como $A$ es acotado superiormente, existe $N \in \mathbb N$ tal que para todo $k \in A$, $k \leq N$. Consideremos dos casos: \\
+
+($\ast$) Si $N \in A$, entonces $N=\max(A)$. \\
+
+($\ast$) Supongamos que $N \notin A$. Adicionalmente, supongamos que $N \in B$. Entonces existe $t \in A$ tal que $N \leq t$. Y como $N$ es cota superior de $A$, tenemos también que $t \leq N$. Es decir que $N=t$, así que $N \in A$ (pues $t \in A$ y $N=t$), lo que es absurdo. Así pues, necesariamente $N \notin B$, y por tanto $B \neq \mathbb N$. Como $0 \in B$ pero $B \neq \mathbb N$, se sigue por inducción que existe $M \in B$ tal que $M^+ \notin B$. A continuación, consideremos $t \in A$. Como $M^+ \notin B$, necesariamente $t<M^+$. De modo pues que $t^+ \leq M^+$, y por tanto $t \leq M$. Es decir que $M$ es cota superior de $A$. Por último: como $M \in B$, existe $t_0 \in A$ tal que $M \leq t_0$. Pero $M$ es cota superior de $A$ y $t_0 \in A$, así que $t_0 \leq M$. Tenemos entonces que $M \leq t_0 \leq M$, así que $M=t_0$, y por tanto $M \in A$ (dado que $t_0 \in A$ y $M=t_0$). Con lo cual, $M=\max(A)$.  \\
+
+Como podemos ver, se sigue en cualquier caso que existe $a \in \mathbb N$ tal que $a=\max(A)$.} \\
+
+\Large{\textbf{Observación:} Si $A$ no fuera acotado superiormente, entonces no podría tener máximo (porque un elemento máximo es a su vez cota superior).} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sea $n \in \mathbb N$. Si $n \neq 0$, entonces existe $m \in \mathbb N$ tal que $n=m^+$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{todo número natural diferente de cero es sucesor de algún natural}.} \\
+
+\Large{\textbf{Demostración:} Consideremos el siguiente conjunto: \\
+
+-- $A=\{k \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm}k<n\}$. \\
+
+Como $n \neq 0$, resulta que $0<n$. Tenemos entonces que $0 \in A$, y por tanto que $A \neq \emptyset$. Además, note que $n$ es una cota superior de $A$. De modo pues que $A$ es no vacío y acotado superiormente. Luego, de acuerdo con el teorema anterior, existe $m \in \mathbb N$ tal que $m=\max(A)$. Como $m \in A$, resulta por definición que $m<n$, así que $m^+ \leq n$. Y si $m^+ \in A$, tendríamos que $m^+ \leq m$ (porque $m^+ \in A$ y $m=\max(A)$), lo cual es absurdo (pues anteriormente se demostró que $m<m^+$). Así pues, necesariamente $m^+ \notin A$. Es decir que $m^+ \nless n$, y por tanto $n \leq m^+$. Como $m^+ \leq n \leq m^+$, concluimos que $n=m^+$. \\
+
+\underline{Otra demostración:} Como $n \neq 0$, resulta que $n \neq \emptyset$ (por ejemplo, $0 \in n$). Además, note que $n$ es una cota superior de sí mismo (pues para todo $m \in n$, $m<n$). Tenemos entonces que $n$ es no vacío y acotado superiormente. Luego, de acuerdo con el teorema anterior, existe $N \in \mathbb N$ tal que $N=\max(n)$. Veamos que $n=N^+$: \\
+
+($\subseteq$) Sea $a \in n$. Como $a \leq N$ (porque $a \in n$ y $N=\max(n)$), resulta que $a<N$ o $a=N$. Si $a<N$, entonces $a \in N$ (por definición). Y si $a=N$, entonces $a \in \{N\}$. Como podemos ver, en cualquier caso se sigue que $a \in N \cup \{N\}$. Es decir que $a \in N^+$, y por tanto que $n \subseteq N^+$. \\
+
+($\supseteq$) Sea $a \in N^+$. Es decir que $a \in N$ o $a=N$. Por un lado, supongamos que $a \in N$. Como $a \in N$ y $N \in n$ (porque, en particular, $N \in n$), resulta que $a \in n$. Por otro lado, supongamos que $a=N$. Entonces $a \in n$ (porque $N \in n$ y $a=N$). Por lo tanto, $N^+ \subseteq n$.}\\
+ 
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{El siguiente resultado se conoce como \textbf{principio del buen orden}:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sea $A \subseteq \mathbb N$. Si $A \neq \emptyset$, entonces existe $a \in \mathbb N$ tal que $a=\min(A)$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{todo conjunto no vacío de números naturales tiene mínimo}.} \\
+
+\Large{\textbf{Demostración:} Consideremos el siguiente conjunto: \\
+
+-- $B=\{k \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm} (\forall t \in A)(k \leq t) \}$. \\
+
+Sabemos que, para todo $t \in A$, $0 \leq t$ (pues $t=0$ o $0<t$). Tenemos entonces que $0 \in B$, y por tanto que $B \neq \emptyset$. Y como $A \neq \emptyset$, existe $n \in A$. Note que, por definición, $n$ es una cota superior de $B$. De modo pues que $B$ es no vacío y acotado superiormente. Luego, de acuerdo con el teorema anterior, existe $a \in \mathbb N$ tal que $a=\max(B)$. Por definición, para todo $t \in A$, $a \leq t$ (porque $a \in B$). Además, como $a^+ \notin B$ (de lo contrario tendríamos que $a^+ \leq a$, lo cual es absurdo), existe $m \in A$ tal que $m<a^+$. Tenemos entonces que $m^+ \leq a^+$, y por tanto que $m \leq a$. Pero $m \in A$ y ya vimos que $a$ es cota inferior de $A$, así que $a \leq m$. Como $a \leq m \leq a$, se sigue que $a=m$, y por tanto que $a \in A$ (dado que $m \in A$ y $a=m$). Con lo cual, $a=\min(A)$.} \\ 
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{El hecho de que la relación $\leq$ sea un \textbf{buen orden} en $\mathbb N$ tiene consecuencias fundamentales. Entre ellas se encuentra el \textbf{principio de inducción fuerte}:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sea $S \subseteq \mathbb N$. Si para todo $n \in \mathbb N$, $n \subseteq S$ implica que $n \in S$, entonces $S=\mathbb N$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Supongamos que $\mathbb N \setminus S \neq \emptyset$. Luego, de acuerdo con el principio del buen orden, existe $a \in \mathbb N$ tal que $a=\min(\mathbb N \setminus S)$. Ahora, sea $k \in a$. Por definición, $k<a$. Además, si $k \notin S$ tendríamos que $k \in \mathbb N \setminus S$, y por tanto que $a \leq k$ (dado que $a=\min(\mathbb N \setminus S)$). De modo pues que $k<a$ y $a \leq k$, lo cual es absurdo. Así pues, necesariamente $k \in S$. Con lo cual, $a \subseteq S$. Luego, por hipótesis, $a \in S$. Es decir que $a \in S$ y $a \notin S$ (porque, en particular, $a \in \mathbb N \setminus S$), lo que es absurdo. De este modo, vemos que necesariamente $\mathbb N \setminus S=\emptyset$, y por tanto que $S=\mathbb N$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{A propósito del principio de inducción fuerte, terminamos con la siguiente observación:} \\
+
+\Large{\textbf{Ejemplo:}} \\
+
+\Large{Supongamos que: \\
+
+i) Se cumple el principio de inducción fuerte. \\
+
+ii) Para todo $n \in \mathbb N$, si $n \neq 0$, entonces existe $m\in \mathbb N$ tal que $n=m^+$. \\
+
+Consideremos $S \subseteq \mathbb N$, y supongamos que $S$ es inductivo. Adicionalmente, sea $n \in \mathbb N$, y supongamos que $n \subseteq S$. Si $n=0$, entonces $n \in S$ (porque $S$ es inductivo). Supongamos ahora que $n \neq 0$. De acuerdo con (ii), existe $m \in \mathbb N$ tal que $n=m^+$. Como $m^+ \subseteq S$ (porque $n \subseteq S$ y $n=m^+$) y $m \in m^+$ (porque $m^+=m \cup \{m\}$), resulta que $m \in S$. Y como $S$ es inductivo, se sigue que $m^+ \in S$, y por tanto que $n \in S$. Como podemos ver, en cualquier caso se sigue que $n \in S$. Luego, de acuerdo con (i), $S=\mathbb N$. \\
+
+Conclusión: (i) y (ii) implican el principio de inducción.} \\
+
+\Large{\textbf{Observación:} Existe un modelo para los axiomas P1, P2, P3 y P4 donde se cumple el principio de inducción fuerte pero no el principio de inducción. Ésto prueba que \textit{el principio de inducción fuerte, por sí solo, no es suficiente para demostrar el principio de inducción}.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\end{document}

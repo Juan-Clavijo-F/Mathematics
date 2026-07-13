@@ -1,0 +1,419 @@
+\documentclass[10 pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[left=2cm, right=2cm, top=1.5cm, bottom=2cm]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{cancel}
+\usepackage{amsmath,amsthm,amsfonts,amscd,amssymb,amsbsy}
+
+\title{\textbf{\underline{Los enteros}}}
+\author{}
+\date{}
+
+\begin{document}
+
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+
+\section*{}
+
+\LARGE{\textbf{\underline{Definición}}}\\ \\
+
+\Large{La función sucesor representa la operación de ``añadir uno''. Resulta entonces natural preguntarse si esta operación puede deshacerse, es decir, si también tiene sentido ``quitar uno''. Intuitivamente, esta idea conduce a la \textbf{resta}. Sin embargo, los números naturales poseen un primer elemento, el cero, que no tiene \textbf{antecesor}. Como consecuencia, existen restas de números naturales que no pueden realizarse dentro de $\mathbb N$. Esta limitación pone de manifiesto que los números naturales no bastan para describir todas las situaciones que nuestra intuición considera posibles. Los \textbf{números enteros} amplían a los naturales precisamente para eliminar esta limitación. Con ellos es posible representar cantidades situadas tanto por encima como por debajo del cero. De este modo describen de manera natural situaciones como déficits, temperaturas bajo cero, desplazamientos en sentidos opuestos, o simplemente el resultado de restar una cantidad mayor de otra menor. Sin embargo, estas interpretaciones tampoco explican qué son realmente los números enteros, sino únicamente algunas de las situaciones en las que aparecen.} \\
+
+\Large{Si los enteros aparecen para dar sentido a aquellas restas que no pueden realizarse en $\mathbb N$, entonces resulta natural intentar construirlos precisamente a partir de la resta de números naturales. Cuando la diferencia entre dos naturales vuelve a ser un natural, no esperamos obtener ningún objeto nuevo; en cambio, cuando la diferencia deja de pertenecer a $\mathbb N$, nuestra intuición nos dice que estamos frente a un \textbf{entero negativo}. Esto sugiere que la operación de restar naturales contiene ya, de manera implícita, toda la información necesaria para construir los números enteros. Surge entonces una dificultad inmediata: \textit{¿cómo utilizar la resta para construir los enteros si precisamente la resta aún no ha sido definida?} La solución consiste en sustituir provisionalmente cada diferencia $n-m$ por la pareja ordenada $(n,m)$. Más adelante identificaremos aquellas parejas que deban representar un mismo entero y definiremos sobre ellas las operaciones de suma y producto. De esta manera obtendremos un sistema que posee exactamente las propiedades esperadas de los números enteros.} \\
+
+\Large{\textbf{Ejemplos:}} \\
+
+\begin{itemize}
+    \item \Large{Informalmente, la pareja $(0,1)$ representa la resta $0-1$.} \\
+
+    \item \Large{Informalmente, la pareja $(3,2)$ representa la resta $3-2$.} \\
+
+    \item \Large{Informalmente, la pareja $(10,11)$ representa la resta $10-11$.} \\
+
+    \item \Large{Informalmente, la pareja $(80,100)$ representa la resta $80-100$.} \\
+
+    \item \Large{Informalmente, la pareja $(7,13)$ representa la resta $7-13$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Al igual que ocurrió con los números naturales, nuestro objetivo no será decidir qué son realmente los números enteros, sino construir un sistema de objetos que satisfaga las propiedades que esperamos de ellos. Veremos que las parejas ordenadas de números naturales proporcionan precisamente el modelo adecuado para lograrlo.} \\
+
+\Large{Un mismo entero puede representarse mediante varias parejas ordenadas de números naturales (de hecho, por infinitas de ellas). Por ejemplo, las parejas $(3,1)$, $(4,2)$ y $(8,6)$ deberían representar el mismo entero. Por lo tanto, antes de continuar es necesario establecer cuándo dos parejas representan al mismo entero. Intuitivamente, si la resta ya estuviera definida en $\mathbb N$, diríamos que dos parejas $(a,b)$ y $(n,m)$ representan el mismo entero, si y sólo si, $a-b=n-m$. Sin embargo, recordemos que estamos construyendo los números enteros porque la resta no siempre puede realizarse en $\mathbb N$, de modo que esta condición no puede utilizarse como definición. Debemos entonces expresarla únicamente en términos de operaciones ya definidas sobre los números naturales. Observemos que, siempre que la igualdad anterior tenga sentido, se verifica que:}
+\begin{align*}
+    a-b=n-m &\iff a+m=n+b
+\end{align*}
+\Large{Esta última condición sólo involucra la suma de números naturales, por lo que puede adoptarse como el criterio para decidir cuándo dos parejas ordenadas representan al mismo entero:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $(a,b),(n,m) \in \mathbb N \times \mathbb N$. Escribimos \underline{$(a,b) \approx (n,m)$}, si y sólo si, $a+m=n+b$.} \\
+\end{itemize}
+
+\Large{\textbf{Observación:} Note que $\approx$ define una relación en $\mathbb N \times \mathbb N$.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{\textbf{Ejemplos:}} \\
+
+\begin{itemize}
+    \item \Large{Observe que $(0,1) \approx (1,2)$, pues $0+2=1+1=2$.} \\
+
+    \item \Large{Observe que $(10,5) \approx (5,0)$, pues $10+0=5+5=10$.} \\
+
+    \item \Large{Observe que $(7,13) \approx (3,9)$, pues $7+9=13+3=16$.} \\ 
+
+    \item \Large{Observe que $(0,1)$ y $(1,0)$ no están relacionados por $\approx$ porque $0+0=0$, $1+1=2$ y $0 \neq 2$.} \\
+
+    \item \Large{Observe que $(2,2)$ y $(1,0)$ no están relacionados por $\approx$ porque $2+0=2$, $2+1=3$ y $2 \neq 3$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} $\approx$ es una relación de equivalencia en $\mathbb N \times \mathbb N$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+-- Sea $(n,m) \in \mathbb N \times \mathbb N$. Claramente $n+m=n+m$, así que $(n,m) \approx (n,m)$. Por lo tanto, $\approx$ es reflexiva. \\
+
+-- Sean $(a,b),(n,m) \in \mathbb N \times \mathbb N$, y supongamos que $(a,b) \approx (n,m)$. Es decir que $a+m=n+b$. Luego $n+b=a+m$, así que $(n,m) \approx (a,b)$. Por lo tanto, $\approx$ es simétrica. \\
+
+-- Sean $(a,b),(c,d),(e,f) \in \mathbb N \times \mathbb N$. Supongamos que $(a,b) \approx (c,d)$ y $(c,d) \approx (e,f)$. Es decir que $a+d=c+b$ y $c+f=e+d$. Tenemos entonces que $a+d+f=c+b+f$ y $c+f+b=e+d+b$. Luego $a+d+f=e+d+b$, así que $a+f=e+b$. De modo pues que $(a,b) \approx (e,f)$. Por lo tanto, $\approx$ es transitiva.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{La proposición anterior nos permite establecer formalmente que cada número entero queda representado por una clase de equivalencia de parejas ordenadas de números naturales y, en consecuencia, que cualquiera de las parejas pertenecientes a dicha clase puede tomarse como un representante del entero correspondiente:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Definimos el \textbf{conjunto de los números enteros} de la siguiente manera: \\
+    
+    -- $\mathbb Z:=(\mathbb N \times \mathbb N)/\approx$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{\textbf{Ejemplo:}} \\
+
+\Large{Observe que: \\
+
+-- $[(0,0)]=[(1,1)]=[(10,10)]$. \\
+
+-- $[(1,0)]=[(2,1)]=[(3,2)]$. \\
+
+-- $[(5,10)]=[(15,20)]=[(0,5)]$. \\
+
+-- $[(9,7)]=[(3,1)]=[(12,10)]$. \\
+
+-- $[(50,0)]=[(100,50)]=[(200,150)]$.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Hasta este momento nos hemos ocupado de construir los números enteros. A partir de ahora nuestro objetivo será dotarlos de la estructura que esperamos de ellos. Para ello definiremos las operaciones de \textbf{suma} y \textbf{producto}, así como una\textbf{ relación de orden}, y demostraremos las propiedades fundamentales que satisfacen.} \\
+
+\Large{Aunque los números enteros han sido definidos como clases de equivalencia de parejas ordenadas de números naturales, gran parte de la información sobre ellos puede obtenerse a partir de cualquiera de sus representantes. Por esta razón, definiremos inicialmente las operaciones (suma y multiplicación) sobre representantes de las clases de equivalencia. Será necesario demostrar, sin embargo, que el resultado obtenido no depende del representante escogido, sino únicamente de la clase de equivalencia correspondiente. Sólo entonces podremos considerar que dichas operaciones están correctamente definidas sobre los números enteros.} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. \\
+
+    i) Definimos $[(a,b)]+[(n,m)]:=[(a+n,b+m)]$. Nos referimos a $[(a,b)] + [(n,m)]$ como la \textbf{suma} de $[(a,b)]$ y $[(n,m)]$.  \\
+
+    \textbf{Observación:} Se sigue de inmediato de la definición que $[(a,b)]+[(n,m)] \in \mathbb Z$. \\
+
+    ii) Definimos $[(a,b)] \cdot [(n,m)]=[(an+bm,am+bn)]$. Nos referimos a $[(a,b)] \cdot [(n,m)]$ como la \textbf{multiplicación} (o \textbf{producto}) de $[(a,b)]$ y $[(n,m)]$. \\
+
+    \textbf{Observación:} Se sigue de inmediato de la definición que $[(a,b)] \cdot [(n,m)] \in \mathbb Z$.} \\
+\end{itemize}
+
+\Large{\textbf{Nota:} Utilizaremos los mismos símbolos para denotar tanto la suma y el producto de los números naturales como las operaciones recién definidas sobre los números enteros. Aunque, estrictamente hablando, no se trata de las mismas operaciones, el contexto permitirá distinguir sin dificultad a cuáles nos referimos en cada caso. Más adelante veremos que \textit{los números naturales pueden identificarse con un subconjunto de los números enteros preservando la suma y el producto}. Esto justificará el uso de una misma notación.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Sean $[(a,b)],[(n,m)] \in \mathbb Z$. Antes de continuar, veamos qué motiva la definición anterior:} \\
+
+\begin{itemize}
+    \item \Large{Como se dijo anteriormente, definimos la suma sobre los representantes de $[(a,b)]$ y $[(n,m)]$. Supongamos que la resta ya está definida. Si las parejas $(a,b)$ y $(n,m)$ representan los enteros $a-b$ y $n-m$, respectivamente, entonces esperamos que su suma represente $(a-b)+(n-m)$. Y por propiedades habituales de la suma y la resta:}
+    \begin{align*}
+        (a-b)+(n-m)&=(a+n)-(b+m)
+    \end{align*}
+
+    \item \Large{Como se dijo anteriormente, definimos la multiplicación sobre los representantes de $[(a,b)]$ y $[(n,m)]$. Supongamos que la resta ya está definida. Si las parejas $(a,b)$ y $(n,m)$ representan los enteros $a-b$ y $n-m$, respectivamente, entonces esperamos que su producto represente $(a-b) \cdot (n-m)$. Y por propiedades habituales de la multiplicación y la resta:}
+    \begin{align*}
+        (a-b) \cdot (n-m)&=(a-b) \cdot n-(a-b) \cdot m \\
+    &=a \cdot n-b \cdot n-a \cdot m+b \cdot m \\
+    &=(a \cdot n+b \cdot m)-(a \cdot m+b \cdot n)
+    \end{align*}
+\end{itemize}
+
+\Large{Naturalmente, aún debemos demostrar que estas definiciones no dependen de los representantes elegidos, sino únicamente de las clases de equivalencia que representan:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} \\
+
+    i) $+$ está bien definida en $\mathbb Z$. \\
+
+    ii) $\cdot$ está bien definida en $\mathbb Z$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Sean $[(a,b)],[(a',b')],[(n,m)],[(n',m')] \in \mathbb Z$. Supongamos que $[(a,b)]=[(a',b')]$ y $[(n,m)]=[(n',m')]$. Entonces $a+b'=a'+b$ y $n+m'=n'+m$. \\
+
+i) Como $a+b'=a'+b$ y $n+m'=n'+m$, resulta que:}
+\begin{align*}
+    (a+b')+(n+m')&=(a'+b)+(n'+m) \\
+    (a+n)+(b'+m')&=(a'+n')+(b+m) 
+\end{align*}
+\Large{Es decir que:}
+\begin{align*}
+    [(a+n,b+m)]&=[(a'+n',b'+m')] \\
+    [(a,b)]+[(n,m)]&=[(a',b')]+[(n',m')]
+\end{align*}
+\Large{ii) Como $a+b'=a'+b$ y $n+m'=n'+m$, resulta que:}
+\begin{align*}
+    (a+b') \cdot n&=(a'+b) \cdot n \\ \\
+    a' \cdot (n+m')&=a' \cdot (n'+m) \\ \\
+    b' \cdot (n'+m)&=b' \cdot (n+m') \\ \\
+    (a'+b) \cdot m&=(a+b') \cdot m
+\end{align*}
+\Large{Es decir que:}
+\begin{align*}
+    a \cdot n+b' \cdot n&=a' \cdot n+b \cdot n \tag{1} \\ \\
+    a' \cdot n+a' \cdot m'&=a' \cdot n'+a' \cdot m \tag{2} \\ \\
+    b' \cdot n'+b' \cdot m&=b' \cdot n+b' \cdot m' \tag{3} \\ \\
+    a' \cdot m+b \cdot m&=a \cdot m+b' \cdot m \tag{4}
+\end{align*}
+\Large{Al sumar las ecuaciones $(1),(2),(3),(4)$ y simplificar, obtenemos que:}
+\begin{align*}
+    (a \cdot n+b \cdot m)+(a' \cdot m'+b' \cdot n')&=(a' \cdot n'+b' \cdot m')+(a \cdot m+b \cdot n)
+\end{align*}
+\Large{Es decir que:}
+\begin{align*}
+    [(a \cdot n+b \cdot m,a \cdot m+b \cdot n)]&=[(a' \cdot n'+b' \cdot m',a' \cdot m'+b' \cdot n')] \\
+    [(a,b)] \cdot [(n,m)]&=[(a',b')] \cdot [(n',m')]
+\end{align*}
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Ahora que sabemos que la suma y la multiplicación están bien definidas, es momento de comprobar que satisfacen las propiedades que esperamos de ellas:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $[(a,b)],[(c,d)],[(e,f)] \in \mathbb Z$. \\
+
+    i) $([(a,b)]+[(c,d)])+[(e,f)]=[(a,b)]+([(c,d)]+[(e,f)])$. \\
+
+    En otras palabras: \textit{la suma de números enteros es asociativa}. \\
+
+    ii) $([(a,b)] \cdot [(c,d)]) \cdot [(e,f)]=[(a,b)] \cdot ([(c,d)] \cdot [(e,f)])$. \\
+
+    En otras palabras: \textit{la multiplicación de números enteros es asociativa}.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Observe que:}
+\begin{align*}
+    ([(a,b)]+[(c,d)])+[(e,f)]&=[(a+c,b+d)]+[(e,f)] \\
+    &=[((a+c)+e,(b+d)+f)] \\
+    &=[(a+(c+e),b+(d+f))] \\
+    &=[(a,b)]+[(c+e,d+f)] \\
+    &=[(a,b)]+([(c,d)]+[(e,f)])
+\end{align*}
+\Large{ii) Observe que:}
+\begin{align*}
+    &([(a,b)] \cdot [(c,d)]) \cdot [(e,f)] \\
+    =&[(a \cdot c+b \cdot d,a \cdot d+b \cdot c)] \cdot [(e,f)] \\
+    =&[((a \cdot c+b \cdot d) \cdot e+(a \cdot d+b \cdot c) \cdot f,(a \cdot c+b \cdot d) \cdot f+(a \cdot d+b \cdot c) \cdot e)] \\
+    =&[(a \cdot c \cdot e+b \cdot d \cdot e+a \cdot d \cdot f+b \cdot c \cdot f,a \cdot c \cdot f+b \cdot d \cdot f+a \cdot d \cdot e+b \cdot c \cdot e)] \\
+    =&[(a \cdot c \cdot e+a \cdot d \cdot f+b \cdot d \cdot e+b \cdot c \cdot f,a \cdot c \cdot f+a \cdot d \cdot e+b \cdot d \cdot f+b \cdot c \cdot e)] \\
+    =&[(a \cdot (c \cdot e+d \cdot f)+b \cdot (d \cdot e+c \cdot f),a \cdot (c \cdot f+d \cdot e)+b \cdot (d \cdot f+c \cdot e)] \\
+    =&[(a \cdot (c \cdot e+d \cdot f)+b \cdot (c \cdot f+d \cdot e),b \cdot (c \cdot e+d \cdot f)+a \cdot (c \cdot f+d \cdot e)] \\
+    =&[(a, b)] \cdot [(c \cdot e+d \cdot f,c \cdot f+d \cdot e)] \\
+    =&[(a,b)] \cdot ([(c,d)] \cdot [(e,f)]) 
+\end{align*}
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. \\
+
+    i) $[(a,b)]+[(n,m)]=[(n,m)]+[(a,b)]$. \\
+
+    En otras palabras: \textit{la suma de números enteros es conmutativa.} \\
+
+    ii) $[(a,b)] \cdot [(n,m)]=[(n,m)] \cdot [(a,b)]$. \\
+
+    En otras palabras: \textit{la multiplicación de números enteros es conmutativa}.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Observe que:} 
+\begin{align*}
+    [(a,b)]+[(n,m)]&=[(a+n,b+m)] \\
+    &=[(n+a,m+b)] \\
+    &=[(n,m)]+[(a,b)]
+\end{align*}
+\Large{ii) Observe que:}
+\begin{align*}
+    [(a,b)] \cdot [(n,m)]&=[(a \cdot n+b \cdot m,a \cdot m+b \cdot n)] \\
+    &=[(n \cdot a+m \cdot b,m \cdot a+n \cdot b)] \\
+    &=[(n \cdot a+m \cdot b,n \cdot b+m \cdot a)] \\
+    &=[(n,m)] \cdot [(a,b)]
+\end{align*}
+
+\begin{flushright}
+$\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sea $[(n,m)] \in \mathbb Z$. \\
+
+    i) $[(n,m)]+[(0,0)]=[(n,m)]$. \\
+
+    En otras palabras: \textit{$[(0,0)]$ es el elemento neutro de $\mathbb Z$ respecto a la suma}. \\
+
+    ii) $[(n,m)] \cdot [(1,0)]=[(n,m)]$. \\
+
+    En otras palabras: \textit{$[(1,0)]$ es el elemento neutro de $\mathbb Z$ respecto a la multiplicación}. \\
+
+    iii) $[(n,m)] \cdot [(0,0)]=[(0,0)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Observe que:}
+\begin{align*}
+    [(n,m)]+[(0,0)]&=[(n+0,m+0)] \\
+    &=[(n,m)]
+\end{align*}
+\Large{ii) Observe que:}
+\begin{align*}
+    [(n,m)] \cdot [(1,0)]&=[(n \cdot 1+m \cdot 0,n \cdot 0+m \cdot 1)] \\
+    &=[(n+0,0+m)] \\
+    &=[(n,m)]
+\end{align*}
+\Large{ii) Observe que:}
+\begin{align*}
+    [(n,m)] \cdot [(0,0)]&=[(n \cdot 0+m \cdot 0,n \cdot 0+m \cdot 0)] \\
+    &=[(0+0,0+0)] \\
+    &=[(0,0)]
+\end{align*}
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{A continuación demostramos una de las diferencias fundamentales entre $\mathbb N$ y $\mathbb Z$: \textit{todo entero tiene un inverso aditivo}.} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sea $[(n,m)] \in \mathbb Z$. Entonces $[(n,m)]+[(m,n)]=[(0,0)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Observe que:}
+\begin{align*}
+    [(n,m)]+[(m,n)]&=[(n+m,m+n)] \\
+    &=[(n+m,n+m)]
+\end{align*}
+\Large{Pero $(n+m,n+m) \approx (0,0)$ (porque $(n+m)+0=0+(n+m)$), así que $[(n+m,n+m)]=[(0,0)]$. Por lo tanto:}
+\begin{align*}
+    [(n,m)]+[(m,n)]&=[(n+m,n+m)] \\
+    &=[(0,0)]
+\end{align*}
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $[(a,b)],[(c,d)],[(e,f)] \in \mathbb Z$. Entonces:}
+    \begin{align*}
+        [(a,b)] \cdot ([(c,d)]+[(e,f)])&=[(a,b)] \cdot[(c,d)]+[(a,b)] \cdot [(e,f)]
+    \end{align*}
+\end{itemize}
+
+\Large{En otras palabras: \textit{la multiplicación distribuye sobre la suma}.} \\
+
+\Large{\textbf{Demostración:} Observe que:}
+\begin{align*}
+    &[(a,b)] \cdot ([(c,d)]+[(e,f)]) \\
+    =&[(a,b)] \cdot [(c+e,d+f)] \\ 
+    =&[(a \cdot (c+e)+b \cdot (d+f),a \cdot (d+f)+b \cdot (c+e))] \\
+    =&[(a \cdot c+a \cdot e+b \cdot d+b \cdot f,a \cdot d+a \cdot f+b \cdot c+b \cdot e)] \\
+    =&[(a \cdot c+b \cdot d+a \cdot e+b \cdot f,a \cdot d+b \cdot c+a \cdot f+b \cdot e)] \\
+    =&[(a \cdot c+b \cdot d,a \cdot d+b \cdot c]+[(a \cdot e+b \cdot f,a \cdot f+b \cdot e)] \\
+    =&[(a \cdot b)] \cdot [(c,d)]+[(a,b)] \cdot [(e,f)]
+\end{align*}
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $[(a,b)],[(c,d)],[(e,f)] \in \mathbb Z$. Si $[(a,b)]+[(e,f)]=[(c,d)]+[(e,f)]$, entonces $[(a,b)]=[(c,d)]$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{la suma satisface la propiedad cancelativa}.} \\
+
+\Large{\textbf{Demostración:} De acuerdo con la hipótesis:}
+\begin{align*}
+    [(a+e,b+f)]&=[(c+e,d+f)] \\
+\end{align*}
+\Large{Es decir que $(a+e)+(d+f)=(c+e)+(b+f)$. Luego $(a+d)+(e+f)=(c+b)+(e+f)$, y por tanto $a+d=c+b$ (por la propiedad cancelativa de la suma de números naturales). Con lo cual, $[(a,b)]=[(c,d)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{El siguiente resultado se conoce como la \textbf{propiedad del producto cero} y es equivalente a la propiedad cancelativa de la multiplicación:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. Si $[(a,b)] \cdot [(n,m)]=[(0,0)]$, entonces $[(a,b)]=[(0,0)]$ o $[(n,m)]=[(0,0)]$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{si una multiplicación es cero, alguno de los factores debe ser cero}.} \\
+
+\Large{\textbf{Demostración:} Supongamos que $[(a,b)] \neq [(0,0)]$. Tenemos entonces que $a+0 \neq 0+b$, y por tanto que $a \neq b$. Y de acuerdo con la hipótesis:}
+\begin{align*}
+    [(a \cdot n+b \cdot m,a \cdot m+b \cdot n)]&=[(0,0)] 
+\end{align*}
+\Large{Es decir que $(a \cdot n+b \cdot m)+0=0+(a \cdot m+b \cdot n)$. Tenemos entonces que $a \cdot n+b \cdot m=a \cdot m+b \cdot n$. Pero $a<b$ o $b<a$ (dado que $a \neq b$). Sin pérdida de generalidad, supongamos que $a<b$. Luego, como se demostró anteriormente, existe $p \in \mathbb N \setminus \{0\}$ tal que $b=a+p$. De modo pues que:}
+\begin{align*}
+    a \cdot n+(a+p) \cdot m&=a \cdot m+(a+p) \cdot n \\
+    a \cdot n+a \cdot m+p \cdot m&=a \cdot m+a \cdot n+p \cdot n
+\end{align*}
+\Large{Por la propiedad cancelativa de la suma de números naturales, se sigue que $p \cdot m=p \cdot n$. Y como $p \neq 0$, se sigue por la propiedad cancelativa de números naturales que $m=n$. Así, resulta que $n+0=0+m$, y por tanto que $[(n,m)]=[(0,0)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Con esto concluimos la construcción de los números enteros con sus operaciones aritméticas básicas. Resulta interesante observar que todas las propiedades algebraicas de los números enteros que demostramos en esta sección tienen su origen, de una u otra forma, en propiedades previamente establecidas para los números naturales. Así, la construcción de los enteros no introduce nuevas reglas de cálculo, sino que extiende las de $\mathbb N$ a un conjunto más amplio. En las secciones siguientes completaremos el estudio de $\mathbb Z$ incorporando una relación de orden y analizando la forma en que los números naturales se identifican con un subconjunto de los enteros.\\
+
+Las propiedades demostradas en esta sección son suficientes para manipular algebraicamente los números enteros de la manera habitual. En adelante, cualquier identidad o transformación algebraica que realicemos descansará únicamente sobre estas propiedades y sobre sus consecuencias. \\
+
+Finalmente, las propiedades establecidas muestran que $\mathbb Z$ conforma un \textbf{anillo conmutativo con identidad}; más aún, un \textbf{dominio entero}. En consecuencia, los enteros satisfacen todas las propiedades generales de estas estructuras algebraicas. Así, resultados como las \textbf{leyes de los signos}, entre muchos otros, dejan de ser propiedades aisladas de $\mathbb Z$ y pasan a ser casos particulares de teoremas válidos para cualquier dominio entero. En este sentido, las propiedades algebraicas fundamentales de los números enteros han quedado completamente establecidas.} \\
+
+\end{document}

@@ -1,0 +1,264 @@
+\documentclass[10 pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[left=2cm, right=2cm, top=1.5cm, bottom=2cm]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{cancel}
+\usepackage{amsmath,amsthm,amsfonts,amscd,amssymb,amsbsy}
+
+\title{\textbf{\underline{Los naturales}}}
+\author{}
+\date{}
+
+\begin{document}
+
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+
+\section*{}
+
+\LARGE{\textbf{\underline{Inducción}}}\\ \\
+
+\Large{Sea $S \subseteq \mathbb N$. Para demostrar que $S$ es inductivo debemos hacer dos cosas:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Caso base:} demostrar que $0 \in S$.} \\
+
+    \item \Large{\textbf{Paso inductivo:} demostrar que si $n \in S$, entonces $n^+ \in S$.} \\
+\end{itemize}
+
+\Large{En el paso inductivo, nos referimos a la hipótesis ``$n \in S$'' como \textbf{hipótesis de inducción}. \\
+
+El siguiente teorema establece un resultado análogo al principio de inducción, en el que el caso base se considera en un número natural distinto de cero:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $S \subseteq \mathbb N$ y $k \in \mathbb N$. Adicionalmente, supongamos que $k \neq 0$. Si: \\
+
+    -- $k \in S$. \\
+
+    -- Para todo $n \in S$, $n^+ \in S$. \\
+
+    entonces $n \in S$, para todo $n \in \mathbb N$ tal que $k \leq n$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Consideremos el siguiente conjunto: \\
+
+-- $S'=\{n \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm} k \leq n \rightarrow n \in S \}$. \\
+
+De acuerdo con la hipótesis, $k \neq 0$. Tenemos entonces que $0<k$, y por tanto que $k \nleq 0$. Con lo cual, $0 \in S'$. A continuación, consideremos $n \in S'$. Adicionalmente, supongamos que $k \leq n^+$, y consideremos dos casos: \\
+
+($\ast$) Si $k=n^+$, entonces $n^+ \in S$ (porque $k \in S$ y $k=n^+$). \\
+
+($\ast$) Supongamos que $k<n^+$. Entonces, como se demostró anteriormente, $k \leq n$. Luego, por hipótesis de inducción, $n \in S$. Por lo tanto, $n^+ \in S$ (de acuerdo con la hipótesis). \\
+
+ Como podemos ver, en cualquier caso se sigue que $n^+ \in S$. De modo pues que $n^+ \in S'$. Tenemos entonces que $S'$ es inductivo, así que $S'=\mathbb N$. Por último, consideremos $n \in \mathbb N$ tal que $k \leq n$. Como $n \in \mathbb N$ y $S'=\mathbb N$, resulta que $n \in S'$. Y como $k \leq n$, se sigue por definición que $n \in S$.} \\
+
+\begin{flushright}
+   $\square$
+\end{flushright}
+
+\Large{El \textbf{teorema de definición por recurrencia} es un resultado fundamental que nos permite definir funciones de manera \textbf{inductiva}. Dicho teorema está íntimamente relacionado con el principio de inducción, ya que ambos reflejan la estructura \textbf{recursiva} de los números naturales.} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $X$ un conjunto, $a \in X$ y $f:X \rightarrow X$ una función. Entonces existe una única función $\mu:\mathbb N \rightarrow X$ tal que: \\
+
+    -- $\mu(0)=a$. \\
+
+    -- Para todo $n \in \mathbb N$, $\mu(n^+)=f(\mu(n))$.}\\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Consideremos el siguiente conjunto: \\
+
+-- $\mathcal{C}=\{R \in \wp(\mathbb N \times X) \hspace{0.2 cm} | \hspace{0.2 cm}(0,a) \in R \land \left(\forall (n,x) \in R)((n^+,f(x)) \in R \right)\}$. \\
+
+Veamos que $\mathbb N \times X \in \mathcal C$: \\
+
+-- Es claro que $\mathbb N \times X \in \wp(\mathbb N \times X)$ (dado que $\mathbb N \times X \subseteq \mathbb N \times X$). \\
+
+-- Sabemos que $0 \in \mathbb N$. Tenemos entonces que $0 \in \mathbb N$ y $a \in X$. Con lo cual, $(0,a) \in \mathbb N \times X$.  \\
+
+-- Consideremos $(n,x) \in \mathbb N \times X$. Es decir que $n \in \mathbb N$ y $x \in X$. Luego $n^+ \in \mathbb N$ (porque $\mathbb N$ es inductivo) y $f(x) \in X$ (porque $(X,f,X)$ es una función), así que $(n^+,f(x)) \in \mathbb N \times X$.  \\
+
+Tenemos entonces que $\mathcal C \neq \emptyset$, y por tanto que $\bigcap \mathcal C$ existe. Ahora, sea $\mu=\bigcap \mathcal C$. Veamos que $(\mathbb N,\mu, X)$ es una función:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Parte 1} - $\text{Dom}(\mu)=\mathbb N$ y $\text{Ran}(\mu) \subseteq X$: note que $\mu \subseteq \mathbb N \times X$ (dado que $\mu=\bigcap \mathcal{C}$ y $\mathbb N \times X \in \mathcal C$). De modo pues que $\text{Dom}(\mu) \subseteq \mathbb N$ y $\text{Ran}(\mu) \subseteq X$. A continuación, veamos que $\text{Dom}(\mu)$ es inductivo: \\
+    
+    -- Sea $R \in \mathcal C$. Por definición, $(0,a) \in R$. Y como $R$ es arbitrario, resulta que $(0,a) \in \mu$. Tenemos entonces que $(0,a) \in \mu$, con $a \in X$. Por lo tanto, $0 \in \text{Dom}(\mu)$. \\
+
+    -- Sea $n \in \text{Dom}(\mu)$. Entonces existe $x \in X$ tal que $(n,x) \in \mu$. Adicionalmente, consideremos $R \in \mathcal{C}$. Por definición, tenemos en particular que $(n,x) \in R$, y por tanto que $(n^+,f(x)) \in R$. Como $R$ es arbitrario, resulta que $(n^+,f(x)) \in \mu$. Tenemos entonces que $(n^+,f(x)) \in \mu$, con $f(x) \in X$. Por lo tanto, $n^+ \in \text{Dom}(\mu)$. \\
+
+    Por el principio de inducción, concluimos que $\text{Dom}(\mu)=\mathbb N$.} \\
+
+    \item \Large{\textbf{Parte 2} - $\mu$ es una relación funcional: consideremos el siguiente conjunto: \\
+
+    -- $A=\{k \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm}(\exists x \in X)(\exists y \in X)((k,x) \in \mu \land (k,y) \in \mu \rightarrow x=y)\}$. \\
+
+    Veamos que $A$ es inductivo: \\
+
+    -- Supongamos que existen $x,y \in X$ tales que $(0,x),(0,y) \in \mu$. Adicionalmente, supongamos que $x \neq y$. Note que $x \neq a$ o $y \neq a$ (si $x=a$ y $y=a$, entonces $x=y$, lo que contradice la hipótesis anterior). Sin pérdida de generalidad, supongamos que $y \neq a$. Consideremos $\tilde{\mu}=\mu \setminus \{(0,y)\}$. Como $(0,a) \in \mu$ y $(0,a) \neq (0,y)$ (porque $y \neq a$), resulta que $(0,a) \in \tilde{\mu}$. Ahora, consideremos $(n,z) \in \tilde{\mu}$. Es decir, en particular, que $(n,z) \in \mu$. Luego $(n^+,f(z)) \in \mu$ y $(n^+,f(z)) \neq (0,y)$ (porque, como se demostró anteriormente, $n^+ \neq 0$), y por tanto $(n^+,f(z)) \in \tilde{\mu}$. Tenemos entonces que $\tilde{\mu} \in \mathcal C$, así que $\mu \subseteq \tilde{\mu}$. Ésto implica que $(0,y) \in \tilde{\mu}$ (pues $(0,y) \in \mu$ y $\mu \subseteq \tilde{\mu}$), lo cual es absurdo. Por lo tanto, necesariamente $x=y$. De este modo, concluimos que $0 \in A$. \\
+
+    -- Sea $k \in A$. Como $A \subseteq \mathbb N$ y $\text{Dom}(\mu)=\mathbb N$ (como se demostró anteriormente), resulta que $k \in \text{Dom}(\mu)$, así que existe $w \in X$ tal que $(k,w) \in \mu$. Luego $(k^+,f(w)) \in \mu$. A continuación, supongamos que existen $x,y \in X$ tales que $(k^+,x),(k^+,y) \in \mu$. Adicionalmente, supongamos que $x \neq y$. Note que $x \neq f(w)$ o $y \neq f(w)$ (si $x=f(w)$ y $y=f(w)$, entonces $x=y$, lo que contradice la hipótesis anterior). Sin pérdida de generalidad, supongamos que $y \neq f(w)$. Consideremos $\tilde{\mu}=\mu \setminus \{(k^+,y)\}$. Como $(0,a) \in \mu$ y $(0,a) \neq (k^+,y)$ (porque, como se demostró anteriormente, $k^+ \neq 0$), resulta que $(0,a) \in \tilde{\mu}$. Ahora, consideremos $(n,z) \in \tilde{\mu}$. Tenemos en particular que $(n,z) \in \mu$, y por tanto que $(n^+,f(z)) \in \mu$. Por último, supongamos que $(n^+,f(z))=(k^+,y)$. Es decir que $n^+=k^+$ y $f(z)=y$. Como $n^+=k^+$, resulta que $n=k$ (como se demostró anteriormente). De modo pues que $(k,w),(k,z) \in \mu$ ($(k,z) \in \mu$ porque $(n,z) \in \mu$ y $k=n$), así que $w=z$ (porque $k \in A$). Luego $f(z)=f(w)$, y por tanto $y=f(w)$ (pues $f(z)=y$). Ésto es absurdo, así que necesariamente $(n^+,f(z)) \neq (k^+,y)$. De este modo, concluimos que $(n^+,f(z)) \in \tilde{\mu}$. Tenemos entonces que $\tilde{\mu} \in \mathcal C$, así que $\mu \subseteq \tilde{\mu}$. Ésto implica que $(k^+,y) \in \tilde{\mu}$ (pues $(k^+,y) \in \mu$ y $\mu \subseteq \tilde{\mu}$), lo cual es absurdo. Por lo tanto, necesariamente $x=y$. Es decir que $k^+ \in A$. \\
+
+    Por el principio de inducción, concluimos que $A=\mathbb N$. Ésto implica que $\mu$ es una relación funcional.} \\
+\end{itemize}
+
+\Large{Ahora que sabemos que $(\mathbb N,\mu,X)$ es una función, se sigue de la definición de $\mu$ que: \\
+
+-- $\mu(0)=a$. \\
+
+-- Sea $n \in \mathbb N$. Como se demostró anteriormente, existe $x \in X$ tal que $\mu(n)=x$. Además, $\mu(n^+)=f(x)=f(\mu(n))$. \\
+
+Por último, supongamos que existe una función $\mu^*: \mathbb N \rightarrow X$ tal que: \\
+
+-- $\mu^*(0)=a$. \\
+
+-- Para todo $n \in \mathbb N$, $\mu^*(n^+)=f(\mu^*(n))$. \\
+
+Consideremos el siguiente conjunto: \\
+
+-- $S=\{k \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm}\mu(k)=\mu^*(k)\}$. \\
+
+Note que $0 \in S$, porque $\mu(0)=\mu^*(0)=a$. A continuación, consideremos $k \in S$. Entonces $\mu(k)=\mu^*(k)$. Luego $\mu(k^+)=f(\mu(k))=f(\mu^*(k))=\mu^*(k^+)$, así que $k^+ \in S$. Tenemos entonces que $S$ es inductivo, así que $S=\mathbb N$. Por lo tanto, $\mu=\mu^*$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Más adelante usaremos el teorema de definición por recurrencia para definir la \textbf{suma}, \textbf{multiplicación} y \textbf{potenciación} de números naturales.} \\
+
+\Large{El teorema anterior permite definir funciones en $\mathbb N$  mediante \textbf{reglas de recurrencia}. En muchos casos, estas reglas pueden depender explícitamente de varios parámetros o de varios valores previos, pero todas ellas pueden reformularse dentro del marco del teorema. Veamos un par de ejemplos:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $X$ un conjunto, $a \in X$ y $f:\mathbb N \times X \rightarrow X$ una función. Entonces existe una única función $\mu:\mathbb N \rightarrow X$ tal que: \\
+
+    -- $\mu(0)=a$. \\
+
+    -- Para todo $n \in \mathbb N$, $\mu(n^+)=f(n,\mu(n))$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} No podemos aplicar el teorema anterior a la función $f$. Por lo tanto, necesitamos una función auxiliar:}
+\begin{align*}
+    g: \mathbb N \times X &\rightarrow \mathbb N \times X \\
+    (n,x) &\mapsto (n^+,f(n,x))
+\end{align*}
+\Large{Note que $(0,a) \in \mathbb N \times X$. Luego, por el teorema anterior, existe una función $\alpha:\mathbb N \rightarrow \mathbb N \times X$ tal que: \\
+
+-- $\alpha(0)=(0,a)$. \\
+
+-- Para todo $n \in \mathbb N$, $\alpha(n^+)=g(\alpha(n))$. \\
+
+ Ahora, para todo $n \in \mathbb N$, digamos que $\alpha(n)=(\alpha_1(n),\alpha_2(n))$, para algunas funciones $\alpha_1:\mathbb N \rightarrow \mathbb N$ y $\alpha_2:\mathbb N \rightarrow X$. La función $\alpha_2$ es la función que buscamos. Antes de comprobarlo, note que: \\
+
+ -- $\alpha(0)=(0,a)$. Luego $\alpha_1(0)=0$. \\
+
+ -- $\alpha(1)=g(\alpha(0))=(1,f(\alpha(0)))$. Luego $\alpha_1(1)=1$. \\
+
+ -- $\alpha(2)=g(\alpha(1))=(2,f(\alpha(1)))$. Luego $\alpha_1(2)=2$. \\
+
+ -- $\alpha(3)=g(\alpha(2))=(3,f(\alpha(2)))$. Luego $\alpha_1(3)=3$. \\
+
+ -- $\alpha(4)=g(\alpha(3))=(4,f(\alpha(3)))$. Luego $\alpha_1(4)=4$. \\
+
+ Parece ser que $\alpha_1$ es la función identidad. Intuitivamente, esto tiene sentido porque el objetivo de la ``primera coordenada'' de $g$ es ``registrar'' en qué paso de la recurrencia nos encontramos. Para comprobarlo, consideremos el siguiente conjunto: \\
+
+ -- $A=\{k \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm}\alpha_1(k)=k\}$. \\
+
+ Observe que $\alpha(0)=(\alpha_1(0),\alpha_2(0))$ y $\alpha(0)=(0,a)$. De modo pues que $(\alpha_1(0),\alpha_2(0))=(0,a)$, y por tanto $\alpha_1(0)=0$. Es decir que $0 \in A$. A continuación, consideremos $k \in A$. Entonces $\alpha_1(k)=k$. Como $\alpha(k^+)=(\alpha_1(k^+),\alpha_2(k^+))$ y $\alpha(k^+)=g(\alpha(k))=g(\alpha_1(k),\alpha_2(k))=(\alpha_1(k)^+,f(\alpha_1(k),\alpha_2(k)))=(k^+,f(\alpha(k)))$, resulta que $(\alpha_1(k^+),\alpha_2(k^+))=(k^+,f(\alpha(k)))$. Con lo cual, $\alpha_1(k^+)=k^+$, así que $k^+ \in A$. Concluimos por el principio de inducción que $A=\mathbb N$. Es decir que $\alpha_1(n)=n$, para todo $n \in \mathbb N$. \\
+ 
+ Más aún: \\
+
+ -- $\alpha(0)=(\alpha_1(0),\alpha_2(0))$ y $\alpha(0)=(0,a)$. De modo pues que $(\alpha_1(0),\alpha_2(0))=(0,a)$, y por tanto $\alpha_2(0)=a$. \\
+
+ -- Sea $n \in \mathbb N$. Sabemos que $\alpha(n^+)=(\alpha_1(n^+ ),\alpha_2(n^+))$ y $\alpha(n^+)=g(\alpha(n))=g(\alpha_1(n),\alpha_2(n))=g(n,\alpha_2(n))=(n^+,f(n,\alpha_2(n)))$. De modo pues que $(\alpha_1(n^+),\alpha_2(n^+))=(n^+,f(n,\alpha_2(n)))$, y por tanto $\alpha_2(n^+)=f(n,\alpha_2(n))$. \\
+
+ Por último, supongamos que existe $\alpha_2^*:\mathbb N \rightarrow X$ tal que: \\
+
+ -- $\alpha_2^*(0)=a$. \\
+
+ -- Para todo $n \in \mathbb N$, $\alpha_2^*(n^+)=f(n,\alpha_2^*(n))$. \\
+
+ Consideremos el siguiente conjunto: \\
+
+ -- $B=\{k \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm}\alpha_2(k)=\alpha_2^*(k)\}$. \\
+
+Es claro que $0 \in B$, porque $\alpha_2(0)=\alpha_2^*(0)=a$. A continuación, consideremos $k \in B$. Tenemos entonces que $\alpha_2(k)=\alpha_2^*(k)$. Luego $\alpha_2(k^+)=f(k,\alpha_2(k))=f(k,\alpha_2^*(k))=\alpha_2^*(k^+)$, así que $k^+ \in B$. Concluimos por el principio de inducción que $B=\mathbb N$. Por lo tanto, $\alpha_2=\alpha_2^*$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{El corolario anterior nos permitirá definir el \textbf{factorial} de un número natural.} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $X$ un conjunto, $a,b \in X$ y $f:X \times X \rightarrow X$ una función. Entonces existe una única función $\mu:\mathbb N \rightarrow X$ tal que: \\
+
+    -- $\mu(0)=a$. \\
+
+    -- $\mu(1)=b$. \\
+
+    -- Para todo $n \in \mathbb N$, $\mu((n^+)^+)=f(\mu(n),\mu(n^+))$.}\\
+\end{itemize}
+
+\Large{\textbf{Demostración:} No podemos aplicar el teorema anterior a la función $f$. Por lo tanto, aquí también necesitamos una función auxiliar:}
+\begin{align*}
+    g: X \times X &\rightarrow X \times X \\
+    (x,y)& \rightarrow (y,f(x,y))
+\end{align*}
+\Large{Note que $(a,b) \in X \times X$. Luego, por el teorema anterior, existe una función $\alpha:\mathbb N \rightarrow X \times X$ tal que: \\
+
+-- $\alpha(0)=(a,b)$. \\
+
+-- Para todo $n \in \mathbb N$, $\alpha(n^+)=g(\alpha(n))$. \\
+
+Ahora, para todo $n \in \mathbb N$, digamos que $\alpha(n)=(\alpha_1(n),\alpha_2(n))$, para algunas funciones $\alpha_1:\mathbb N \rightarrow X$ y $\alpha_2:\mathbb N \rightarrow X$. La función $\alpha_1$ es la función que buscamos. Para comprobarlo, primero consideremos $n \in \mathbb N$, y veamos que $\alpha_1(n^+)=\alpha_2(n)$:}
+\begin{align*}
+    \alpha(n^+)&=g(\alpha(n)) \\
+    &=g(\alpha_1(n),\alpha_2(n)) \\
+    &=(\alpha_2(n),f(\alpha_1(n),\alpha_2(n))) \\
+    &=(\alpha_2(n),f(\alpha(n)))
+\end{align*}
+\Large{Pero $\alpha(n^+)=(\alpha_1(n^+),\alpha_2(n^+))$. Es decir que $(\alpha_1(n^+),\alpha_2(n^+))=(\alpha_2(n),f(\alpha(n)))$, y por tanto que $\alpha_1(n^+)=\alpha_2(n)$ y $\alpha_2(n^+)=f(\alpha(n))$. En particular, $\alpha_1(n^+)=\alpha_2(n)$. Además: \\
+
+-- $\alpha(0)=(\alpha_1(0),\alpha_2(0))$ y $\alpha(0)=(a,b)$. De modo pues que $\alpha_1(0)=a$ y $\alpha_2(0)=b$. En particular, $\alpha_1(0)=a$. \\
+
+-- Como se demostró anteriormente, $\alpha_1(1)=\alpha_2(0)=b$. \\
+
+-- Sea $n \in \mathbb N$. Anteriormente vimos que $\alpha_1((n^+)^+)=\alpha_2(n^+)$, $\alpha_1(n^+)=\alpha_2(n)$ y $\alpha_2(n^+)=f(\alpha(n))=f(\alpha_1(n),\alpha_2(n))$. Por lo tanto, $\alpha_1((n^+)^+)=f(\alpha_1(n),\alpha_1(n^+))$. \\
+
+Por último, supongamos que existe $\alpha_1^*: \mathbb N \rightarrow X$ tal que: \\
+
+-- $\alpha_1^*(0)=a$. \\
+
+-- $\alpha_1^*(1)=b$. \\
+
+-- Para todo $n \in \mathbb N$, $\alpha_1^*((n^+)^+)=f(\alpha_1^*(n),\alpha_1^*(n^+))$. \\
+
+Adicionalmente, consideremos el siguiente conjunto: \\
+
+-- $S=\{k \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm} \alpha_1(k)=\alpha_1^*(k)\}$. \\
+
+Sea $n \in \mathbb N$, y supongamos que $n \subseteq S$. Si $n=0$, entonces $n \in S$, porque $\alpha_1(0)=\alpha_1^*(0)=a$. Supongamos entonces que $n \neq 0$. Luego, como se demostró anteriormente, existe $m \in \mathbb N$ tal que $n=m^+$. Si $m=0$, entonces $n \in S$, porque $n=0^+=1$ y $\alpha_1(1)=\alpha_1^*(1)=b$. Supongamos ahora que $m \neq 0$. Es decir que existe $t \in \mathbb N$ tal que $m=t^+$. Tenemos entonces que $n=m^+=(t^+)^+$. Como $t \in t^+$, $t^+ \in (t^+)^+$, $n=(t^+)^+$ y $n \subseteq S$, resulta que $t,t^+ \in S$. Con lo cual, $\alpha_1(t)=\alpha_1^*(t)$ y $\alpha_1(t^+)=\alpha_1^*(t^+ )$. Luego $n \in S$, dado que:}
+\begin{align*}
+    \alpha_1(n)&=\alpha_1((t^+)^+) \\
+    &=f(\alpha_1(t),\alpha_1(t^+)) \\
+    &=f(\alpha_1^*(t),\alpha_1^*(t^+)) \\
+    &=\alpha_1^*((t^+)^+) \\
+    &=\alpha_1^*(n)
+\end{align*}
+\Large{Como podemos ver, en cualquier caso se sigue que $n \in S$. De este modo, concluimos por inducción fuerte que $S=\mathbb N$. Por lo tanto, $\alpha_1=\alpha_1^*$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{El corolario anterior nos permitirá definir la \textbf{sucesión de Fibonacci}. En general, cuando utilicemos el teorema de definición por recurrencia (o alguno de sus corolarios) para definir una función, diremos que dicha función está \textbf{definida inductivamente} (o \textbf{recursivamente}).} \\
+
+\Large{ En adelante, aplicaremos el principio de inducción (y, de manera análoga, el de inducción fuerte) sin hacer referencia explícita al conjunto inductivo, verificando únicamente el caso base y el paso inductivo para la propiedad considerada.} \\
+
+\end{document}

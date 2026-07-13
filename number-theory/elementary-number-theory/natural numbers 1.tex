@@ -1,0 +1,406 @@
+\documentclass[10 pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[left=2cm, right=2cm, top=1.5cm, bottom=2cm]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{cancel}
+\usepackage{amsmath,amsthm,amsfonts,amscd,amssymb,amsbsy}
+
+\title{\textbf{\underline{Los naturales}}}
+\author{}
+\date{}
+
+\begin{document}
+
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+
+\section*{}
+
+\LARGE{\textbf{\underline{Definición}}}\\ \\
+
+\Large{Los \textbf{números naturales} se utilizan fundamentalmente para dos propósitos: contar elementos de un conjunto e indicar la posición de un objeto dentro de una secuencia ordenada. Sin embargo, estas descripciones no nos dicen realmente qué son los números naturales, sino únicamente para qué se utilizan. \\
+
+En general, no es sencillo responder qué son los números. En matemáticas, de hecho, suele ser más importante comprender cómo se relacionan entre sí y cuáles propiedades satisfacen que determinar la naturaleza exacta de los objetos que los representan. Por esta razón, en lugar de intentar describir qué son los números naturales en sí mismos, construiremos un sistema de objetos que satisfaga las propiedades fundamentales que esperamos de ellos.} \\
+
+\Large{Vamos a obtener todos los números naturales a partir del \textbf{cero}, mediante la operación \textbf{sucesor}:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sea $A$ un conjunto. Entonces $A^+:=A \cup \{A\}$. Nos referimos a $A^+$ como el \textbf{sucesor} de $A$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Una vez construido el conjunto de los números naturales, surge la necesidad de contar con una forma de referirse a sus elementos. Para ello se utilizan \textbf{sistemas de numeración} que proporcionan símbolos y reglas para representar los números. \\
+
+Existen diversas maneras de representar los números naturales mediante distintos sistemas de numeración. El más utilizado en la actualidad es el \textbf{sistema de numeración decimal}, el cual emplea únicamente diez símbolos, llamados \textbf{cifras}, para representar todos los números naturales.} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} \\
+
+    -- $0:=\emptyset$. Nos referimos a $0$ como \textbf{número cero} o simplemente \textbf{cero}. \\
+
+    -- $1:=0^+$. Nos referimos a $1$ como \textbf{número uno} o simplemente \textbf{uno}. \\ 
+
+    -- $2:=1^+$. Nos referimos a $2$ como \textbf{número dos} o simplemente \textbf{dos}. \\
+
+    -- $3:=2^+$. Nos referimos a $3$ como \textbf{número tres} o simplemente \textbf{tres}.  \\
+
+    -- $4:=3^+$. Nos referimos a $4$ como \textbf{número cuatro} o simplemente \textbf{cuatro}. \\
+
+    -- $5:=4^+$. Nos referimos a $5$ como \textbf{número cinco} o simplemente \textbf{cinco}. \\
+
+    -- $6:=5^+$. Nos referimos a $6$ como \textbf{número seis} o simplemente \textbf{seis}. \\
+
+    -- $7:=6^+$. Nos referimos a $7$ como \textbf{número siete} o simplemente \textbf{siete}. \\
+
+    -- $8:=7^+$. Nos referimos a $8$ como \textbf{número ocho} o simplemente \textbf{ocho}. \\
+
+    -- $9:=8^+$. Nos referimos a $9$ como \textbf{número nueve} o simplemente \textbf{nueve}.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{\textbf{Ejemplo:}} \\
+
+\Large{De acuerdo con la definición: \\
+
+-- $1=0^+=0 \cup \{0\}=\emptyset \cup \{0\}=\{0\}$. \\
+
+-- $2=1^+=1 \cup \{1\}=\{0\} \cup \{1\}=\{0,1\}$. \\
+
+-- $3=2^+=2 \cup \{2\}=\{0,1\} \cup \{2\}=\{0,1,2\}$. \\
+
+-- $4=3^+=3 \cup \{3\}=\{0,1,2\} \cup \{3\}=\{0,1,2,3\}$. \\
+
+-- $5=4^+=4 \cup \{4\}=\{0,1,2,3\} \cup \{4\}=\{0,1,2,3,4\}$. \\
+
+-- $6=5^+=5 \cup \{5\}=\{0,1,2,3,4\} \cup \{5\}=\{0,1,2,3,4,5\}$. \\
+
+-- $7=6^+=6 \cup \{6\}=\{0,1,2,3,4,5\} \cup \{6\}=\{0,1,2,3,4,5,6\}$. \\
+
+-- $8=7^+=7 \cup \{7\}=\{0,1,2,3,4,5,6\} \cup \{7\}=\{0,1,2,3,4,5,6,7\}$. \\
+
+-- $9=8^+=8 \cup \{8\}=\{0,1,2,3,4,5,6,7\} \cup \{8\}=\{0,1,2,3,4,5,6,7,8\}$. \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Para producir todos los números naturales a la vez, en lugar de construirlos uno por uno, necesitamos la noción de \textbf{conjunto inductivo}:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sea $A$ un conjunto. Diremos que $A$ es \textbf{inductivo}, si y sólo si, se cumple lo siguiente: \\
+
+    i) $0 \in A$. \\
+
+    ii) Para todo $n \in A$, $n^+ \in A$.} \\
+\end{itemize}
+
+\Large{\textbf{Nota:} Por el \textbf{axioma del infinito} de la teoría de conjuntos ZFC, podemos asegurar que existe al menos un conjunto inductivo.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Lema:} Sea $\mathcal{C}$ una familia de conjuntos inductivos. Entonces $\bigcap \mathcal{C}$ también es un conjunto inductivo.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Sea $A \in \mathcal{C}$. Por hipótesis, $A$ es inductivo, así que $0 \in A$. Como $A$ es arbitrario, concluimos que $0 \in \bigcap \mathcal C$. A continuación, consideremos $n \in \bigcap \mathcal C$ y $A \in \mathcal C$ (nuevamente). Tenemos en particular que $n \in A$. Luego, dado que $A$ es inductivo, $n^+ \in A$. Y como $A$ es arbitrario, concluimos que $n^+ \in \bigcap \mathcal C$. Por lo tanto, $\bigcap \mathcal C$ también es inductivo.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Lema:} Sean $A$ y $B$ conjuntos. Adicionalmente, supongamos que $A$ es inductivo, y consideremos el siguiente conjunto: \\
+
+    -- $\mathcal C=\{X \in \wp(A) \hspace{0.2 cm}|\hspace{0.2 cm}\text{X es inductivo}\}$. \\
+
+    Si $B$ es inductivo, entonces $\bigcap \mathcal C \subseteq B$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} De acuerdo con el lema anterior, $A \cap B$ es inductivo (porque, por hipótesis, $A$ y $B$ son inductivos). Como $A \cap B \subseteq A$, resulta que $A \cap B \in \wp(A)$. Tenemos entonces que $A \cap B \in \mathcal C$, y por tanto que $\bigcap \mathcal C \subseteq A \cap B$. Y como $A \cap B \subseteq B$, concluimos que $\bigcap \mathcal C \subseteq B$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Lema:} Sean $A$ y $B$ conjuntos inductivos. Adicionalmente, consideremos los siguientes conjuntos: \\
+
+    -- $\mathcal C_1=\{X \in \wp(A) \hspace{0.2 cm}|\hspace{0.2 cm} \text{X es inductivo}\}$. \\
+
+    -- $\mathcal C_2=\{X \in \wp(B) \hspace{0.2 cm}|\hspace{0.2 cm}\text{X es inductivo}\}$. \\
+
+    Entonces $\bigcap \mathcal C_1=\bigcap \mathcal C_2$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Como se demostró anteriormente, $\bigcap \mathcal C_1$ y $\bigcap \mathcal C_2$ son inductivos. Luego, tenemos por el lema anterior que $\bigcap \mathcal C_1 \subseteq \bigcap \mathcal C_2$ y $\bigcap \mathcal C_2 \subseteq \bigcap \mathcal C_1$. Es decir que $\bigcap \mathcal C_1=\bigcap \mathcal C_2$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Tenemos todo lo necesario para definir a los números naturales:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sea $A$ un conjunto inductivo. Adicionalmente, consideremos el siguiente conjunto: \\
+
+    -- $\mathcal C=\{X \in \wp(A) \hspace{0.2 cm}| \hspace{0.2 cm} \text{X es inductivo}\}$. \\
+
+    Definimos al \textbf{conjunto de los números naturales} de la siguiente manera: \\
+
+    -- $\mathbb N:=\bigcap \mathcal C$.} \\
+\end{itemize}
+
+\Large{\textbf{Observaciones:} Los lemas previos nos permiten establecer que:} \\
+
+    \begin{itemize}
+        
+        \item \Large{$\mathbb N$ está bien definido porque: \\
+        
+        -- Existe un conjunto inductivo (por el axioma del infinito). \\
+        
+        -- Por el lema anterior, $\mathbb N$ no depende del conjunto inductivo que se considere.} \\
+
+        \item \Large{$\mathbb N$ es un conjunto inductivo. De hecho, \textit{$\mathbb N$ es el conjunto inductivo más ``pequeño''}.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{\textbf{Ejemplo:}} \\
+
+\Large{-- Como $\mathbb N$ es inductivo, resulta que $0 \in \mathbb N$. Con lo cual, $0^+ \in \mathbb N$. Es decir que $1 \in \mathbb N$. \\
+
+-- Como $1 \in \mathbb N$, resulta que $1^+ \in \mathbb N$. Es decir que $2 \in \mathbb N$. \\
+
+-- Como $2 \in \mathbb N$, resulta que $2^+ \in \mathbb N$. Es decir que $3 \in \mathbb N$. \\
+
+-- Como $3 \in \mathbb N$, resulta que $3^+ \in \mathbb N$. Es decir que $4\in \mathbb N$. \\
+
+-- Como $4 \in \mathbb N$, resulta que $4^+ \in \mathbb N$. Es decir que $5 \in \mathbb N$. \\
+
+-- Como $5 \in \mathbb N$, resulta que $5^+ \in \mathbb N$. Es decir que $6 \in \mathbb N$. \\
+
+-- Como $6 \in \mathbb N$, resulta que $6^+ \in \mathbb N$. Es decir que $7 \in \mathbb N$. \\
+
+-- Como $7 \in \mathbb N$, resulta que $7^+ \in \mathbb N$. Es decir que $8 \in \mathbb N$. \\
+
+-- Como $8 \in \mathbb N$, resulta que $8^+ \in \mathbb N$. Es decir que $9 \in \mathbb N$.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Intuitivamente, definir $\mathbb N$ como el menor conjunto inductivo significa que sus elementos se obtienen partiendo de un elemento inicial (en nuestro caso, el cero) y aplicando repetidamente la operación sucesor. Además, no contiene ningún otro elemento distinto de aquellos que se generan de esta manera. En este sentido, $\mathbb N$ está formado exactamente por los objetos que se obtienen tras un número finito de aplicaciones del sucesor al elemento inicial.} \\
+
+\Large{El siguiente resultado se conoce como \textbf{principio de inducción} y será nuestra principal herramienta para demostrar propiedades sobre los números naturales:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sea $S \subseteq \mathbb N$. Si $S$ es inductivo, entonces $S=\mathbb N$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Como $S$ es inductivo, resulta que $\mathbb N \subseteq S$ (como se demostró anteriormente). Tenemos entonces que $S \subseteq \mathbb N$ (por hipótesis) y $\mathbb N \subseteq S$, así que $S=\mathbb N$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{A continuación se establecen algunas propiedades de los números naturales:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $A$ un conjunto y $n \in \mathbb N$. Si $A \in n$, entonces $A \in \mathbb N$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{los elementos de un número natural son números naturales}.} \\
+
+\Large{\textbf{Demostración:} Consideremos el siguiente conjunto: \\
+
+-- $S=\{k \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm} (k=0) \lor (\forall t \in k)(t \in \mathbb N)\}$. \\
+
+Por definición, $0 \in S$. A continuación, consideremos $k \in S$. Entonces $k=0$ o para todo $t \in k$, $t \in \mathbb N$. Consideremos ambos casos: \\
+
+($\ast$) Supongamos que $k=0$. Entonces $k^+=1=\{0\}$. A continuación, consideremos $t \in k^+$. Como $k^+=\{0\}$, resulta que $t=0$, y por tanto que $t \in \mathbb N$. Con lo cual, $k^+ \in S$. \\
+
+($\ast$) Supongamos que para todo $t \in k$, $t \in \mathbb N$. A continuación, consideremos $t \in k^+$. Entonces $t \in k$ o $t \in \{k\}$ (dado que, por definición, $k^+=k \cup \{k\}$). En el primer caso se sigue que $t \in \mathbb N$ (por hipótesis). En el segundo caso se sigue que $t=k$, y por tanto que $t \in \mathbb N$ (porque $k \in S$ y $S \subseteq \mathbb N$). Como podemos ver, en cualquier caso se sigue que $t \in \mathbb N$. Con lo cual, $k^+ \in S$. \\
+
+Tenemos entonces que $S$ es inductivo, así que $S=\mathbb N$. De este modo, como $n \in S$ (porque $n \in \mathbb N$ y $S=\mathbb N$) y $n \neq 0$ (pues $A \in n$, por lo que $n \neq \emptyset$), concluimos que $A \in \mathbb N$.} \\ 
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Si $n \in m$, entonces $m \nsubseteq n$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{ningún número natural es subconjunto de alguno de sus elementos}.} \\
+
+\Large{\textbf{Demostración:} Consideremos el siguiente conjunto: \\
+
+-- $S=\{k \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm}(\forall t \in \mathbb N)(t \in k \rightarrow k \nsubseteq t)\}$. \\
+
+Como $0=\emptyset$, es claro que $0 \in S$. A continuación, consideremos $k \in S$ y $t \in k^+$. Entonces $t \in k$ o $t \in \{k\}$. Consideremos ambos casos: \\
+
+($\ast$) Si $t \in k$, entonces $k \nsubseteq t$ (por hipótesis). Es decir que existe $A \in k$ tal que $A \notin t$. Pero $k \subseteq k^+$ (porque $k^+=k \cup \{k\}$), así que $A \in k^+$ y $A \notin t$. De modo pues que $k^+ \nsubseteq t$. \\
+
+($\ast$) Supongamos que $t \in \{k\}$. Es decir que $t=k$. Como $k \in S$, $k \in \mathbb N$ (porque $S \subseteq \mathbb N$) y $k \subseteq k$, necesariamente $k \notin k$. De modo pues que $t \in k^+$ pero $t \notin t$ (dado que $k \notin k$ y $t=k$), lo que significa que $k^+ \nsubseteq t$. \\
+
+Tenemos entonces que $k^+ \in S$. Luego $S$ es inductivo, así que $S=\mathbb N$. De este modo, como $m \in S$ (porque $m \in \mathbb N$ y $S=\mathbb N)$, $n \in \mathbb N$ y $n \in m$, concluimos que $m \nsubseteq n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sea $n \in \mathbb N$. Entonces $n \notin n$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{ningún número natural es elemento de sí mismo}.} \\
+
+\Large{\textbf{Demostración:} Supongamos que $n \in n$. Luego, por la proposición anterior, $n \nsubseteq n$. Ésto absurdo, así que, necesariamente, $n \notin n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sea $n \in \mathbb N$. Entonces $n \subset n^+$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{todo número natural es subconjunto propio de su sucesor}.} \\
+
+\Large{\textbf{Demostración:} Como $n^+=n \cup \{n\}$, resulta que $n \subseteq n^+$ y $n \in n^+$. Sin embargo, por el corolario anterior, $n \notin n$. De modo pues que $n \subseteq n^+$ y $n^+ \nsubseteq n$ (porque $n \in n^+$ y $n \notin n$). Es decir que $n \subset n^+$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Si $n \in m$, entonces $n \subset m$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{todo elemento de un número natural es subconjunto propio del mismo}.} \\
+
+\Large{\textbf{Demostración:} Consideremos el siguiente conjunto: \\
+
+-- $S=\{k \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm} (\forall t \in \mathbb N)(t \in k \rightarrow t \subset k) \}$. \\
+
+Como $0=\emptyset$, es claro que $0 \in S$. A continuación, consideremos $k \in S$ y $t \in k^+$. Entonces $t \in k$ o $t \in \{k\}$. Consideremos ambos casos: \\
+
+($\ast$) Si $t \in k$, entonces $t \subset k$ (por hipótesis). Como $k \subset k^+$ (de acuerdo con el corolario anterior), resulta que $t \subset k^+$. \\
+
+($\ast$) Supongamos que $t \in \{k\}$. Es decir que $t=k$. Como $k \subset k^+$ (de acuerdo con el corolario anterior) y $t=k$, resulta que $t \subset k^+$. \\
+
+Tenemos entonces que $k^+ \in S$. Luego $S$ es inductivo, así que $S=\mathbb N$. De este modo, como $m \in S$ (porque $m \in \mathbb N$ y $S=\mathbb N$), $n \in \mathbb N$ y $n \in m$, concluimos que $n \subset m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $k,n,m \in \mathbb N$. Si $k \in n$ y $n \in m$, entonces $k \in m$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{la relación $\in$ es transitiva en los números naturales}.} \\
+
+\Large{\textbf{Demostración:} Como $n \in m$, resulta que $n \subset m$ (por la proposición anterior). De modo pues que $k \in n$ (por hipótesis) y $n \subset m$, así que $k \in m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Si $n \subset m$, entonces $n \in m$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{si un número natural es subconjunto propio de otro, entonces el primero pertenece al segundo}.} \\
+
+\Large{\textbf{Demostración:} Consideremos el siguiente conjunto: \\
+
+-- $S=\{k \in \mathbb N \hspace{0.2 cm}| \hspace{0.2 cm} (\forall t \in \mathbb N)(t \subset k \rightarrow t \in k)\}$. \\
+
+Como $0=\emptyset$ y el conjunto vacío no tiene subconjuntos propios, es claro que $0 \in S$. A continuación, consideremos $k \in S$ y $t \subset k^+$. Adicionalmente, supongamos que $k \in t$. Ahora, sea $a \in k^+$. Entonces $a \in k$ o $a=k$. En el primer caso se sigue que $a \in t$ (porque $a \in \mathbb N$, $a \in k$ y $k \in t$). En el segundo caso también se sigue que $a \in t$ (porque $k \in t$ y $a=k$). De modo pues que $k^+ \subseteq t$. Ésto es absurdo porque estamos suponiendo que $t \subset k^+$. Así pues, necesariamente $k \notin t$. Y como $t \subset k^+$ y $k^+=k \cup \{k\}$, resulta que $t \subseteq k$. Por último, consideremos dos casos: \\
+
+($\ast$) Si $k \subseteq t$, entonces $t=k$ (porque $t \subseteq k$ y $k \subseteq t$). Como $k \in k^+$ y $t=k$, resulta que $t \in k^+$. \\
+
+($\ast$) Supongamos que $k \nsubseteq t$. Entonces $t \subset k$ (porque $t \subseteq k$ pero $k \nsubseteq t$), y por tanto $t \in k$ (porque $k \in S$). Pero $k \in k^+$, así que $t \in k^+$ (como se demostró anteriormente). \\
+
+Tenemos entonces que $k^+ \in S$. Luego $S$ es inductivo, así que $S=\mathbb N$. De este modo, como $m \in S$ (porque $m \in \mathbb N$ y $S=\mathbb N$), $n \in \mathbb N$ y $n \subset m$, concluimos que $n \in m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $n \in \mathbb N$. Entonces $n^+ \neq 0$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{cero no es el sucesor de ningún número natural}.} \\
+
+\Large{\textbf{Demostración:} Como $n^+=n \cup \{n\}$, resulta que $n \in n^+$. Tenemos entonces que $n^+ \neq \emptyset$, y por tanto que $n^+ \neq 0$ (recordemos que $0=\emptyset$).} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Si $n=m$, entonces $n^+=m^+$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Como $n=m$, tenemos que $n \subseteq m$ y $m \subseteq n$. De modo pues que $n \cup \{n\} \subseteq m \cup \{n\}$ y $m \cup \{n\} \subseteq n \cup \{n\}$. Y como $n=m$, resulta que $m \cup \{n\}=m \cup \{m\}$. De modo pues que $n \cup \{n\} \subseteq m \cup \{m\}$ y $m \cup \{m\} \subseteq n \cup \{n\}$. Es decir que $n^+ \subseteq m^+$ y $m^+ \subseteq n^+$, y por tanto que $n^+=m^+$.}
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Si $n^+=m^+$, entonces $n=m$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{dos números naturales diferentes tienen sucesores diferentes}.} \\
+
+\Large{\textbf{Demostración:} Como $n \in n^+$ y $n^+=m^+$, resulta que $n \in m$ o $n=m$ (es decir que $n \in m^+$). Supongamos ahora que $n \neq m$. Con lo cual, necesariamente $n \in m$. Análogamente: como $m \in m^+$ y $n^+=m^+$, resulta que $m \in n$ o $n=m$ (es decir que $m \in n^+$). Pero por hipótesis $n \neq m$, así que $m \in n$. Tenemos entonces que $n \in m$ y $m \in n$, lo que implica que $n \in n$ (dado que $\in$ es transitiva en $\mathbb N$). Ésto es absurdo (como se demostró anteriormente), por lo que necesariamente $n=m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Entre las propiedades que acabamos de demostrar se encuentran los \textbf{axiomas de Peano}. Los axiomas de Peano no determinan de manera única un conjunto específico de objetos, sino que caracterizan completamente la estructura de los números naturales. En particular, cualesquiera dos sistemas que satisfacen dichos axiomas son \textbf{isomorfos}, por lo que, desde el punto de vista matemático, pueden considerarse esencialmente iguales. \\
+
+Para terminar, veamos rápidamente por qué los axiomas de Peano ``caracterizan'' a los números naturales:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{P1-} $0 \in \mathbb N$. Esta propiedad nos asegura que $\mathbb N \neq \emptyset$. Además, $0$ se considera el ``primer'' número natural.} \\
+\end{itemize}
+
+\begin{itemize}
+    \item \Large{\textbf{P2-} Para todo $n \in \mathbb N$, $n^+ \in \mathbb N$. Esta propiedad nos asegura que podemos aplicar la operación sucesor indefinidamente, partiendo desde $0$, para obtener más números naturales.} \\
+\end{itemize}
+
+\begin{itemize}
+\item \Large{\textbf{P3-} Para todo $n \in \mathbb N$, $n^+ \neq 0$. Esta propiedad nos asegura que en ninún momento volveremos al cero al aplicar la operación sucesor.} \\
+\end{itemize} 
+
+\begin{itemize}
+    \item \Large{\textbf{P4-} Para todo $n \in \mathbb N$ y para todo $m \in \mathbb N$, si $n \neq m$, entonces $n^+ \neq m^+$. Esta propiedad nos asegura que podemos aplicar indefinidamente la operación sucesor sin alcanzar un ``techo'' (cosas como ``$5=6=7=8=9=...$'').} \\
+\end{itemize}
+
+\begin{itemize}
+    \item \Large{\textbf{P5-} Para todo $S \subseteq \mathbb N$, si $S$ es inductivo, entonces $S=\mathbb N$. Esta propiedad nos asegura, entre otras cosas, que $\mathbb N$ contiene solamente aquellos números que se obtienen mediante aplicaciones sucesivas de la operación sucesor a $0$.}
+\end{itemize}
+
+\end{document}

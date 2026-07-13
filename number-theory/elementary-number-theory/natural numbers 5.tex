@@ -1,0 +1,216 @@
+\documentclass[10 pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[left=2cm, right=2cm, top=1.5cm, bottom=2cm]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{cancel}
+\usepackage{amsmath,amsthm,amsfonts,amscd,amssymb,amsbsy}
+
+\title{\textbf{\underline{Los naturales}}}
+\author{}
+\date{}
+
+\begin{document}
+
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+
+\section*{}
+
+\LARGE{\textbf{\underline{Numeración posicional}}}\\ \\
+
+\Large{En las secciones anteriores construimos el conjunto de los números naturales y establecimos sus propiedades fundamentales. Sin embargo, aún no hemos explicado cómo escribir de manera sistemática estos números. El propósito de esta sección es introducir el\textbf{ sistema de numeración posicional}, que permite representar cualquier número natural mediante una sucesión finita de \textbf{dígitos} respecto de una \textbf{base} dada.} \\
+
+\Large{La \textbf{numeración posicional} es un tipo de \textbf{sistema de numeración} en el cual el valor de cada dígito depende tanto del símbolo utilizado como de la posición que ocupa dentro de la representación del número. Esta posición está determinada por una base $b \geq 2$, que fija el conjunto de dígitos disponibles. La principal ventaja de la numeración posicional es que permite representar cualquier número natural mediante una cantidad finita de dígitos y efectuar de manera sistemática las operaciones aritméticas sobre dichas representaciones. El sistema de numeración posicional más utilizado es el \textbf{sistema decimal}, aunque existen muchos otros, como el \textbf{binario}, el \textbf{octal} y el \textbf{hexadecimal}.} \\
+
+\Large{Una vez fijada una base, necesitamos especificar los símbolos que utilizaremos para representar los dígitos de esa base:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sea $b \in  \mathbb N$ tal que $2 \leq b$. Entonces: \\
+
+    -- $D_{b}:=\{n \in \mathbb N \hspace{0.2 cm}|\hspace{0.2 cm}n<b\}$. \\
+
+    Nos referimos a $D_{b}$ como el \textbf{conjunto de dígitos en base b}.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Aunque estudiaremos sistemas de numeración en una base arbitraria, utilizaremos el sistema decimal como referencia para nombrar los dígitos. Esto no significa que estemos trabajando en base diez, sino únicamente que empleamos dicha notación para identificar los elementos del conjunto de dígitos.} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} En base diez, $10:=9^+$.} \\
+\end{itemize}
+
+\Large{\textbf{Nota:} En otras palabras: $10=9+1$.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Cuando la base es menor o igual que $10$, es habitual utilizar los mismos símbolos del sistema decimal. Y cuando la base es mayor que $10$, los diez símbolos decimales no son suficientes para representar todos los dígitos. En ese caso es habitual emplear letras para representar los valores restantes.} \\
+
+\Large{\textbf{Ejemplos:}} \\
+
+\begin{itemize}
+    \item \Large{El conjunto de dígitos en base $2$ es: \\
+
+    -- $D_2=\{0,1\}$.} \\
+
+    \item \Large{El conjunto de dígitos en base $3$ es: \\
+
+    -- $D_3=\{0,1,2\}$.} \\
+
+    \item \Large{El conjunto de dígitos en base $8$ es: \\
+
+    -- $D_8=\{0,1,2,3,4,5,6,7\}$.} \\
+
+    \item \Large{El conjunto de dígitos en base $10$ es: \\
+
+    -- $D_{10}=\{0,1,2,3,4,5,6,7,8,9\}$.} \\
+
+    \item \Large{El conjunto de dígitos en base $16$ (aunque no lo hemos definido, intuitivamente sabemos qué representa el símbolo ``$16$'') es: \\
+
+    -- $D_{16}=\{0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F\}$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Una vez fijada la base $b$, cada elemento del conjunto $D_b$ puede representarse mediante un único dígito y, por ello, se dice que su representación consta de una sola cifra. Para representar los demás números naturales será necesario combinar varios dígitos. Esto motiva la introducción de las \textbf{cadenas de dígitos}, que constituyen las representaciones de dos o más cifras:} \\
+
+\begin{itemize}
+\item \Large{\textbf{Definición:} Sea $b \in \mathbb N$ tal que $2 \leq b$. Adicionalmente, consideremos $c_0,c_1,...,c_n \in D_b$ ($n \in \mathbb N \setminus \{0\}$), y supongamos que $c_n \neq 0$. Entonces: \\
+
+-- $(c_n \cdot \cdot \cdot c_1c_0)_b:=\displaystyle \sum_{i=0}^nc_i \cdot b^i$. \\
+
+Además, diremos que $(c_n \cdot \cdot \cdot c_1c_0)_b$ tiene $n+1$ cifras en base $b$.} \\
+\end{itemize}
+
+\Large{\textbf{Nota:} En este contexto, ``$c_n \cdot \cdot \cdot c_1c_0$'' es una cadena de símbolos y no una multiplicación.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Sea $b \in \mathbb N$ tal que $2 \leq b$. Adicionalmente, consideremos $c_0,c_1,...,c_n \in D_b$ ($n \in \mathbb N \setminus \{0\}$), y supongamos que $c_n \neq 0$. Si se especifica la base de antemano y no hay riesgo de confusión, escribimos simplemente ``$c_n \cdot \cdot \cdot c_1c_0$'' en lugar de ``$(c_n \cdot \cdot \cdot c_1c_0)_b$''.} \\
+
+\Large{\textbf{Ejemplos:}} \\
+
+\begin{itemize}
+    \item \Large{En base $2$ tenemos que: \\
+
+    -- $11=1 \cdot 2^1+1 \cdot 2^0$. \\
+
+    -- $101=1 \cdot 2^2+0 \cdot 2^1+1 \cdot 2^0$. \\
+
+    -- $110=1 \cdot 2^2+1 \cdot 2^1+0 \cdot 2^0$.} \\
+
+    \item \Large{En base $8$ tenemos que: \\
+
+    -- $10=1 \cdot 8^1+0 \cdot 8^0$. \\
+
+    -- $277=2 \cdot 8^2+7 \cdot 8^1+7 \cdot 7^0$. \\ 
+
+    -- $1234=1 \cdot 8^3+2 \cdot 8^2+3 \cdot 8^1+4 \cdot 8^0$.}\\
+
+    \item \Large{En base $10$ tenemos que: \\
+
+    -- $44=4 \cdot 10^1+4 \cdot 10^0$. \\
+
+    -- $709=7 \cdot 10^2+0 \cdot 10^0+9 \cdot 10^0$. \\
+
+    -- $5050=5 \cdot 10^3+0 \cdot 10^2+5 \cdot 10^1+5 \cdot 10^0$.}\\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Pasar de una representación en una base arbitraria a la base $10$ es un procedimiento sencillo. Basta con desarrollar la expresión correspondiente según el valor posicional de cada dígito y efectuar las operaciones en el sistema decimal.} \\
+
+\Large{\textbf{Ejemplos:}} \\
+
+\begin{itemize}
+    \item \Large{En base $10$, el número $(101)_2$ se representa como $5$, pues:}
+    \begin{align*}
+        1 \cdot 2^2+0 \cdot 2^1+1 \cdot 2^0&=4+0+1 \\
+        &=5
+    \end{align*}
+    \item \Large{En base $10$, el número $(222)_3$ se representa como $26$, pues:}
+    \begin{align*}
+        2 \cdot 3^2+2 \cdot 3^1+2 \cdot 3^0&=2 \cdot 9+2 \cdot 3+2 \cdot 1 \\
+        &=18+6+2 \\
+        &=26
+    \end{align*}
+    \item \Large{En base $10$, el número $(714)_8$ se representa como $460$, pues:}
+    \begin{align*}
+        7 \cdot 8^2+1 \cdot 8^1+4 \cdot 8^0&=7 \cdot 64+8+4 \\
+        &=460
+    \end{align*}
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Para pasar de base $10$ a una base arbitraria se emplea un procedimiento basado en aplicaciones sucesivas del \textbf{algoritmo de la división}:} \\
+
+\Large{\textbf{Ejemplos:}} \\
+
+\begin{itemize}
+    \item \Large{Observe que:}
+    \begin{align*}
+        13&=2 \cdot 6+1 \\
+        &=2 \cdot (2 \cdot 3)+1 \\
+        &=2^2 \cdot 3+1 \\
+        &=2^2 \cdot (2+1)+1 \\
+        &=2^3+2^2+1
+    \end{align*}
+    \Large{Por lo tanto, el número $(13)_{10}$ se representa como $1101$ en base $2$.} \\
+\end{itemize}
+\begin{itemize}
+    \item \Large{Observe que:}
+    \begin{align*}
+        17&=3 \cdot 5+2 \\
+        &=3 \cdot (3+2)+2 \\
+        &=3^2+2 \cdot 3+2
+    \end{align*}
+    \Large{Por lo tanto, el número $(17)_{10}$ se representa como $122$ en base $3$.} \\
+
+    \item \Large{Observe que:}
+    \begin{align*}
+        83&=8 \cdot 10+3 \\
+        &=8 \cdot (8+2)+3 \\
+        &=8^2+2 \cdot 8+3
+    \end{align*}
+    \Large{Por lo tanto, el número $(83)_{10}$ se representa como $123$ en base $8$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Los dos procedimientos anteriores pueden combinarse para convertir una representación entre dos bases cualesquiera. La idea consiste en utilizar la base $10$ como punto intermedio: primero se convierte el número a la base $10$ y, después, a la base deseada:} \\
+
+\Large{\textbf{Ejemplo:}} \\
+
+\Large{Anteriormente vimos que $(101)_2=(5)_{10}$. Como $5=3+2$, resulta que $(101)_2=(12)_3$.} \\
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\Large{Con esto concluimos nuestra introducción al sistema de numeración posicional. Aún quedan, sin embargo, algunos resultados fundamentales por demostrar. En primer lugar, falta justificar que todo número natural admite una representación en cualquier base; esta demostración se realizará una vez dispongamos del \textbf{algoritmo de la división}. También mostraremos que dicha representación es única, para lo cual recurriremos a las \textbf{congruencias}, que permiten obtener una demostración sencilla y elegante. Finalmente, después de construir los \textbf{enteros} y a medida que desarrollemos distintas herramientas de la teoría de números, estableceremos otras propiedades del sistema de numeración posicional, como los criterios para comparar números a partir de los dígitos de su representación y diversos criterios de divisibilidad.} \\
+
+
+\Large{A partir de este momento, y salvo que se indique explícitamente lo contrario, todos los números naturales se representarán en el sistema decimal (base $10$).} \\
+
+\end{document}

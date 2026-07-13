@@ -1,0 +1,901 @@
+\documentclass[10 pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[left=2cm, right=2cm, top=1.5cm, bottom=2cm]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{cancel}
+\usepackage{amsmath,amsthm,amsfonts,amscd,amssymb,amsbsy}
+
+\title{\textbf{\underline{Los naturales}}}
+\author{}
+\date{}
+
+\begin{document}
+
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+
+\section*{}
+
+\LARGE{\textbf{\underline{Aritmética}}}\\ \\
+
+\Large{La \textbf{función sucesor} nos permite definir la \textbf{suma} de números naturales:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Nos referimos a la siguiente función como \textbf{función sucesor}:}
+    \begin{align*}
+        \sigma:\mathbb N &\rightarrow \mathbb N \\
+        n &\mapsto n^+
+    \end{align*}
+\end{itemize}
+
+\begin{flushright}
+   $\blacksquare$
+\end{flushright}
+
+\Large{Intuitivamente, la operación sucesor representa el paso al siguiente número natural. A partir de esta operación, la suma se define como el resultado de aplicar sucesivamente el sucesor una cantidad determinada de veces:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $n,m \in \mathbb N$. Establecemos inductivamente que: \\
+
+    i) $S_n(0)=n$. \\
+
+    ii) $S_n(m^+)=\sigma(S_n(m))$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{\textbf{Ejemplos:}} \\
+
+\begin{itemize}
+    \item \Large{De acuerdo con la definición: \\
+
+    -- $S_1(1)=\sigma(S_1(0))=\sigma(1)=1^+=2$. \\
+
+    -- $S_1(2)=\sigma(S_1(1))=\sigma(2)=2^+=3$. \\
+
+    -- $S_1(3)=\sigma(S_1(2))=\sigma(3)=3^+=4$.} \\
+
+    \item \Large{De acuerdo con la definición: \\
+
+    -- $S_2(1)=\sigma(S_2(0))=\sigma(2)=2^+=3$. \\
+
+    -- $S_2(2)=\sigma(S_2(1))=\sigma(3)=3^+=4$. \\
+
+    -- $S_2(3)=\sigma(S_2(2))=\sigma(4)=4^+=5$.} \\
+
+    \item \Large{De acuerdo con la definición: \\
+
+    -- $S_3(1)=\sigma(S_3(0))=\sigma(3)=3^+=4$. \\
+
+    -- $S_3(2)=\sigma(S_3(1))=\sigma(4)=4^+=5$. \\
+
+    -- $S_3(3)=\sigma(S_3(2))=\sigma(5)=5^+=6$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $n,m \in \mathbb N$. Entonces $n+m:=S_n(m)$. Nos referimos a $n+m$ como la \textbf{suma} de $n$ y $m$.} \\ 
+\end{itemize}
+
+\Large{\textbf{Observación:} Se sigue de inmediato de la definición que $n+m \in \mathbb N$.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{\textbf{Ejemplos:}} \\
+
+\begin{itemize}
+    \item \Large{Por definición: \\
+
+    -- $1+1=S_1(1)=2$. \\
+
+    -- $1+2=S_1(2)=3$. \\
+
+    -- $1+3=S_1(3)=4$.} \\
+
+    \item \Large{Por definición: \\
+
+    -- $2+1=S_2(1)=3$. \\
+
+    -- $2+2=S_2(2)=4$. \\
+
+    -- $2+3=S_2(3)=5$.}\\
+
+    \item \Large{Por definición: \\
+
+    -- $3+1=S_3(1)=4$. \\
+
+    -- $3+2=S_3(2)=5$. \\
+
+    -- $3+3=S_3(3)=6$.}\\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Sea $n \in \mathbb N$. Ahora que la expresión ``$n+1$'' está bien definida, podemos comprobar que coincide con $n^+$. Además, veremos que la suma de dos números naturales se corresponde con la idea intuitiva de aplicar sucesivamente la operación sucesor:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $n \in \mathbb N$. Entonces $n+1=n^+$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Por definición, $n+1=S_n(1)=\sigma(S_n(0))=\sigma(n)=n^+$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{\textbf{Ejemplo:}} \\
+
+\Large{Sea $m \in \mathbb N$. Note que: \\
+
+-- $m+2=S_m(2)=\sigma(S_m(1))=\sigma(m+1)=(m+1)^+=m+1+1$. \\
+
+-- $m+3=S_m(3)=\sigma(S_m(2))=\sigma(m+1+1)=(m+1+1)^+=m+1+1+1$. \\
+
+-- $m+4=S_m(4)=\sigma(S_m(3))=\sigma(m+1+1+1)=(m+1+1+1)^+=m+1+1+1+1$.} \\
+
+\Large{\textbf{Observación:} omitimos los paréntesis al final para facilitar la escritura. Más adelante comprobamos que no hay ningún problema con dicha omisión.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{A continuación, se establecen las propiedades fundamentales de la suma de números naturales:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $n \in \mathbb N$. Entonces $n+0=0+n=n$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{$0$ es el elemento neutro de $\mathbb N$ respecto a la suma}.} \\
+
+\Large{\textbf{Demostración:} Por definición, $n+0=S_n(0)=n$. Similarmente, tenemos por definición que $0+0=S_0(0)=0$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $0+k=k$. Luego $0+k^+=S_0(k^+)=\sigma(S_0(k))=\sigma(0+k)=\sigma(k)=k^+$. Así pues, concluimos por inducción que $0+n=n$. De modo pues que $n+0=0+n=n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Lema:} Sean $n,m \in \mathbb N$. Entonces $(n+m)^+=n^++m=n+m^+$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Por un lado, tenemos por definición que $n+m^+=S_n(m^+)=\sigma(S_n(m))=\sigma(n+m)=(n+m)^+$. Por otro lado, tenemos por la proposición anterior que $n^++0=n^+$ y $n=n+0$. Con lo cual, $n^++0=n^+=(n+0)^+$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $n^++k=(n+k)^+$. Luego:}
+\begin{align*}
+    n^++k^+&=S_{n^+}(k^+) \\
+    &=\sigma(S_{n^+}(k)) \\
+    &=\sigma(n^++k) \\
+    &=\sigma((n+k)^+) \\
+    &=\sigma(\sigma(S_n(k))) \\
+    &=\sigma(S_n(k^+)) \\
+    &=\sigma(n+k^+) \\
+    &=(n+k^+)^+
+\end{align*}
+\Large{Así pues, concluimos por inducción que $n^++m=(n+m)^+$. De modo pues que $(n+m)^+=n^++m=n+m^+$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $k,n,m \in \mathbb N$. Entonces $(k+n)+m=k+(n+m)$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{la suma de números naturales es \textbf{asociativa}}.} \\
+
+\Large{\textbf{Demostración:} Como se demostró anteriormente, $(k+n)+0=k+n$ y $n=n+0$. Luego $(k+n)+0=k+n=k+(n+0)$. A continuación, consideremos $t \in \mathbb N$, y supongamos que $(k+n)+t=k+(n+t)$. Luego:}
+\begin{align*}
+    (k+n)+t^+&=((k+n)+t)^+ \\
+    &=(k+(n+t))^+ \\
+    &=k+(n+t)^+ \\
+    &=k+(n+t^+)
+\end{align*}
+\Large{Así pues, concluimos por inducción que $(k+n)+m=k+(n+m)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Entonces $n+m=m+n$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{la suma de números naturales es \textbf{conmutativa}}.} \\
+
+\Large{\textbf{Demostración:} Como se demostró anteriormente, $n+0=n=0+n$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $n+k=k+n$. Luego $n+k^+=(n+k)^+=(k+n)^+=k^++n$. Así pues, concluimos por inducción que $n+m=m+n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Si $n \neq 0$ o $m \neq 0$, entonces $n+m \neq 0$.} \\
+\end{itemize}
+
+\Large{Equivalentemente: si $n+m=0$, entonces $n=m=0$.} \\
+
+\Large{\textbf{Demostración:} Consideremos dos casos: \\
+
+($\ast$) Supongamos que $n \neq 0$. Entonces, como se demostró anteriormente, existe $k \in \mathbb N$ tal que $n=k^+$. Luego $n+m=k^++m=(k+m)^+$. Como $(k+m)^+ \neq 0$, resulta que $n+m \neq 0$. \\
+
+($\ast$) Supongamos que $m \neq 0$. Entonces, como se demostró anteriormente, existe $t \in \mathbb N$ tal que $m=t^+$. Luego $n+m=n+t^+=(n+t)^+$. Como $(n+t)^+ \neq 0$, resulta que $n+m \neq 0$. \\
+
+Como podemos ver, en cualquier caso se sigue que $n+m \neq 0$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $k,n,m \in \mathbb N$. Si $n+k=m+k$, entonces $n=m$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{la suma satisface la \textbf{propiedad cancelativa}}.} \\
+
+\Large{\textbf{Demostración:} Supongamos que $n+0=m+0$.  Entonces $n=n+0=m+0=m$. A continuación, consideremos $t \in \mathbb N$, y supongamos que $n+t=m+t$ implica que $n=m$. Supongamos ahora que $n+t^+=m+t^+$. Entonces $(n+t)^+=(m+t)^+$ (dado que $n+t^+=(n+t)^+$ y $m+t^+=(m+t)^+$). Luego, como se demostró anteriormente, $n+t=m+t$. Con lo cual, de acuerdo con la hipótesis de inducción, $n=m$. Así pues, concluimos por inducción que si $n+k=m+k$, entonces $n=m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{El orden en $\mathbb N$ puede caracterizarse en términos de la suma:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Entonces $n<m$, si y sólo si, existe $p \in \mathbb N \setminus \{0\}$ tal que $m=n+p$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $0<m$. Es decir que $m \neq 0$. De modo pues que $m=0+m$, con $m \in \mathbb N \setminus \{0\}$. A continuación, consideremos $k \in \mathbb N$, y supongamos que si $k<m$, entonces existe $t \in \mathbb N \setminus \{0\}$ tal que $m=k+t$. Por último, supongamos que $k^+<m$. Como $k<k^+$, tenemos que $k<m$. Por lo tanto, de acuerdo con la hipótesis de inducción, existe $t \in \mathbb N \setminus \{0\}$ tal que $m=k+t$. Y como $t \neq 0$, existe $r \in \mathbb N$ tal que $t=r^+$. Luego $m=k+t=k+r^+=k^++r$. Si $r=0$, entonces $m=k^++r=k^++0=k^+$, lo que contradice el hecho de que $m \neq k^+$ (dado que $k^+<m$). Así pues, necesariamente $r \neq 0$. De este modo, concluimos por inducción que si $n<m$, entonces existe $p \in \mathbb N \setminus \{0\}$ tal que $m=n+p$. \\
+
+($\leftarrow$) Supongamos que existe $p \in \mathbb N \setminus \{0\}$ tal que $m=0+p$. Es decir que $m=p$, así que $m \neq 0$. Luego, como se demostró anteriormente, $0<m$. A continuación, consideremos $k \in \mathbb N$, y supongamos que si existe $p \in \mathbb N \setminus \{0\}$ tal que $m=k+p$, entonces $k<m$. Por último, supongamos que existe $p \in \mathbb N \setminus \{0\}$ tal que $m=k^++p$. Entonces $m=k^++p=k+p^+$, con $p^+ \in \mathbb N \setminus \{0\}$. Por lo tanto, de acuerdo con la hipótesis de inducción, $k<m$. Tenemos entonces que $k^+ \leq m$, así que $k^+<m$ o $k^+=m$. Si $k^+=m$, entonces $m+0=m=k^++p=m+p$. Con lo cual, por la propiedad cancelativa de la suma, $p=0$. Ésto es absurdo, pues se supone que $p \neq 0$. Así pues, necesariamente $k^+<m$. De este modo, concluimos por inducción que si existe $p \in \mathbb N \setminus \{0\}$ tal que $m=n+p$, entonces $n<m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $n,m \in \mathbb N$. Entonces $n \leq m$, si y sólo si, existe $p \in \mathbb N$ tal que $m=n+p$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $n \leq m$. Es decir que $n<m$ o $n=m$. Consideremos ambos casos: \\
+
+($\ast$) Si $n<m$, entonces existe $r \in \mathbb N \setminus \{0\}$ tal que $m=n+r$ (por la proposición anterior). Como $\mathbb N \setminus \{0\} \subseteq \mathbb N$, tenemos que $r \in \mathbb N$. \\
+
+($\ast$) Supongamos que $n=m$. Entonces $m=n=n+0$, con $0 \in \mathbb N$. \\
+
+Como podemos ver, en cualquier caso existe $p \in \mathbb N$ tal que $m=n+p$. \\
+
+($\leftarrow$) Supongamos que existe $p \in \mathbb N$ tal que $m=n+p$. Si $p=0$, entonces $m=n+p=n+0=n$. Y si $p \neq 0$, entonces $n<m$ (por la proposición anterior). De modo pues que $n \leq m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{El orden en $\mathbb N$ es \textbf{compatible} con la suma:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $k,n,m \in \mathbb N$. Entonces $n<m$, si y sólo si, $n+k<m+k$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $n<m$. Entonces existe $p \in \mathbb N \setminus \{0\}$ tal que $m=n+p$. Luego $m+k=(n+p)+k=(n+k)+p$, con $p \in \mathbb N \setminus \{0\}$. Con lo cual, $n+k<m+k$. \\
+
+($\leftarrow$) Supongamos que $n+k<m+k$. Entonces existe $p \in \mathbb N \setminus \{0\}$ tal que $m+k=(n+k)+p$. Luego $m+k=(n+k)+p=(n+p)+k$, y por tanto $m=n+p$ (por la propiedad cancelativa de la suma). Como $p \in \mathbb N \setminus \{0\}$, concluimos que $n<m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $k,n,m \in \mathbb N$. Entonces $n \leq m$, si y sólo si, $n+k \leq m+k$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $n \leq m$. Es decir que $n<m$ o $n=m$. Consideremos ambos casos: \\
+
+($\ast$) Si $n<m$, entonces $n+k<m+k$ (por la proposición anterior). \\
+
+($\ast$) Supongamos que $n=m$. Como $n+k=n+k$ y $n=m$, resulta que $n+k=m+k$. \\
+
+Como podemos ver, en cualquier caso se sigue que $n+k<m+k$ o $n+k=m+k$. Por lo tanto, $n+k \leq m+k$. \\
+
+($\leftarrow$) Supongamos que $n+k \leq m+k$. Es decir que $n+k<m+k$ o $n+k=m+k$. Consideremos ambos casos: \\
+
+($\ast$) Si $n+k<m+k$, entonces $n<m$ (por la proposición anterior). \\
+
+($\ast$) Si $n+k=m+k$, entonces $n=m$ (por la propiedad cancelativa de la suma). \\
+
+Como podemos ver, en cualquier caso se sigue que $n<m$ o $n=m$. Por lo tanto, $n \leq m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $t,k,n,m \in \mathbb N$. \\
+
+    i) Si $n<m$ y $t<k$, entonces $n+t<m+k$. \\
+
+    ii) Si $n<m$ y $t \leq k$, entonces $n+t<m+k$. \\
+
+    iii) Si $n \leq m$ y $t<k$, entonces $n+t<m+k$. \\
+
+    iv) Si $n \leq m$ y $t \leq k$, entonces $n+t \leq m+k$.}\\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Las hipótesis implican que $n+t<m+t$ y $m+t<m+k$. Luego $n+t<m+k$.  \\
+
+ii) Las hipótesis implican que $n+t<m+t$ y $m+t \leq m+k$. Luego $n+t<m+k$. \\
+
+iii) Las hipótesis implican que $n+t \leq m+t$ y $m+t<m+k$. Luego $n+t<m+k$. \\
+
+iv) Las hipótesis implican que $n+t \leq m+t$ y $m+t \leq m+k$. Luego $n+t \leq m+k$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{La suma se define mediante aplicaciones sucesivas de la función sucesor. De manera análoga, la \textbf{multiplicación} se define a partir de aplicaciones sucesivas de la función suma:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $n,m \in \mathbb N$. Establecemos inductivamente que: \\
+
+    i) $P_n(0)=0$. \\
+
+    ii) $P_n(m^+)=S_n(P_n(m))$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{\textbf{Ejemplos:}} \\
+
+\begin{itemize}
+    \item \Large{De acuerdo con la definición: \\
+
+    -- $P_1(1)=S_1(P_1(0))=S_1(0)=1+0=1$. \\
+
+    -- $P_1(2)=S_1(P_1(1))=S_1(1)=1+1=2$. \\
+
+    -- $P_1(3)=S_1(P_1(2))=S_1(2)=1+2=3$.}\\
+
+    \item \Large{De acuerdo con la definición: \\
+
+    -- $P_2(1)=S_2(P_2(0))=S_2(0)=2+0=2$. \\
+
+    -- $P_2(2)=S_2(P_2(1))=S_2(2)=2+2=4$. \\
+
+    -- $P_2(3)=S_2(P_2(2))=S_2(4)=2+4=6$.} \\
+
+    \item \Large{De acuerdo con la definición: \\
+
+    -- $P_3(1)=S_3(P_3(0))=S_3(0)=3+0=3$. \\
+
+    -- $P_3(2)=S_3(P_3(1))=S_3(3)=3+3=6$. \\
+
+    -- $P_3(3)=S_3(P_3(2))=S_3(6)=3+6=9$.}\\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $n,m \in \mathbb N$. Entonces $n \cdot m:=P_n(m)$. Nos referimos a $n \cdot m$ como la \textbf{multiplicación} (o \textbf{producto}) de $n$ y $m$.} \\
+\end{itemize}
+
+\Large{\textbf{Observación:} Se sigue de inmediato de la definición que $n \cdot m \in \mathbb N$.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{\textbf{Ejemplos:}} \\
+
+\begin{itemize}
+    \item \Large{Por definición: \\
+
+    -- $1 \cdot 1=P_1(1)=1$. \\
+
+    -- $1 \cdot 2=P_1(2)=2$. \\
+
+    -- $1 \cdot 3=P_1(3)=3$.}\\
+
+    \item \Large{Por definición: \\
+
+    -- $2 \cdot 1=P_2(1)=2$.  \\
+
+    -- $2 \cdot 2=P_2(2)=4$. \\
+
+    -- $2 \cdot 3=P_2(3)=6$.} \\
+
+    \item \Large{Por definición: \\
+
+    -- $3 \cdot 1=P_3(1)=3$. \\
+
+    -- $3 \cdot 2=P_3(2)=6$. \\
+
+    -- $3 \cdot 3=P_3(3)=9$.} \\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Veremos a continuación que el producto de dos números naturales se corresponde con la idea intuitiva de aplicar sucesivamente la suma:} \\
+
+\Large{\textbf{Ejemplo:}} \\
+
+\Large{Sea $m \in \mathbb N$. Note que: \\
+
+-- $m \cdot 1=P_m(1)=S_m(P_m(0))=S_m(0)=m$. \\
+
+-- $m \cdot 2=P_m(2)=S_m(P_m(1))=S_m(m)=m+m$. \\
+
+-- $m \cdot 3=P_m(3)=S_m(P_m(2))=S_m(m+m)=m+m+m$. \\
+
+-- $m \cdot 4=P_m(4)=S_m(P_m(3))=S_m(m+m+m)=m+m+m+m$. \\
+
+-- $m \cdot 5=P_m(5)=S_m(P_m(4))=S_m(m+m+m+m)=m+m+m+m+m$.} \\
+
+\Large{\textbf{Observación:} omitimos los paréntesis al final para facilitar la escritura. Esto es posible gracias a la asociatividad de la suma.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{A continuación, se establecen las propiedades fundamentales de la multiplicación de números naturales:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $n \in \mathbb N$. Entonces $n \cdot 1=1 \cdot n=n$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{$1$ es el elemento neutro de $\mathbb N$ respecto a la multiplicación}.} \\
+
+\Large{\textbf{Demostración:} Por definición, $n \cdot 1=P_n(1)=S_n(P_n(0))=S_n(0)=n$. Similarmente, tenemos por definición que $1 \cdot 0=P_1(0)=0$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $1 \cdot k=k$. Luego $1 \cdot k^+=P_1(k^+)=S_1(P_1(k))=S_1(1 \cdot k)=S_1(k)=1+k=k+1=k^+$. Así pues, concluimos por inducción que $1 \cdot n=n$. De modo pues que $n \cdot 1=n \cdot 1=n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $n \in \mathbb N$. Entonces $n \cdot 0=0 \cdot n=0$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Por definición, $n \cdot 0=P_n(0)=0$. Similarmente, tenemos por definición que $0 \cdot 0=P_0(0)=0$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $0 \cdot k=0$. Luego $0 \cdot k^+=P_0(k^+)=S_0(P_0(k))=S_0(0 \cdot k)=S_0(0)=0$. Así pues, concluimos por inducción que $0 \cdot n=0$. De modo pues que $n \cdot 0=0 \cdot n=n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Lema:} Sean $k,n,m \in \mathbb N$. Entonces $(n+m) \cdot k=n \cdot k+m\cdot k$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Note que $(n+m) \cdot 0=0=0+0=n \cdot 0+m \cdot 0$. A continuación, consideremos $t \in \mathbb N$, y supongamos que $(n+m) \cdot t=n \cdot t+m \cdot t$. Luego $(n+m) \cdot t^+=P_{n+m}(t^+)=S_{n+m}(P_{n+m}(t))=S_{n+m}((n+m) \cdot t)=S_{n+m}(n \cdot t+m \cdot t)=(n+m)+(n \cdot t+m \cdot t)=(n+n \cdot t)+(m+m \cdot t)=S_n(P_n(t))+S_m(P_m(t))=P_n(t^+)+P_m(t^+)=n \cdot t^++m \cdot t^+$. Así pues, concluimos por inducción que $(n+m) \cdot k=n \cdot k+m \cdot k$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Entonces $n \cdot m=m \cdot n$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{la multiplicación de números naturales es conmutativa}.} \\
+
+\Large{\textbf{Demostración:} Como se demostró anteriormente, $n \cdot 0=0 \cdot n$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $n \cdot k=k \cdot n$. Luego $n \cdot k^+=P_n(k^+)=S_n(P_n(k))=S_n(n \cdot k)=S_n(k \cdot n)=n+k \cdot n=k \cdot n+n=k \cdot n+1 \cdot n=(k+1) \cdot n=k^+ \cdot n$. Así pues, concluimos por inducción que $n \cdot m=m \cdot n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $k,n,m \in \mathbb N$. \\
+
+    i) $(n+m) \cdot k=n \cdot k+m \cdot k$. \\
+
+    ii) $k \cdot (n+m)=k \cdot n+k \cdot m$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{la multiplicación distribuye sobre la suma}.} \\
+
+\Large{\textbf{Demostración:} \\
+
+i) Como se demostró anteriormente, $(n+m) \cdot k=n \cdot k+m \cdot k$. \\
+
+ii) Note que $k \cdot (n+m)=(n+m) \cdot k=n \cdot k+m \cdot k=k \cdot n+k \cdot m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $k,n,m \in \mathbb N$. Entonces $(k \cdot n) \cdot m=k \cdot (n \cdot m)$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{la multiplicación de números naturales es asociativa}.} \\
+
+\Large{\textbf{Demostración:} Como se demostró anteriormente, $(k \cdot n) \cdot 0=0=k \cdot 0=k \cdot (n \cdot 0)$. A continuación, consideremos $t \in \mathbb N$, y supongamos que $(k \cdot n) \cdot t=k \cdot (n \cdot t)$. Luego $(k \cdot n) \cdot t^+=(k \cdot n) \cdot (t+1)=(k \cdot n) \cdot t+(k \cdot n) \cdot 1=k \cdot (n \cdot t)+k \cdot n=k \cdot (n \cdot t+n)=k \cdot (n \cdot (t+1))=k \cdot (n \cdot t^+)$. Así pues, concluimos por inducción que $(k \cdot n) \cdot m=k \cdot (n \cdot m)$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Si $n \cdot m=0$ y $m \neq 0$, entonces $n=0$.} \\
+\end{itemize}
+
+\Large{Equivalentemente: si $n \neq 0$ y $m \neq 0$, entonces $n \cdot m \neq 0$.} \\
+
+\Large{\textbf{Demostración:} Como $m \neq 0$, existe $k \in \mathbb N$ tal que $m=k^+$. De modo pues que $0=n \cdot m=n \cdot k^+=n \cdot (k+1)=n \cdot k+n \cdot 1=n \cdot k+n$. Luego, como se demostró anteriormente, $n \cdot k=n=0$. En particular, $n=0$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $k,n,m \in \mathbb N$. Si $n \cdot k=m \cdot k$ y $k \neq 0$, entonces $n=m$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{la multiplicación satisface la \textbf{propiedad cancelativa}}.} \\
+
+\Large{\textbf{Demostración:} Sabemos que $n \leq m$ o $m \leq n$. Sin pérdida de generalidad, supongamos que $n \leq m$. Luego, como se demostró anteriormente, existe $p \in \mathbb N$ tal que $m=n+p$. Con lo cual, $n \cdot k=m \cdot k=(n+p) \cdot k=n \cdot k+p \cdot k$. Tenemos entonces que $p \cdot k=0$ (por la propiedad cancelativa de la suma), y por tanto que $p=0$ (por la proposición anterior, ya que $k \neq 0$). Con lo cual, $n=m$ (pues $m=n+p=n+0=n$).} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{El orden en $\mathbb N$ también es \textbf{compatible} con la multiplicación:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $k,n,m \in \mathbb N$. Si $k \neq 0$, entonces $n<m$, si y sólo si, $k \cdot n<k \cdot m$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $n<m$. Entonces, como se demostró anteriormente, existe $p \in \mathbb N \setminus \{0\}$ tal que $m=n+p$. Luego $k \cdot m=k \cdot (n+p)=k \cdot n+k \cdot p$. Como $k \neq 0$ y $p \neq 0$, resulta que $k \cdot p \in \mathbb N \setminus \{0\}$ (pues $k \cdot p \in \mathbb N$ y $k \cdot p \neq 0$). Por lo tanto, $k \cdot n<m \cdot k$. \\
+
+($\leftarrow$) Supongamos que $k \cdot n<k \cdot m$. Adicionalmente, supongamos que $n \nless m$. Entonces, por tricotomía, $n=m$ o $m<n$. Consideremos ambos casos: \\
+
+($\ast$) Si $n=m$, entonces $k \cdot n=k \cdot m$ (porque $k \cdot n=k \cdot n$ y $n=m$). Con lo cual, $k \cdot n \nless k \cdot m$. \\
+
+($\ast$) Si $m<n$, entonces $k \cdot m<k \cdot n$ (por la parte anterior). Con lo cual, $k \cdot n \nless k \cdot m$. \\
+
+Como podemos ver, en cualquier caso se sigue que $k \cdot n \nless k \cdot m$, lo cual es absurdo. Por lo tanto, necesariamente $n<m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $k,n,m \in \mathbb N$. Si $n<m$, entonces $k \cdot n \leq k \cdot m$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Consideremos dos casos: \\
+
+($\ast$) Si $k=0$, entonces $k \cdot n=k \cdot m=0$. \\
+
+($\ast$) Si $k \neq 0$, entonces $k \cdot n<k \cdot m$ (por la proposición anterior). \\
+
+Como podemos ver, en cualquier caso se sigue que $k \cdot n=k \cdot m$ o $k \cdot n<k \cdot m$. Por lo tanto, $k \cdot n \leq k \cdot m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $k,n,m \in \mathbb N$. Si $n \leq m$, entonces $k \cdot n \leq k \cdot m$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} De acuerdo con la hipótesis, tenemos que $n=m$ o $n<m$. Consideremos ambos casos: \\
+
+($\ast$) Si $n=m$, entonces $k \cdot n=k \cdot m$ (porque $k \cdot n=k \cdot n$ y $n=m$). Con lo cual, $k \cdot n \leq k \cdot m$. \\
+
+($\ast$) Si $n<m$, entonces $k \cdot n \leq k \cdot m$ (por el corolario anterior). \\
+
+Como podemos ver, en cualquier caso se sigue que $k \cdot n \leq k \cdot m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $k,n,m \in \mathbb N$. Si $k \neq 0$, entonces $n \leq m$, si y sólo si, $k \cdot n \leq k \cdot m$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Si $n \leq m$, entonces $k \cdot n \leq k \cdot m$ (por el corolario anterior). \\
+
+($\leftarrow$) Supongamos que $k \cdot n \leq k \cdot m$. Entonces $k \cdot n=k \cdot m$ o $k \cdot n<k \cdot m$. Consideremos ambos casos: \\
+
+($\ast$) Si $k \cdot n=k \cdot m$, entonces $n=m$ (por la propiedad cancelativa de la multiplicación). \\
+
+($\ast$) Si $k \cdot n<k \cdot m$, entonces $n<m$ (por la proposición anterior). \\
+
+Como podemos ver, en cualquier caso se sigue que $n \leq m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $n,m \in \mathbb N$. Si $n \cdot m=1$, entonces $n=m=1$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Si $n=0$ o $m=0$, entonces $n \cdot m=0$. Ésto es absurdo porque por hipótesis $n \cdot m=1$ y $0 \neq 1$. De modo pues que $n \neq 0$ y $m \neq 0$. Luego, como se demostró anteriormente, $1 \leq n$ y $1 \leq m$. Como $1 \leq m$, resulta que $n \cdot 1 \leq n \cdot m$. Es decir que $n \leq 1$ (pues $n \cdot 1=n$ y $n \cdot m=1$), y por tanto que $n=1$ (pues $1 \leq n \leq 1$). De modo pues que $n \cdot m=1$ y $n=1$, así que $1=n \cdot m=1 \cdot m=m$. Por lo tanto, $n=m=1$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $t,k,n,m \in \mathbb N$. \\
+
+    i) Si $n<m$, $t<k$ y $m,t \in \mathbb N \setminus \{0\}$, entonces $n \cdot t<m \cdot k$. \\
+
+    ii) Si $n<m$, $t \leq k$ y $m,t \in \mathbb N \setminus \{0\}$, entonces $n \cdot t<m \cdot k$. \\
+
+    iii) Si $n \leq m$, $t<k$ y $m,t \in \mathbb N \setminus \{0\}$, entonces $n \cdot t<m \cdot k$. \\
+
+    iv) Si $n \leq m$ y $t \leq k$, entonces $n \cdot t \leq m \cdot k$.}\\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Las hipótesis implican que $n \cdot t<m \cdot t$ y $m \cdot t<m \cdot k$. Luego $n \cdot t<m \cdot k$. \\
+
+ii) Las hipótesis implican que $n \cdot t<m \cdot t$ y $m \cdot t \leq m \cdot k$. Luego $n \cdot t < m \cdot k$ \\
+
+iii) Las hipótesis implican que $n \cdot t \leq m \cdot t$ y $m \cdot t<m \cdot k$. Luego $n \cdot t<m \cdot k$. \\
+
+iv) Las hipótesis implican que $n \cdot t \leq m \cdot t$ y $m \cdot t \leq m \cdot k$. Luego $n \cdot t \leq m \cdot k$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Por último, definimos la \textbf{potenciación} a partir de aplicaciones sucesivas de la función multiplicación:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $n,m \in \mathbb N$. Establecemos inductivamente que: \\
+
+    i) $e_m(0)=1$. \\
+
+    ii) $e_m(n^+)=m \cdot e_m(n)$.} \\
+\end{itemize}
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\Large{\textbf{Ejemplo:}} \\
+
+\begin{itemize}
+    \item \Large{De acuerdo con la definición: \\
+
+    -- $e_1(1)=1 \cdot e_1(0)=1 \cdot 1=1$. \\
+
+    -- $e_1(2)=1 \cdot e_1(1)=1 \cdot 1=1$. \\
+
+    -- $e_1(3)=1 \cdot e_2(2)=1 \cdot 1=1$.}\\
+
+    \item \Large{De acuerdo con la definición: \\
+
+    -- $e_2(1)=2 \cdot e_2(0)=2 \cdot 1=2$. \\
+
+    -- $e_2(2)=2 \cdot e_2(1)=2 \cdot 2=4$. \\
+
+    -- $e_2(3)=2 \cdot e_2(2)=2 \cdot 4=8$.} \\
+
+    \item \Large{De acuerdo con la definición: \\
+
+    -- $e_3(1)=3 \cdot e_3(0)=3 \cdot 1=3$. \\
+
+    -- $e_3(2)=3 \cdot e_3(1)=3 \cdot 3=9$. \\
+
+    -- $e_3(3)=3 \cdot e_3(2)=3 \cdot 9=27$.}\\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $n,m \in \mathbb N$. Entonces $m^n:=e_m(n)$. En ``$m^n$'' nos referimos a $m$ y $n$ como \textbf{base} y \textbf{exponente}, respectivamente.} \\
+\end{itemize}
+
+\Large{\textbf{Observación:} Se sigue de inmediato de la definición que $m^n \in \mathbb N$.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{\textbf{Ejemplos:}} \\
+
+\begin{itemize}
+    \item \Large{Por definición: \\
+
+    -- $1^1=e_1(1)=1$. \\
+
+    -- $1^2=e_1(2)=1$. \\
+
+    -- $1^3=e_1(3)=1$.} \\
+
+    \item \Large{Por definición: \\
+
+    -- $2^1=e_2(1)=2$. \\
+
+    -- $2^2=e_2(2)=4$. \\
+
+    -- $2^3=e_2(3)=8$.} \\
+
+    \Large{Por definición: \\
+
+    -- $3^1=e_3(1)=3$. \\
+
+    -- $3^2=e_3(2)=9$. \\
+
+    -- $3^3=e_3(3)=27$.}\\
+\end{itemize}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{Veremos a continuación que la potenciación se corresponde con la idea intuitiva de aplicar sucesivamente la multiplicación:} \\
+
+\Large{\textbf{Ejemplo:}} \\
+
+\Large{Sea $m \in \mathbb N$. Note que: \\
+
+-- $m^1=e_m(1)=m \cdot e_m(0)=m \cdot 1=m$. \\
+
+-- $m^2=e_m(2)=m \cdot e_m(1)=m \cdot m$. \\
+
+-- $m^3=e_m(3)=m \cdot e_m(2)=m \cdot m \cdot m$. \\
+
+-- $m^4=e_m(4)=m \cdot e_m(3)=m \cdot m \cdot m \cdot m$. \\
+
+-- $m^5=e_m(5)=m \cdot e_m(4)=m \cdot m \cdot m \cdot m \cdot m$.} \\
+
+\Large{\textbf{Observación:} omitimos los paréntesis al final para facilitar la escritura. Esto es posible gracias a la asociatividad de la multiplicación.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{A continuación, se establecen las propiedades fundamentales de la potenciación de números naturales:} \\
+
+\begin{itemize}
+\item \Large{\textbf{Lema:} Sean $n,m \in \mathbb N$. \\
+
+i) $m^0=1$. \\
+
+ii) $m^{n^+}=m \cdot m^n$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Por definición, $m^0=e_m(0)=1$. \\
+
+ii) Por definición, $m^{n^+}=e_m(n^+)=m \cdot e_m(n)=m \cdot m^n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $n \in  \mathbb N$. \\
+
+    i) $n^1=n$. \\
+
+    ii) $0^{n^+}=0$. \\
+
+    iii) $1^n=1$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Observe que $n^1=n \cdot n^0=n \cdot 1=n$. \\
+
+ii) Observe que $0^{n^+}=0 \cdot 0^n=0$. \\
+
+ii) Observe que $1^0=1$. A continuación, consideremos $k \in \mathbb N$, y supongamos que $1^k=1$. Luego $1^{k^+}=1 \cdot 1^k=1 \cdot 1=1$. Así pues, concluimos por inducción que $1^n=1$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $k,n,m \in \mathbb N$. \\
+
+    i) $k^n \cdot k^m=k^{n+m}$. \\
+
+    ii) $(k^n)^m=k^{nm}$. \\
+
+    iii) $(n \cdot m)^k=n^k \cdot m^k$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Note que $k^n \cdot k^0=k^n \cdot 1=k^n=k^{n+0}$. A continuación, consideremos $t \in \mathbb N$, y supongamos que $k^n \cdot k^t=k^{n+t}$. Luego $k^n \cdot k^{t+1}=k^n \cdot k \cdot k^t=k \cdot k^n \cdot k^t=k \cdot k^{n+t}=k^{n+t+1}$. Así pues, concluimos por inducción que $k^n \cdot k^m=k^{n+m}$. \\
+
+ii) Note que $(k^n)^0=1=k^0=k^{n \cdot 0}$. A continuación, consideremos $t \in \mathbb N$, y supongamos que $(k^n)^t=k^{n \cdot t}$. Luego $(k^n)^{t+1}=k^n \cdot (k^n)^t=k^n \cdot k^{n \cdot t}=k^{n+n \cdot t}=k^{n \cdot (t+1)}$. Así pues, concluimos por inducción que $(k^n)^m=k^{n \cdot m}$. \\
+
+iii) Note que $(n \cdot m)^0=1=1 \cdot 1=n^0 \cdot m^0$. A continuación, consideremos $t \in \mathbb N$, y supongamos que $(n \cdot m)^t=n^t \cdot m^t$. Luego $(n \cdot m)^{t+1}=(n \cdot m) \cdot (n \cdot m)^{t}=n \cdot m \cdot n^t \cdot m^t=(n \cdot n^t) \cdot (m \cdot m^t)=n^{t+1} \cdot m^{t+1}$. Así pues, concluimos por inducción que $(n \cdot m)^k=n^k \cdot m^k$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Lema:} Sean $n,m \in \mathbb N$. Si $0<m$, entonces $0<m^n$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Supongamos que $0<m$. Claramente $0<m^0$ (pues $m^0=1$ y $0<1$). A continuación, consideremos $k \in \mathbb N$, y supongamos que $0<m^k$. Como $m \neq 0$ (por hipótesis), resulta que $m \cdot 0<m \cdot m^k$. Es decir que $0<m^{k+1}$. Así pues, concluimos por inducción que $0<m^n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $a,b,n \in \mathbb N$. Si $0<a<b$ y $1 \leq n$, entonces $a^n<b^n$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Supongamos que $0<a<b$. Claramente $a^1<b^1$ (pues $a^1=a$, $b^1=b$ y $a<b$). A continuación, consideremos $k \in \mathbb N$ tal que $1 \leq k$, y supongamos que $a^k<b^k$. Como $a<b$ (por hipótesis), $a^k<b^k$ (por hipótesis de inducción), $b \neq 0$ (dado que $0<a<b$) y $a^k \neq 0$ (por el lema anterior, dado que $0<a$), concluimos que $a \cdot a^k<b \cdot b^k$ (como se demostró anteriormente). Es decir que $a^{k+1}<b^{k+1}$. Así pues, concluimos por inducción que $a^n<b^n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $a,n,m \in \mathbb N$. Si $1<a$ y $n<m$, entonces $a^n<a^m$.} \\
+\end{itemize}
+
+\Large{\textbf{Dempostración:} Como $n<m$, existe $p \in \mathbb N \setminus \{0\}$ tal que $m=n+p$. Ahora, como $1<a$ y $1 \leq p$, resulta por la proposición anterior que $1^p<a^p$, y por tanto que $1<a^p$ (pues $1^p=1$). Pero $a^n \neq 0$ (por el lema anterior, dado que $0<1<a$), así que $a^n \cdot 1<a^n \cdot a^p$. Tenemos entonces que $a^n<a^{n+p}$. Es decir que $a^n<a^m$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $a,n \in \mathbb N$. Entonces $a \leq a^n$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Consideremos varios casos: \\
+
+($\ast$) Si $a=0$, entonces $a^n=1$ (si $n=0$) o $a^n=0$ (si $n \neq 0$). Como podemos ver, en cualquier caso se sigue que $a \leq a^n$. \\
+
+($\ast$) Si $a=1$, entonces $a^n=1$. Con lo cual, es claro que $a \leq a^n$. \\
+
+($\ast$) Supongamos que $1<a$. Si $n=1$, claramente $a \leq a^n$ (dado que $a^1=a$). Y si $1<n$, concluimos por el corolario anterior que $a^1<a^n$, y por tanto que $a \leq a^n$. \\
+
+Se concluye en cualquier caso que $a \leq a^n$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\end{document}
