@@ -1,0 +1,548 @@
+\documentclass[10 pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[left=2cm, right=2cm, top=1.5cm, bottom=2cm]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{cancel}
+\usepackage{amsmath,amsthm,amsfonts,amscd,amssymb,amsbsy}
+
+\title{\textbf{\underline{Los enteros}}}
+\author{}
+\date{}
+
+\begin{document}
+
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+
+\section*{}
+
+\LARGE{\textbf{\underline{Orden}}}\\ \\
+
+\Large{Hemos construido los números enteros y descrito las operaciones de suma y multiplicación. El siguiente paso consiste en introducir una \textbf{relación de orden} que nos permita compararlos:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. Diremos que $[(a,b)]$ es \textbf{menor que} $[(n,m)]$, y escribimos \underline{$[(a,b)]<[(n,m)]$}, si y sólo si, $a+m<n+b$ (este es el orden de los números naturales). Adicionalmente, diremos que $[(a,b)]$ \textbf{no es menor que} $[(n,m)]$, y escribimos \underline{$[(a,b)] \nless [(n,m)]$}, si y sólo si, $\neg([(a,b)]<[(n,m)])$.} \\
+\end{itemize}
+
+\Large{\textbf{Nota:} Utilizaremos el mismo símbolo para denotar tanto la relación de orden en los números naturales como la relación recién definida sobre los números enteros. Aunque, estrictamente hablando, se trata de relaciones distintas, el contexto permitirá distinguir sin dificultad a cuál de ellas nos referimos en cada caso. Más adelante veremos que los números naturales pueden identificarse con un subconjunto de los números enteros preservando tanto las operaciones como la relación de orden. Esto justificará el uso de una misma notación.} \\
+
+\begin{flushright}
+   $\blacksquare$
+\end{flushright}
+
+\Large{Note que la filosofía es la misma que empleamos para definir la suma y la multiplicación: \textit{la relación de orden también se introducirá comparando representantes de los números enteros}. Teniendo en cuenta esto, veamos qué motiva la definición anterior: sean $[(a,b)],[(n,m)] \in \mathbb Z$. Supongamos que la relación de orden ya se ha definido y que sabemos que $[(a,b)]<[(n,m)]$. Como pretendemos realizar esta comparación mediante representantes, debería cumplirse que $a-b<n-m$, y por tanto que $a+m<n+b$. Como $a+m$ y $n+b$ son números naturales, pueden compararse mediante la relación de orden de $\mathbb N$. Y como ocurrió con la suma y la multiplicación, aún debemos demostrar que esta definición no depende de los representantes elegidos, sino únicamente de las clases de equivalencia que representan:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} La relación $<$ está bien definida.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Sean $[(a,b)],[(a',b')],[(n,m)],[(n',m')] \in \mathbb Z$. Supongamos que $[(a,b)]=[(a',b')]$ y $[(n,m)]=[(n',m')]$. Entonces $a+b'=a'+b$ y $n+m'=n'+m$. \\
+
+($\rightarrow$) Supongamos que $a+m<n+b$. Entonces existe $p \in \mathbb N$ tal que $n+b=(a+m)+p$. Ahora, como $a+b'=a'+b$ y $n+m'=n'+m$, resulta que:}
+\begin{align*}
+    (a+m)+(n'+b')&=(n+b)+(a'+m') \\
+    &=(a+m+p)+(a'+m') \\
+    n'+b'&=(a'+m')+p
+\end{align*}
+\Large{Con lo cual, $a'+m'<n'+b'$.} \\
+
+\Large{($\leftarrow$) Supongamos que $a'+m'<n'+b'$. Entonces existe $p \in \mathbb N$ tal que $n'+b'=(a'+m')+p$. Ahora, como $a+b'=a'+b$ y $n+m'=n'+m$, resulta que:}
+\begin{align*}
+    (n+b)+(a'+m')&=(a+m)+(n'+b') \\
+    &=(a+m)+(a'+m'+p) \\
+    n+b&=(a+m)+p
+\end{align*}
+\Large{Con lo cual, $a+m<n+b$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Definición:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. Diremos que $[(a,b)]$ es \textbf{menor o igual que} $[(n,m)]$, y escribimos \underline{$[(a,b)] \leq [(n,m)]$}, si y sólo si, $[(a,b)]<[(n,m)]$ o $[(a,b)]=[(n,m)]$. Adicionalmente, diremos que $[(a,b)]$ \textbf{no es menor o igual que} $[(n,m)]$, y escribimos \underline{$[(a,b)] \nleq [(n,m)]$}, si y sólo si, $\neg([(a,b)] \leq [(n,m)])$.} \\
+\end{itemize}
+
+\Large{\textbf{Observación:} De acuerdo con la definición, $[(a,b)] \nleq [(n,m)]$, si y sólo si, $[(a,b)] \nless [(n,m)]$ y $[(a,b)] \neq [(n,m)]$.} \\
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\Large{A continuación demostramos las propiedades fundamentales de las relaciones $<$ y $\leq$:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $[(n,m)] \in \mathbb Z$. Entonces $[(n,m)] \nless [(n,m)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Anteriormente vimos que $n+m \nless n+m$. Por lo tanto, $[(n,m)] \nless [(n,m)]$.} \\ 
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $[(n,m)] \in \mathbb Z$. Entonces $[(n,m)]<[(n,m)]+[(1,0)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Sabemos que $n+m<(n+m)+1$. Es decir que $n+m<(n+1)+m$, y por tanto que $[(n,m)]<[(n+1,m)]$. Con lo cual, $[(n,m)]<[(n,m)]+[(1,0)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sea $[(n,m)] \in \mathbb Z$. Entonces $[(n,m)] \leq [(n,m)]$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{la relación $\leq$ es reflexiva}.} \\
+
+\Large{\textbf{Demostración:} Como $[(n,m)]=[(n,m)]$, tenemos por definición que $[(n,m)]\leq [(n,m)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. Entonces $[(a,b)]<[(n,m)]$, si y sólo si, existe $p \in \mathbb N \setminus \{0\}$ tal que $[(n,m)]=[(a,b)]+[(p,0)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $[(a,b)]<[(n,m)]$. Entonces $a+m<n+b$. Luego, como se demostró anteriormente, existe $p \in \mathbb N \setminus \{0\}$ tal que $n+b=(a+m)+p$. Tenemos entonces que $n+b=(a+p)+m$, y por tanto que $[(n,m)]=[(a+p,b)]$. Es decir que $[(n,m)]=[(a,b)]+[(p,0)]$. \\
+
+($\leftarrow$) Supongamos que existe $p \in \mathbb N \setminus \{0\}$ tal que $[(n,m)]=[(a,b)]+[(p,0)]$. Es decir que $[(n,m)]=[(a+p,b)]$, y por tanto que $n+b=(a+p)+m=(a+m)+p$. Tenemos entonces que $a+m<n+b$, así que $[(a,b)]<[(n,m)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. Entonces $[(a,b)] \leq [(n,m)]$, si y sólo si, existe $p \in \mathbb N$ tal que $[(n,m)]=[(a,b)]+[(p,0)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $[(a,b)] \leq [(n,m)]$. Entonces $[(a,b)]<[(n,m)]$ o $[(a,b)]=[(n,m)]$. Consideremos ambos casos: \\
+
+($\ast$) Supongamos que $[(a,b)]<[(n,m)]$. Luego, por la proposición anterior, existe $t \in \mathbb N \setminus \{0\}$ (recordemos que $\mathbb N \setminus \{0\} \subseteq \mathbb N$) tal que $[(n,m)]=[(a,b)]+[(t,0)]$. \\
+
+($\ast$) Supongamos que $[(a,b)]=[(n,m)]$. Tenemos entonces que $[(n,m)]=[(a,b)]+[(0,0)]$, con $0 \in \mathbb N$. \\
+
+Como podemos ver, en cualquier caso existe $p \in \mathbb N$ tal que $[(n,m)]=[(a,b)]+[(0,0)]$. \\
+
+($\leftarrow$) Supongamos que existe $p \in \mathbb N$ tal que $[(n,m)]=[(a,b)]+[(p,0)]$. Si $p=0$, entonces $[(n,m)]=[(a,b)]+[(p,0)]=[(a,b)]+[(0,0)]=[(a,b)]$. Y si $p \neq 0$, tenemos por la proposición anterior que $[(a,b)]<[(n,m)]$. Como podemos ver, en cualquier caso se sigue que $[(a,b)]<[(n,m)]$ o $[(a,b)]=[(n,m)]$. Es decir que $[(a,b)] \leq [(n,m)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{El siguiente resultado también caracteriza la relación $\leq$:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. Entonces $[(a,b)] \leq [(n,m)]$, si y sólo si, $a+m \leq n+b$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $[(a,b)] \leq [(n,m)]$. Es decir que $[(a,b)]<[(n,m)]$ o $[(a,b)]=[(n,m)]$. En el primer caso se sigue que $a+m<n+b$. En el segundo caso se sigue que $a+m=n+b$. Como podemos ver, en cualquier caso se sigue que $a+m \leq n+b$. \\
+
+($\leftarrow$) Supongamos que $a+m \leq n+b$. Es decir que $a+m<n+b$ o $a+m=n+b$. En el primer caso se sigue que $[(a,b)]<[(n,m)]$. En el segundo caso se sigue que $[(a,b)]=[(n,m)]$. Como podemos ver, en cualquier caso se sigue que $[(a,b)] \leq [(n,m)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $[(a,b)],[(c,d)],[(e,f)] \in \mathbb Z$. \\
+
+    i) Si $[(a,b)]<[(c,d)]$ y $[(c,d)]<[(e,f)]$, entonces $[(a,b)]<[(e,f)]$. \\
+
+    En otras palabras: \textit{la relación $<$ es transitiva}. \\
+
+    ii) Si $[(a,b)] \leq [(c,d)]$ y $[(c,d)]<[(e,f)]$, entonces $[(a,b)]<[(e,f)]$. \\
+
+    iii) Si $[(a,b)]<[(c,d)]$ y $[(c,d)] \leq [(e,f)]$, entonces $[(a,b)]<[(e,f)]$. \\
+
+    iv) Si $[(a,b)] \leq [(c,d)]$ y $[(c,d)] \leq [(e,f)]$, entonces $[(a,b)] \leq [(c,d)]$.\\
+
+    En otras palabras: \textit{la relación $\leq$ es transitiva}.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Por hipótesis, $a+d<c+b$ y $c+f<e+d$. Luego $a+d+f<c+b+f$ y $c+f+b<e+d+b$. Tenemos entonces que $a+f+d<e+b+d$, y por tanto que $a+f<e+b$. Es decir que $[(a,b)]<[(e,f)]$. \\
+
+ii) De acuerdo con la hipótesis, existen $p_1 \in \mathbb N$ y $p_2 \in \mathbb N \setminus \{0\}$ tales que $[(c,d)]=[(a,b)]+[(p_1,0)]$ y $[(e,f)]=[(c,d)]+[(p_2,0)]$. Es decir que $[(e,f)]=[(c,d)]+[(p_2,0)]=[(a,b)]+[(p_1,0)]+[(p_2,0)]=[(a,b)]+[(p_1+p_2,0)]$. Por último, note que $p_1+p_2 \in \mathbb N$. Y como se demostró anteriormente, si $p_1+p_2=0$, entonces $p_2=0$ (en particular), lo que contradice el hecho de que $p_2 \in \mathbb N \setminus \{0\}$. Por lo tanto, necesariamente $p_1+p_2 \in \mathbb N \setminus \{0\}$. Con lo cual, $[(a,b)]<[(e,f)]$. \\
+
+iii) De acuerdo con la hipótesis, existen $p_1 \in \mathbb N \setminus \{0\}$ y $p_2 \in \mathbb N \setminus$ tales que $[(c,d)]=[(a,b)]+[(p_1,0)]$ y $[(e,f)]=[(c,d)]+[(p_2,0)]$. Es decir que $[(e,f)]=[(c,d)]+[(p_2,0)]=[(a,b)]+[(p_1,0)]+[(p_2,0)]=[(a,b)]+[(p_1+p_2,0)]$. Por último, note que $p_1+p_2 \in \mathbb N$. Y como se demostró anteriormente, si $p_1+p_2=0$, entonces $p_1=0$ (en particular), lo que contradice el hecho de que $p_1 \in \mathbb N \setminus \{0\}$. Por lo tanto, necesariamente $p_1+p_2 \in \mathbb N \setminus \{0\}$. Con lo cual, $[(a,b)]<[(e,f)]$. \\
+
+iv) De acuerdo con la hipótesis, existen $p_1 \in \mathbb N$ y $p_2 \in \mathbb N$ tales que $[(c,d)]=[(a,b)]+[(p_1,0)]$ y $[(e,f)]=[(c,d)]+[(p_2,0)]$. Es decir que $[(e,f)]=[(c,d)]+[(p_2,0)]=[(a,b)]+[(p_1,0)]+[(p_2,0)]=[(a,b)]+[(p_1+p_2,0)]$. Por último, note que $p_1+p_2 \in \mathbb N$. Luego, como se demostró anteriormente, $[(a,b)] \leq [(e,f)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. Si $[(a,b)] \leq [(n,m)]$ y $[(n,m)] \leq [(a,b)]$, entonces $[(a,b)]=[(n,m)]$.} \\ 
+\end{itemize}
+
+\Large{En otras palabras: \textit{la relación $\leq$ es antisimétrica}.} \\
+
+\Large{\textbf{Demostración:} De acuerdo con la hipótesis, $a+m \leq n+b$ y $n+b \leq a+m$. Luego, como se demostró anteriormente, $a+m=n+b$. Con lo cual, $[(a,b)]=[(n,m)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. Entonces $[(a,b)]<[(n,m)]$, si y sólo si, $[(a,b)]+[(1,0)] \leq [(n,m)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $[(a,b)]<[(n,m)]$. Entonces $a+m<n+b$, y por tanto $(a+m)+1 \leq n+b$. Tenemos entonces que $(a+1)+m \leq n+b$, así que $[(a+1,m)] \leq [(n,m)]$. Es decir que $[(a,b)]+[(1,0)] \leq [(n,m)]$. \\
+
+($\leftarrow$) Supongamos que $[(a,b)]+[(1,0)] \leq [(n,m)]$. Anteriormente vimos que $[(a,b)]<[(a,b)]+[(1,0)]$. De modo pues que $[(a,b)]<[(a,b)]+[(1,0)] \leq [(n,m)]$. Luego, como se demostró anteriormente, $[(a,b)]<[(n,m)]$.}\\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{El siguiente teorema se conoce como \textbf{tricotomía}:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Teorema:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. \\
+
+    i) $[(a,b)]<[(n,m)]$ o $[(a,b)]=[(n,m)]$ o $[(n,m)]<[(a,b)]$. \\
+
+    ii) $[(a,b)] \nless [(n,m)]$ o $[(a,b)] \neq [(n,m)]$. \\
+
+    iii) $[(a,b)] \nless [(n,m)]$ o $[(n,m)] \nless [(a,b)]$. \\
+
+    iv) $[(a,b)] \neq [(n,m)]$ o $[(n,m)] \nless [(a,b)]$. \\
+
+     En otras palabras: \textit{se cumple exactamente una de las siguientes relaciones: $[(a,b)]<[(n,m)]$, $[(a,b)]=[(n,m)]$ o $[(n,m)]<[(a,b)]$}.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Por tricotomía (en $\mathbb N$), resulta que $a+m<n+b$ o $a+m=n+b$ o $n+b<a+m$. Es decir, respectivamente, que $[(a,b)]<[(n,m)]$ o $[(a,b)]=[(n,m)]$ o $[(n,m)]<[(a,b)]$. \\
+
+ii) Supongamos que $[(a,b)]<[(n,m)]$ y $[(a,b)]=[(n,m)]$. Tenemos entonces que $[(a,b)]<[(a,b)]$, lo cual es absurdo. Así pues, necesariamente $[(a,b)] \nless [(n,m)]$ o $[(a,b)] \neq [(n,m)]$. \\
+
+iii) Supongamos que $[(a,b)]<[(n,m)]$ y $[(n,m)]<[(a,b)]$. Tenemos entonces que $[(a,b)]<[(a,b)]$, lo cual es absurdo. Así pues, necesariamente $[(a,b)] \nless [(n,m)]$ o $[(n,m)] \nless [(a,b)]$. \\
+
+iv) Supongamos que $[(a,b)]=[(n,m)]$ y $[(n,m)]<[(a,b)]$. Tenemos entonces que $[(a,b)]<[(a,b)]$, lo cual es absurdo. Así pues, necesariamente $[(a,b)] \neq [(n,m)]$ o $[(n,m)] \nless [(a,b)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. Entonces $[(a,b)] \leq [(n,m)]$ o $[(n,m)] \leq [(a,b)]$.} \\
+\end{itemize}
+
+\Large{En otras palabras: \textit{todos los números enteros son comparables respecto a la relación $\leq$}.} \\
+
+\Large{\textbf{Demostración:} Anteriormente se demostró que $a+m \leq n+b$ o $n+b \leq a+m$. Es decir, respectivamente, que $[(a,b)] \leq [(n,m)]$ o $[(n,m)] \leq [(a,b)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. \\
+
+    i) $[(a,b)] \nless [(n,m)]$, si y sólo si, $[(n,m)] \leq [(a,b)]$. \\
+
+    ii) $[(a,b)] \nleq [(n,m)]$, si y sólo si, $[(n,m)]<[(a,b)]$.}\\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) ($\rightarrow$) Supongamos que $[(a,b)] \nless [(n,m)]$. Por tricotomía, necesariamente $[(a,b)]=[(n,m)]$ o $[(n,m)]<[(a,b)]$. Es decir que $[(n,m)] \leq [(a,b)]$. \\
+
+($\leftarrow$) Supongamos que $[(n,m)] \leq [(a,b)]$. Es decir que $[(a,b)]=[(n,m)]$ o $[(n,m)]<[(a,b)]$. Luego, por tricotomía, $[(a,b)] \nless [(n,m)]$. \\
+
+ii) ($\rightarrow$) Supongamos que $[(a,b)] \nleq [(n,m)]$. Es decir que $[(a,b)] \nless [(n,m)]$ y $[(a,b)] \neq [(n,m)]$. Por tricotomía, necesariamente $[(n,m)]<[(a,b)]$. \\
+
+($\leftarrow$) Supongamos que $[(n,m)]<[(a,b)]$. Entonces, por tricotomía, $[(a,b)] \nless [(n,m)]$ y $[(a,b)] \neq [(n,m)]$. Es decir que $[(a,b)] \nleq [(n,m)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{El orden en $\mathbb Z$ también es compatible con la suma:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $[(a,b)],[(c,d)],[(e,f)] \in \mathbb Z$. Entonces $[(a,b)]<[(c,d)]$, si y sólo si, $[(a,b)]+[(e,f)]<[(c,d)]+[(e,f)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $[(a,b)]<[(c,d)]$. Es decir que $a+d<c+b$. Luego $(a+d)+(e+f)<(c+b)+(e+f)$, así que $(a+e)+(d+f)<(c+e)+(b+f)$. Tenemos entonces que $[(a+e,b+f)]<[(c+e,d+f)]$, y por tanto que $[(a,b)]+[(e,f)]<[(c,d)]+[(e,f)]$. \\
+
+($\leftarrow$) Supongamos que $[(a,b)]+[(e,f)]<[(c,d)]+[(e,f)]$. Entonces $[(a+e,b+f)]<[(c+e,d+f)]$, así que $(a+e)+(d+f)<(c+e)+(b+f)$. Tenemos entonces que $(a+d)+(e+f)<(c+b)+(e+f)$, y por tanto que $a+d<c+b$. Con lo cual, $[(a,b)]<[(c,d)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. Si $[(a,b)]<[(n,m)]$, entonces $[(m,n)]<[(b,a)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Por la proposición anterior:}
+\begin{align*}
+    [(a,b)]&<[(n,m)] \\
+    [(a,b)]+[(b,a)]+[(m,n)]&<[(n,m)]+[(m,n)]+[(b,a)] \\
+    0+[(m,n)]&<0+[(b,a)] \\
+    [(m,n)]&<[(b,a)]
+\end{align*}
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $[(a,b)],[(c,d)],[(e,f)] \in \mathbb Z$. Entonces $[(a,b)] \leq [(c,d)]$, si y sólo si, $[(a,b)]+[(e,f)] \leq [(c,d)]+[(e,f)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $[(a,b)] \leq [(c,d)]$. Es decir que $a+d \leq c+b$. Luego $(a+d)+(e+f) \leq (c+b)+(e+f)$, así que $(a+e)+(d+f) \leq (c+e)+(b+f)$. Tenemos entonces que $[(a+e,b+f)] \leq [(c+e,d+f)]$, y por tanto que $[(a,b)]+[(e,f)] \leq [(c,d)]+[(e,f)]$. \\
+
+($\leftarrow$) Supongamos que $[(a,b)]+[(e,f)] \leq [(c,d)]+[(e,f)]$. Entonces $[(a+e,b+f)] \leq [(c+e,d+f)]$, así que $(a+e)+(d+f) \leq (c+e)+(b+f)$. Tenemos entonces que $(a+d)+(e+f) \leq (c+b)+(e+f)$, y por tanto que $a+d \leq c+b$. Con lo cual, $[(a,b)] \leq [(c,d)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. Si $[(a,b)]\leq [(n,m)]$, entonces $[(m,n)]\leq [(b,a)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Por la proposición anterior:}
+\begin{align*}
+    [(a,b)]& \leq [(n,m)] \\
+    [(a,b)]+[(b,a)]+[(m,n)]& \leq [(n,m)]+[(m,n)]+[(b,a)] \\
+    0+[(m,n)]& \leq 0+[(b,a)] \\
+    [(m,n)]& \leq [(b,a)]
+\end{align*}
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. Entonces $[(a,b)] \leq [(n,m)]$, si y sólo si, $[(a,b)]<[(n,m)]+[(1,0)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $[(a,b)] \leq [(n,m)]$. Como $[(n,m)]<[(n,m)]+[(1,0)]$, resulta que $[(a,b)]<[(n,m)]+[(1,0)]$. \\
+
+($\leftarrow$) Supongamoos que $[(a,b)]<[(n,m)]+[(1,0)]$. Luego $[(a,b)]+[(1,0)] \leq [(n,m)]+[(1,0)]$, y por tanto $[(a,b)] \leq [(n,m)]$ (de acuerdo con la proposición anterior).}\\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $[(a,b)],[(n,m)] \in \mathbb Z$. \\
+
+    i) Si $[(a,b)] \leq [(n,m)]<[(a,b)]+[(1,0)]$, entonces $[(n,m)]=[(a,b)]$. \\
+
+    ii) Si $[(a,b)]<[(n,m)] \leq [(a,b)]+[(1,0)]$, entonces $[(n,m)]=[(a,b)]+[(1,0)]$. \\
+
+    En otras palabras: \textit{no existen números enteros entre enteros consecutivos.}} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Por hipótesis, tenemos en particular que $[(n,m)]<[(a,b)]+[(1,0)]$. Luego, por la proposición anterior, $[(n,m)] \leq [(a,b)]$. De modo pues que $[(a,b)] \leq [(n,m)]$ y $[(n,m)] \leq [(a,b)]$, así que $[(n,m)]=[(a,b)]$. \\
+
+ii) Por hipótesis, tenemos en particular que $[(a,b)]<[(n,m)]$. Con lo cual, $[(a,b)]+[(1,0)] \leq [(n,m)]$. De modo pues que $[(a,b)]+[(1,0)] \leq [(n,m)]$ y $[(n,m)] \leq [(a,b)]+[(1,0)]$, así que $[(n,m)]=[(a,b)]+[(1,0)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $[(a,b)],[(c,d)],[(e,f)],[(h,i)] \in \mathbb Z$. \\
+
+    i) Si $[(a,b)]<[(e,f)]$ y $[(c,d)]<[(h,i)]$, entonces $[(a,b)]+[(c,d)]<[(e,f)]+[(h,i)]$. \\
+
+    ii) Si $[(a,b)]<[(e,f)]$ y $[(c,d)] \leq [(h,i)]$, entonces $[(a,b)]+[(c,d)]<[(e,f)]+[(h,i)]$. \\
+
+    iii) Si $[(a,b)] \leq [(e,f)]$ y $[(c,d)]<[(h,i)]$, entonces $[(a,b)]+[(c,d)]<[(e,f)]+[(h,i)]$. \\
+
+    iv) Si $[(a,b)] \leq [(e,f)]$ y $[(c,d)] \leq [(h,i)]$, entonces $[(a,b)]+[(c,d)] \leq [(e,f)]+[(h,i)]$. \\ } \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Las hipótesis implican que $[(a,b)]+[(c,d)]<[(e,f)]+[(c,d)]$ y $[(e,f)]+[(c,d)]<[(e,f)]+[(h,i)]$. Luego $[(a,b)]+[(c,d)]<[(e,f)]+[(h,i)]$. \\
+
+ii) Las hipótesis implican que $[(a,b)]+[(c,d)]<[(e,f)]+[(c,d)]$ y $[(e,f)]+[(c,d)] \leq [(e,f)]+[(h,i)]$. Luego $[(a,b)]+[(c,d)]<[(e,f)]+[(h,i)]$. \\
+
+iii) Las hipótesis implican que $[(a,b)]+[(c,d)]\leq [(e,f)]+[(c,d)]$ y $[(e,f)]+[(c,d)]<[(e,f)]+[(h,i)]$. Luego $[(a,b)]+[(c,d)]<[(e,f)]+[(h,i)]$. \\
+
+iv) Las hipótesis implican que $[(a,b)]+[(c,d)] \leq [(e,f)]+[(c,d)]$ y $[(e,f)]+[(c,d)] \leq [(e,f)]+[(h,i)]$. Luego $[(a,b)]+[(c,d)] \leq [(e,f)]+[(h,i)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Las propiedades que relacionan el orden con la multiplicación adoptan, por el momento, una formulación algo distinta de la habitual, pues aún no hemos introducido las nociones de \textbf{entero positivo} y \textbf{entero negativo}.} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $[(a,b)],[(c,d)] \in \mathbb Z$ y $n \in \mathbb N$. Si $n \neq 0$, entonces: \\
+
+    i) $[(a,b)]<[(c,d)]$, si y sólo si, $[(n,0)] \cdot [(a,b)]<[(n,0)] \cdot [(c,d)]$. \\
+
+    ii) $[(a,b)]<[(c,d)]$, si y sólo si, $[(0,n)] \cdot [(c,d)]<[(0,n)] \cdot [(a,b)]$ } \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) ($\rightarrow$) Supongamos que $[(a,b)]<[(c,d)]$. Entonces $a+d<c+b$. Como $n \neq 0$, resulta que $n \cdot (a+d)<n \cdot (c+b)$. Es decir que $n \cdot a+n \cdot d<n \cdot c+n \cdot b$, y por tanto que $[(n \cdot a,n \cdot b)]<[(n \cdot c,n \cdot d)]$. Luego $[(n,0)] \cdot [(a,b)]<[(n,0)] \cdot [(c,d)]$. \\
+
+($\leftarrow$) Supongamos que $[(n,0)] \cdot [(a,b)]<[(n,0)] \cdot [(c,d)]$. Es decir que $[(n \cdot a,n \cdot b)]<[(n \cdot c,n \cdot d)]$, y por tanto que $n \cdot a+n \cdot d<n \cdot c+n \cdot b$. Luego $n \cdot (a+d)<n \cdot (c+b)$, así que $a+d<c+b$ (porque $n \neq 0$). Con lo cual, $[(a,b)]<[(c,d)]$. \\
+
+ii) ($\rightarrow$) Supongamos que $[(a,b)]<[(c,d)]$. Entonces, como se demostró anteriormente, $[(d,c)]<[(b,a)]$. Luego $[(n,0)] \cdot [(d,c)]<[(n \cdot 0)] \cdot [(b,a)]$, así que $[(n \cdot d,n \cdot c)]<[(n \cdot b,n \cdot a)]$. Tenemos entonces que $[(0,n)] \cdot [(c,d)]<[(0,n)] \cdot [(a,b)]$. \\
+
+($\leftarrow$) Supongamos que $[(0,n)] \cdot [(c,d)]<[(0,n)] \cdot [(a,b)]$. Es decir que $[(n \cdot d,n \cdot c)]<[(n \cdot b,n \cdot a)]$, y por tanto que $[(n,0)] \cdot [(d,c)]<[(n,0)] \cdot [(b,a)]$. Como $n \neq 0$, concluimos por la parte anterior que $[(d,c)]<[(b,a)]$. Luego, como se demostró anteriormente, $[(a,b)]<[(c,d)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $[(a,b)],[(c,d)] \in \mathbb Z$ y $n \in \mathbb N$. \\
+
+    i) Si $[(a,b)]<[(c,d)]$, entonces $[(n,0)] \cdot [(a,b)] \leq [(n,0)] \cdot [(c,d)]$. \\
+
+    ii) Si $[(a,b)]<[(c,d)]$, entonces $[(0,n)] \cdot [(c,d)] \leq [(0,n)] \cdot [(a,b)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Si $n=0$, entonces $[(n,0)] \cdot [(a,b)]=[(n,0)] \cdot [(c,d)]=[(0,0)]$. Y si $n \neq 0$, entonces $[(n,0)] \cdot [(a,b)]<[(n,0)] \cdot [(c,d)]$ (por la proposición anterior). Como podemos ver, en cualquier caso se sigue que $[(n,0)] \cdot [(a,b)] \leq [(n,0)] \cdot [(c,d)]$. \\
+
+ii) Si $n=0$, entonces $[(0,n)] \cdot [(c,d)]=[(0,n)] \cdot [(a,b)]=[(0,0)]$. Y si $n \neq 0$, entonces $[(0,n)] \cdot [(c,d)]<[(0,n)] \cdot [(a,b)]$ (por la proposición anterior). Como podemos ver, en cualquier caso se sigue que $[(0,n)] \cdot [(c,d)] \leq [(0,n)] \cdot [(a,b)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $[(a,b)],[(c,d)] \in \mathbb Z$ y $n \in \mathbb N$. \\
+
+    i) Si $[(a,b)] \leq [(c,d)]$, entonces $[(n,0)] \cdot [(a,b)] \leq [(n,0)] \cdot [(c,d)]$. \\
+
+    ii) Si $[(a,b)] \leq [(c,d)]$, entonces $[(0,n)] \cdot [(c,d)] \leq [(0,n)] \cdot [(a,b)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que $[(a,b)] \leq [(c,d)]$. Es decir que $[(a,b)]=[(c,d)]$ o $[(a,b)]<[(c,d)]$. Consideremos ambos casos: \\
+
+($\ast$) Supongamos que $[(a,b)]=[(c,d)]$. Entonces $[(n,0)] \cdot [(a,b)]=[(n,0)] \cdot [(c,d)]$. \\
+
+($\ast$) Supongamos que $[(a,b)]<[(c,d)]$. Entonces, por el corolario anterior, $[(n,0)] \cdot [(a,b)]<[(n,0)] \cdot [(c,d)]$. \\
+
+Como podemos ver, en cualquier caso se sigue que $[(n,0)] \cdot [(a,b)] \leq [(n,0)] \cdot [(c,d)]$. \\
+
+($\leftarrow$) Supongamos que $[(a,b)] \leq [(c,d)]$. Es decir que $[(a,b)]=[(c,d)]$ o $[(a,b)]<[(c,d)]$. Consideremos ambos casos: \\
+
+($\ast$) Supongamos que $[(a,b)]=[(c,d)]$. Entonces $[(0,n)] \cdot [(c,d)]=[(0,n)] \cdot [(a,b)]$. \\
+
+($\ast$) Supongamos que $[(a,b)]<[(c,d)]$. Entonces, por el corolario anterior, $[(0,n)] \cdot [(c,d)]<[(0,n)] \cdot [(a,b)]$. \\
+
+Como podemos ver, en cualquier caso se sigue que $[(0,n)] \cdot [(c,d)] \leq [(0,n)] \cdot [(a,b)]$.}\\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Corolario:} Sean $[(a,b)],[(c,d)] \in \mathbb Z$ y $n \in \mathbb N$. Si $n \neq 0$, entonces: \\
+
+    i) Si $[(n,0)] \cdot [(a,b)] \leq [(n,0)] \cdot [(c,d)]$, entonces $[(a,b)] \leq [(c,d)]$. \\
+
+    ii) Si $[(0,n)] \cdot [(a,b)] \leq [(0,n)] \cdot [(c,d)]$, entonces $[(c,d)] \leq [(a,b)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} Como $n \neq 0$, necesariamente $[(n,0)] \neq [(0,0)]$. \\
+
+i) De acuerdo con la hipótesis, $[(n,0)] \cdot [(a,b)]=[(n,0)] \cdot [(c,d)]$ o $[(n,0)] \cdot [(a,b)]<[(n,0)] \cdot [(c,d)]$. Consideremos ambos casos:  \\
+
+($\ast$) Si $[(n,0)] \cdot [(a,b)]=[(n,0)] \cdot [(c,d)]$, entonces $[(a,b)]=[(c,d)]$ (dado que $[(n,0)] \neq [(0,0)]$). \\
+
+($\ast$) Si $[(n,0)] \cdot [(a,b)]<[(n,0)] \cdot [(c,d)]$, entonces $[(a,b)]<[(c,d)]$ (de acuerdo con la proposición anterior). \\
+
+Como podemos ver, en cualquier caso se sigue que $[(a,b)] \leq [(c,d)]$. \\
+
+ii)  De acuerdo con la hipótesis, $[(0,n)] \cdot [(a,b)]=[(0,n)] \cdot [(c,d)]$ o $[(0,n)] \cdot [(a,b)]<[(0,n)] \cdot [(c,d)]$. Consideremos ambos casos:  \\
+
+($\ast$) Si $[(0,n)] \cdot [(a,b)]=[(0,n)] \cdot [(c,d)]$, entonces $[(a,b)]=[(c,d)]$ (dado que $[(0,n)] \neq [(0,0)]$). \\
+
+($\ast$) Si $[(0,n)] \cdot [(a,b)]<[(0,n)] \cdot [(c,d)]$, entonces $[(c,d)]<[(a,b)]$ (de acuerdo con la proposición anterior). \\
+
+Como podemos ver, en cualquier caso se sigue que $[(c,d)] \leq [(a,b)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $[(a,b)],[(c,d)] \in \mathbb Z$ y $n,m \in \mathbb N \setminus \{0\}$. \\
+
+    i) Si $[(a,b)]<[(n,0)]$ y $[(m,0)]<[(c,d)]$, entonces $[(m,0)] \cdot [(a,b)]<[(n,0)] \cdot [(c,d)]$. \\
+
+    ii) Si $[(a,b)]<[(n,0)]$ y $[(m,0)] \leq [(c,d)]$, entonces $[(m,0)] \cdot [(a,b)]<[(n,0)] \cdot [(c,d)]$. \\
+
+    iii) Si $[(a,b)] \leq [(n,0)]$ y $[(m,0)]<[(c,d)]$, entonces $[(m,0)] \cdot [(a,b)]<[(n,0)] \cdot [(c,d)]$. \\
+
+    iv) Si $[(a,b)] \leq [(n,0)]$ y $[(m,0)] \leq [(c,d)]$, entonces $[(m,0)] \cdot [(a,b)] \leq [(n,0)] \cdot [(c,d)]$. \\ } \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+i) Las hipótesis implican que $[(m,0)] \cdot [(a,b)]<[(m,0)] \cdot [(n,0)]$ y $[(n,0)] \cdot [(m,0)]<[(n,0)] \cdot [(c,d)]$. Por lo tanto, $[(m,0)] \cdot [(a,b)]<[(n,0)] \cdot [(c,d)]$. \\
+
+ii) Las hipótesis implican que $[(m,0)] \cdot [(a,b)]<[(m,0)] \cdot [(n,0)]$ y $[(n,0)] \cdot [(m,0)] \leq [(n,0)] \cdot [(c,d)]$. Por lo tanto, $[(m,0)] \cdot [(a,b)]<[(n,0)] \cdot [(c,d)]$. \\
+
+iii) Las hipótesis implican que $[(m,0)] \cdot [(a,b)] \leq [(m,0)] \cdot [(n,0)]$ y $[(n,0)] \cdot [(m,0)]<[(n,0)] \cdot [(c,d)]$. Por lo tanto, $[(m,0)] \cdot [(a,b)]<[(n,0)] \cdot [(c,d)]$. \\
+
+iv) Las hipótesis implican que $[(m,0)] \cdot [(a,b)] \leq [(m,0)] \cdot [(n,0)]$ y $[(n,0)] \cdot [(m,0)] \leq [(n,0)] \cdot [(c,d)]$. Por lo tanto, $[(m,0)] \cdot [(a,b)] \leq [(n,0)] \cdot [(c,d)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\Large{Los resultados anteriores son completamente análogos a los obtenidos al estudiar el orden de $\mathbb N$. Del mismo modo que ocurrió con la suma y la multiplicación, sus demostraciones se apoyan de manera esencial en propiedades previamente establecidas para los números naturales. Esto pone nuevamente de manifiesto que las propiedades fundamentales de $\mathbb Z$ tienen su origen, de una u otra forma, en las propiedades de $\mathbb N$. \\
+
+No obstante, esto no significa que los números enteros hereden todas las propiedades de los números naturales. Por ejemplo, \textit{no es cierto que todo subconjunto no vacío de $\mathbb Z$ admita un elemento mínimo} (aunque sí existe un resultado análogo al principio del buen orden).} \\
+
+\Large{Finalizamos esta sección con un resultado que será de utilidad en la siguiente, donde caracterizaremos cuándo la \textbf{resta} de dos números enteros es un número natural:} \\
+
+\begin{itemize}
+    \item \Large{\textbf{Proposición:} Sean $[(a,b)],[(c,d)] \in \mathbb Z$. Entonces existe $n \in \mathbb N$ tal que $[(a,b)]+[(d,c)]=[(n,0)]$, si y sólo si, $[(c,d)]<[(a,b)]$.} \\
+\end{itemize}
+
+\Large{\textbf{Demostración:} \\
+
+($\rightarrow$) Supongamos que existe $n \in \mathbb N$ tal que $[(a,b)]+[(d,c)]=[(n,0)]$. Es decir que $[(a+d,b+c)]=[(n,0)]$, y por tanto $(a+d)+0=n+(b+c)$. Tenemos entonces que $a+d=(c+b)+n$, así que $a+d \leq c+b$. Con lo cual, $[(c,d)] \leq [(a,b)]$. \\
+
+($\leftarrow$) Supongamos que $[(c,d)] \leq [(a,b)]$. Es decir que $c+b \leq a+d$. Con lo cual, existe $n \in \mathbb N$ tal que $a+d=(c+b)+n=n+(b+c)$. De modo pues que $[(a+d,b+c)]=[(n,0)]$, y por tanto $[(a,b)]+[(d,c)]=[(n,0)]$.} \\
+
+\begin{flushright}
+    $\square$
+\end{flushright}
+
+\end{document}
